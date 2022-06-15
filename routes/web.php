@@ -26,7 +26,7 @@ Auth::routes();
 
 // Client Route
 Route::namespace('Client')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('client.home');
+    Route::get('/', [PageController::class, 'index'])->name('client.home');
     Route::get('/profile', [PageController::class, 'profile'])->name('client.profile');
 });
 

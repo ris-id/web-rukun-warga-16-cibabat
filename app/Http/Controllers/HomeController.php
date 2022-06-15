@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kegiatan;
 
 class HomeController extends Controller
 {
@@ -24,8 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = Kegiatan::all();
-        return view('home', ['data' => $data]);
+        
     }
 
     public function adminHome()
