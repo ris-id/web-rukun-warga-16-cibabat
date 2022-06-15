@@ -153,10 +153,22 @@
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fa fa-power-off"></i>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                            Keluar
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        {{-- <a href="#" class="dropdown-item">
+                            Keluar
+                        </a> --}}
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -165,7 +177,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="{{ route('admin.home') }}" class="brand-link">
                 <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Rukun Warga 16</span>
