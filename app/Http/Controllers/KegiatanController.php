@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
+use Image;
 
 class KegiatanController extends Controller
 {
@@ -116,11 +117,12 @@ class KegiatanController extends Controller
      * @param  \App\Models\Kegiatan  $kegiatan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kegiatan $kegiatan)
+    public function destroy($id)
     {
-        $kegiatan->delete();
-
-        return redirect()->route('products.index')
+        $data =  Kegiatan::find($id);
+        unlink("image/kegiatan/" . $data->foto_kegiatan);
+        $data::where("id", $id)->delete();
+        return redirect()->route('kegiatan.index')
             ->with('success', 'Kegiatan berhasil di hapus');
     }
 }
