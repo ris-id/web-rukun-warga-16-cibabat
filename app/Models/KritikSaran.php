@@ -9,4 +9,8 @@ class KritikSaran extends Model
 {
     use HasFactory;
     protected $table = 'tb_kritik_saran';
+
+    protected $fillable = [
+        'kritik', 'saran'
+    ];
 }

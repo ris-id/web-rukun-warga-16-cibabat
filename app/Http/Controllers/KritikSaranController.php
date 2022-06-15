@@ -14,7 +14,8 @@ class KritikSaranController extends Controller
      */
     public function index()
     {
-        //
+        $kritikSaran = KritikSaran::orderBy('created_at', 'asc')->get();
+        return view('admin.kritikSaran.index', compact('kritikSaran'));
     }
 
     /**
@@ -24,7 +25,7 @@ class KritikSaranController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -46,7 +47,7 @@ class KritikSaranController extends Controller
      */
     public function show(KritikSaran $kritikSaran)
     {
-        //
+        return view('admin.kritikSaran.detail', compact('kritikSaran'));
     }
 
     /**
@@ -78,8 +79,11 @@ class KritikSaranController extends Controller
      * @param  \App\Models\KritikSaran  $kritikSaran
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KritikSaran $kritikSaran)
+    public function destroy($id)
     {
-        //
+        $data =  KritikSaran::find($id);
+        $data::where("id", $id)->delete();
+        return redirect()->route('kritikSaran.index')
+            ->with('success', 'Kritik & Saran Berhasil di hapus');
     }
 }

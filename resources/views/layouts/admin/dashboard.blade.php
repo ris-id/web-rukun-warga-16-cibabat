@@ -228,6 +228,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('kritikSaran.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-comment"></i>
+                                <p>
+                                    Kritik & Saran
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item ">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -297,6 +305,7 @@
     <script src="/dist/js/adminlte.min.js"></script>
     @yield('script-kegiatan')
     @yield('script-infoPenting')
+    @yield('script-kritikSaran')
 </body>
 
 </html>

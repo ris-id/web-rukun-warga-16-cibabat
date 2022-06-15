@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\InfoPentingController;
+use App\Http\Controllers\KritikSaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::resource('admin/kegiatan', KegiatanController::class)->middleware('is_admin');
 Route::resource('admin/infoPenting', InfoPentingController::class)->middleware('is_admin');
+Route::resource('admin/kritikSaran', KritikSaranController::class)->middleware('is_admin');
