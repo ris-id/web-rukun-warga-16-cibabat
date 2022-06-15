@@ -7,6 +7,8 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\InfoPentingController;
 use App\Http\Controllers\KritikSaranController;
 
+use App\Http\Controllers\Client\PageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,14 +20,17 @@ use App\Http\Controllers\KritikSaranController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Client Route
+Route::namespace('Client')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('client.home');
+    Route::get('/profile', [PageController::class, 'profile'])->name('client.profile');
+});
 
+// Admin Routes
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::resource('admin/kegiatan', KegiatanController::class)->middleware('is_admin');
 Route::resource('admin/infoPenting', InfoPentingController::class)->middleware('is_admin');
