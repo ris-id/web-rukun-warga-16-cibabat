@@ -14,7 +14,8 @@ class InfoPentingController extends Controller
      */
     public function index()
     {
-        //
+        $infoPenting = InfoPenting::orderBy('created_at', 'asc')->get();
+        return view('admin.infoPenting.index', compact('infoPenting'));
     }
 
     /**
@@ -24,7 +25,7 @@ class InfoPentingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.infoPenting.create');
     }
 
     /**
@@ -35,7 +36,18 @@ class InfoPentingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul_info' => 'required|string|max:55',
+            'deskripsi' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        InfoPenting::create($input);
+
+        return redirect()->route('infoPenting.index')
+        ->with('Success', 'Info Penting berhasil diumumkan');
+
     }
 
     /**
@@ -46,7 +58,7 @@ class InfoPentingController extends Controller
      */
     public function show(InfoPenting $infoPenting)
     {
-        //
+        return view('admin.infoPenting.detail', compact('infoPenting'));
     }
 
     /**
@@ -55,9 +67,9 @@ class InfoPentingController extends Controller
      * @param  \App\Models\InfoPenting  $infoPenting
      * @return \Illuminate\Http\Response
      */
-    public function edit(InfoPenting $infoPenting)
+    public function edit(Request $request, InfoPenting $infoPenting)
     {
-        //
+        return view ('admin.infoPenting.edit', compact('infoPenting'));
     }
 
     /**
@@ -69,7 +81,16 @@ class InfoPentingController extends Controller
      */
     public function update(Request $request, InfoPenting $infoPenting)
     {
-        //
+        $request->validate([
+            'judul_info' => 'required|string|max:55',
+            'deskripsi' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $infoPenting->update($input);
+
+        return redirect()->route('infoPenting.index')->with('success', 'Info berhasil di update');
     }
 
     /**
@@ -78,8 +99,11 @@ class InfoPentingController extends Controller
      * @param  \App\Models\InfoPenting  $infoPenting
      * @return \Illuminate\Http\Response
      */
-    public function destroy(InfoPenting $infoPenting)
+    public function destroy($id)
     {
-        //
+        $data =  InfoPenting::find($id);
+        $data::where("id", $id)->delete();
+        return redirect()->route('infoPenting.index')
+            ->with('success', 'Info Berhasil di hapus');
     }
 }

@@ -220,6 +220,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('infoPenting.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-info"></i>
+                                <p>
+                                    Info Penting
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item ">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -288,6 +296,7 @@
     <!-- AdminLTE App -->
     <script src="/dist/js/adminlte.min.js"></script>
     @yield('script-kegiatan')
+    @yield('script-infoPenting')
 </body>
 
 </html>

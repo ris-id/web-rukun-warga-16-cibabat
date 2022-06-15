@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class InfoPenting extends Model
 {
     use HasFactory;
+
     protected $table = 'tb_info_penting';
+
+    protected $fillable = [
+        'judul_info', 'deskripsi'
+    ];
 }
