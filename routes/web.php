@@ -8,6 +8,7 @@ use App\Http\Controllers\InfoPentingController;
 use App\Http\Controllers\KritikSaranController;
 
 use App\Http\Controllers\Client\PageController;
+use App\Http\Controllers\Client\PageKegiatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +25,16 @@ use App\Http\Controllers\Client\PageController;
 
 Auth::routes();
 
-// Client Route
+// Client Routes
 Route::namespace('Client')->group(function () {
+    // Main Page Routes
     Route::get('/', [PageController::class, 'index'])->name('client.home');
     Route::get('/profile', [PageController::class, 'profile'])->name('client.profile');
     Route::get('/organisasi', [PageController::class, 'organisasi'])->name('client.organisasi');
+
+    // Kegiatan Page Routes
+    Route::get('/kegiatan', [PageKegiatanController::class, 'index'])->name('client.kegiatan');
+    Route::get('/kegiatan/{id}', [PageKegiatanController::class, 'show'])->name('client.kegiatan.show');
 });
 
 // Admin Routes

@@ -33,12 +33,6 @@
 
     <!-- Material Kit-->
     <link type="text/css" href="{{ asset('css/material-kit.min.css') }}" rel="stylesheet">
-    <style>
-        body {
-            position: relative;
-            height: 100vh;
-        }
-    </style>
 
 </head>
 
@@ -51,9 +45,8 @@
                 <nav
                     class="navbar navbar-expand-lg  blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
                     <div class="container-fluid px-0">
-                        <a class="navbar-brand font-weight-bolder ms-sm-3"
-                            href="{{ route('client.home') }}" rel="tooltip"
-                            title="Designed and Coded by Creative Tim" data-placement="bottom">
+                        <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ route('client.home') }}"
+                            rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom">
                             <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" alt="AdminLTE Logo"
                                 width="45" style="opacity: .8" width>&nbspRukun Warga 16 - Cibabat
                         </a>
@@ -88,13 +81,14 @@
                                         <div class="d-none d-lg-block">
                                             <h6
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                                                Landing Pages
+                                                Post
                                             </h6>
-                                            <a href="" class="dropdown-item border-radius-md">
-                                                <span>About Us</span>
+                                            <a href="{{ route('client.kegiatan') }}"
+                                                class="dropdown-item border-radius-md">
+                                                <span>Kegiatan</span>
                                             </a>
                                             <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                                                <span>Contact Us</span>
+                                                <span>Info Penting</span>
                                             </a>
                                             <a href="./pages/author.html" class="dropdown-item border-radius-md">
                                                 <span>Author</span>
@@ -161,7 +155,7 @@
         </div>
     </div>
 
-    <main class="">
+    <main>
         @yield('content')
     </main>
 
@@ -169,12 +163,17 @@
         <div class="container">
             <div class=" row">
                 <div class="col-md-3 mb-4 ms-auto">
-                    <div>
-                        <a href="https://www.creative-tim.com/product/material-kit">
-                            <i class="fa-solid fa-building-columns mb-3 footer-logo"></i>
-                        </a>
-                        <h6 class="font-weight-bolder">Rukun Warga 16</h6>
-                        <h6 class="font-weight-bolder mb-4">Kelurahan Cibabat</h6>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/">
+                                <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png"
+                                    alt="AdminLTE Logo" width="50" style="opacity: .8" width>
+                            </a>
+                        </div>
+                        <div class="col-md-7">
+                            <h6 class="font-weight-bolder">Rukun Warga 16</h6>
+                            <h6 class="font-weight-bolder mb-4">Kelurahan Cibabat</h6>
+                        </div>
                     </div>
                     <div>
                         <ul class="d-flex flex-row ms-n3 nav">
@@ -217,129 +216,104 @@
 
                 <div class="col-md-2 col-sm-6 col-6 mb-4">
                     <div>
-                        <h6 class="text-sm">Company</h6>
+                        <h6 class="text-sm">Tentang Kami</h6>
                         <ul class="flex-column ms-n3 nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/presentation" target="_blank">
-                                    About Us
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/templates/free" target="_blank">
-                                    Freebies
+                                <a class="nav-link" href="#" target="_blank">
+                                    Profil
                                 </a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="https://www.creative-tim.com/templates/premium"
                                     target="_blank">
-                                    Premium Tools
+                                    Pelayanan
                                 </a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="https://www.creative-tim.com/blog" target="_blank">
-                                    Blog
+                                    Struktur Organisasi
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-md-2 col-sm-6 col-6 mb-4">
-                    <div>
-                        <h6 class="text-sm">Resources</h6>
-                        <ul class="flex-column ms-n3 nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://iradesign.io/" target="_blank">
-                                    Illustrations
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/bits" target="_blank">
-                                    Bits & Snippets
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/affiliates/new" target="_blank">
-                                    Affiliate Program
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-6 col-6 mb-4">
+                <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
                     <div>
                         <h6 class="text-sm">Help & Support</h6>
                         <ul class="flex-column ms-n3 nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/contact-us" target="_blank">
-                                    Contact Us
+                                <a class="nav-link" href="#" target="_blank">
+                                    Kritik & Saran
                                 </a>
                             </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/knowledge-center"
-                                    target="_blank">
-                                    Knowledge Center
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://services.creative-tim.com/?ref=ct-mk2-footer"
-                                    target="_blank">
-                                    Custom Development
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/sponsorships" target="_blank">
-                                    Sponsorships
-                                </a>
-                            </li>
-
                         </ul>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-md-2 col-sm-6 col-6 mb-4 me-auto">
-                    <div>
-                        <h6 class="text-sm">Legal</h6>
-                        <ul class="flex-column ms-n3 nav">
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="https://www.creative-tim.com/knowledge-center/terms-of-service"
-                                    target="_blank">
-                                    Terms & Conditions
-                                </a>
-                            </li>
+                <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
+                    
+                </div> -->
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/knowledge-center/privacy-policy"
-                                    target="_blank">
-                                    Privacy Policy
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.creative-tim.com/license" target="_blank">
-                                    Licenses (EULA)
-                                </a>
-                            </li>
-                        </ul>
+                <div class="col-md-7 col-sm-6 col-6 mb-4">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-lg mx-auto d-flex justify-content-center flex-column">
+                                <h6 class="">Kritik & Saran</h6>
+                                <form role="form" id="contact-form" method="post" autocomplete="off">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md">
+                                                <div class="input-group input-group-dynamic mb-4">
+                                                    <label class="form-label">Nama</label>
+                                                    <input class="form-control" aria-label="First Name..." type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <div class="input-group input-group-dynamic">
+                                                <label class="form-label">Alamat Email</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-4 input-group-static">
+                                            <label>Pesan Anda</label>
+                                            <textarea name="message" class="form-control" id="message"
+                                                rows="4"></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <!-- <div class="col-md-12">
+                                                <div class="form-check form-switch mb-4 d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="flexSwitchCheckDefault" checked="">
+                                                    <label class="form-check-label ms-3 mb-0"
+                                                        for="flexSwitchCheckDefault">I agree to the <a
+                                                            href="javascript:;" class="text-dark"><u>Terms and
+                                                                Conditions</u></a>.</label>
+                                                </div>
+                                            </div> -->
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn bg-gradient-primary w-100">Kirim
+                                                    Pesan</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-12">
                     <div class="text-center">
                         <p class="text-dark my-4 text-sm font-weight-normal">
-                            All rights reserved. Copyright © <script>
+                            Build With Respect By <strong><a href="https://github.com/ris-id" target="_blank">RIS.ID x
+                                    Hana
+                                </a></strong> | Copyright © <script>
                                 document.write(new Date().getFullYear())
-                            </script> Material Kit by <a href="https://www.creative-tim.com" target="_blank">Creative
+                            </script> | Material Kit by <a href="https://www.creative-tim.com" target="_blank">Creative
                                 Tim</a>.
                         </p>
                     </div>
