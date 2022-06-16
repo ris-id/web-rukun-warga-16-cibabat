@@ -143,6 +143,14 @@
                                         <p class="d-inline text-sm z-index-1 font-weight-bold">Struktur Organisasi</p>
                                     </a>
                                 </li>
+                                
+                                 <li class="nav-item ms-lg-auto">
+                                    <a class="nav-link ps-2 nav-link-icon me-2" href="{{ route('client.layanan') }}">
+                                        <i class="fa-solid fa-headset opacity-6 me-1 text-sm"></i>
+                                        <p class="d-inline text-sm z-index-1 font-weight-bold">Pelayanan</p>
+                                    </a>
+                                 </li>
+
 
                             </ul>
                         </div>
