@@ -87,7 +87,7 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Kegiatan</span>
                                             </a>
-                                            <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.infopenting') }}" class="dropdown-item border-radius-md">
                                                 <span>Info Penting</span>
                                             </a>
                                             <a href="./pages/author.html" class="dropdown-item border-radius-md">
