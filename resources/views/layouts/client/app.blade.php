@@ -90,8 +90,8 @@
                                             <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
                                                 <span>Info Penting</span>
                                             </a>
-                                            <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                                                <span>Author</span>
+                                            <a href="{{ route('client.pkk') }}" class="dropdown-item border-radius-md">
+                                                <span>PKK</span>
                                             </a>
                                             <h6
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">

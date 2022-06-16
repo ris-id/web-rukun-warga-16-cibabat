@@ -2,7 +2,7 @@
 
 @section('content')
 <header class="header-2">
-  <div class="page-header min-vh-75 relative" style="background-image: url('{{asset('dist/img/client/bg.jpg')}}')">
+  <div class="page-header min-vh-75 relative" style="background-image: url('{{asset('dist/img/client/bg3.jpg')}}')">
     <span class="mask bg-gradient-dark opacity-4"></span>
     <div class="container">
       <div class="row">
@@ -29,7 +29,7 @@
 
 
   <!-- -------- START Features w/ icons and text on left & gradient title and text on right -------- -->
-  <div class="container py-">
+  <div class="container py-3">
     <div class="row justify-content-center">
       <div CLASS='col-sm-4'>
         <i class="fa-solid fa-user-group fa-2x" style="color:red"></i>

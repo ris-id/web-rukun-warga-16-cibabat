@@ -9,6 +9,8 @@ use App\Http\Controllers\KritikSaranController;
 
 use App\Http\Controllers\Client\PageController;
 use App\Http\Controllers\Client\PageKegiatanController;
+use App\Http\Controllers\Client\PagePkkController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,11 @@ Route::namespace('Client')->group(function () {
     // Kegiatan Page Routes
     Route::get('/kegiatan', [PageKegiatanController::class, 'index'])->name('client.kegiatan');
     Route::get('/kegiatan/{id}', [PageKegiatanController::class, 'show'])->name('client.kegiatan.show');
+
+    //PKK Page Routes
+    Route::get('/pkk', [PagePkkController::class, 'index'])->name('client.pkk');
+    Route::get('/pkk/{id}', [PagePkkController::class, 'show'])->name('client.pkk.show');
+
 });
 
 // Admin Routes
