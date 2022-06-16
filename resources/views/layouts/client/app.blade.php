@@ -52,8 +52,8 @@
                     class="navbar navbar-expand-lg  blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
                     <div class="container-fluid px-0">
                         <a class="navbar-brand font-weight-bolder ms-sm-3"
-                            href="https://demos.creative-tim.com/material-kit/index" rel="tooltip"
-                            title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+                            href="{{ route('client.home') }}" rel="tooltip"
+                            title="Designed and Coded by Creative Tim" data-placement="bottom">
                             <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" alt="AdminLTE Logo"
                                 width="45" style="opacity: .8" width>&nbspRukun Warga 16 - Cibabat
                         </a>
@@ -144,7 +144,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item ms-lg-auto">
-                                    <a class="nav-link ps-2 nav-link-icon me-2" href="{{ route('client.home') }}">
+                                    <a class="nav-link ps-2 nav-link-icon me-2" href="{{ route('client.organisasi') }}">
                                         <i class="fa-solid fa-sitemap opacity-6 me-1 text-sm"></i>
                                         <p class="d-inline text-sm z-index-1 font-weight-bold">Struktur Organisasi</p>
                                     </a>
