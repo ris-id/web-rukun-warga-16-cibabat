@@ -23,7 +23,7 @@
                 <div class="col">
                     <div class="card p-5">
                             <a class="d-block blur-shadow-image d-flex mt-3 mx-auto">
-                                <img src="../dist/img/client/struktur-organisasi.png" style="width: 700px;" alt="">
+                                <img src="../dist/img/client/struktur-organisasi.png" class="img-fluid" style="width: 700px;" alt="">
                             </a>
                     </div>
                 </div>

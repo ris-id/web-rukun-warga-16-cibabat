@@ -43,7 +43,6 @@ Route::namespace('Client')->group(function () {
     Route::get('/infopenting', [PageInfoPentingController::class, 'index'])->name('client.infopenting');
     Route::get('/infopenting/{id}', [PageInfoPentingController::class, 'show'])->name('client.infopenting.show');
 
-    Route::get('/organisasi', [PageController::class, 'organisasi'])->name('client.organisasi');
     Route::get('/pelayanan', [PageController::class, 'layanan'])->name('client.layanan');
 
     // Kegiatan Page Routes
