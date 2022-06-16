@@ -28,6 +28,7 @@ Auth::routes();
 Route::namespace('Client')->group(function () {
     Route::get('/', [PageController::class, 'index'])->name('client.home');
     Route::get('/profile', [PageController::class, 'profile'])->name('client.profile');
+    Route::get('/organisasi', [PageController::class, 'organisasi'])->name('client.organisasi');
 });
 
 // Admin Routes
