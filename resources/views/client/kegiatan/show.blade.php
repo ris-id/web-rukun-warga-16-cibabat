@@ -19,7 +19,7 @@
 
 <div class="row">
     <div class="col-md-8">
-        <div class="card card-body blur shadow-blur mx-3  mt-n6">
+        <div class="card card-body blur shadow-blur mx-3 mb-5 mt-n6">
             <section class="pt-3">
                 <div class="container">
                     <div class="row">
@@ -39,6 +39,88 @@
                 </div>
             </section>
         </div>
+
+        <div class="card card-body blur shadow-blur mx-3  mt-n6">
+            <section class="pt-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h2 class="mb-5">Komentar</h2>
+                        <hr class="mb-3">
+                        <div class="col-lg py-4">
+                            <div class="row justify-content-start">
+                                <div class="row justify-content-start">
+                                    <div class="col">
+                                        <div class="info">
+                                            <h6 class="text-dark text-gradient">User@mail.com</h6>
+                                            <p class="mt-n2" style="font-size: 12px;">20 Januari 2022 | 20.22</p>
+                                            <p class="text-dark">asdadwqafasd</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row justify-content-start">
+                                    <div class="col">
+                                        <div class="info">
+                                            <h6 class="text-dark text-gradient">User@mail.com</h6>
+                                            <p class="mt-n2" style="font-size: 12px;">20 Januari 2022 | 20.22</p>
+                                            <p class="text-dark">asdadwqafasd</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card shadow">
+                                    <div class="card-body">
+                                    <div class="col">
+                                    <h6 class="">Tulis Komentar</h6>
+                                    <form role="form" id="contact-form" method="post" autocomplete="off">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md">
+                                                    <div class="input-group input-group-dynamic mb-4">
+                                                        <label class="form-label">Nama</label>
+                                                        <input class="form-control" aria-label="First Name..."
+                                                            type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="input-group input-group-dynamic">
+                                                    <label class="form-label">Alamat Email</label>
+                                                    <input type="email" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="input-group mb-4 input-group-static">
+                                                <label>Komentar Anda</label>
+                                                <textarea name="message" class="form-control" id="message"
+                                                    rows="4"></textarea>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch mb-4 d-flex align-items-center">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="flexSwitchCheckDefault" checked="">
+                                                        <label class="form-check-label ms-3 mb-0"
+                                                            for="flexSwitchCheckDefault">Saya setuju dengan <a
+                                                                href="javascript:;" class="text-dark"><u>Ketentuan
+                                                                    Berkomentar</u></a>.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <button type="submit" class="btn bg-gradient-primary w-100">Kirim
+                                                        Komentar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </div>
     <div class="col-md-4">
         <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
