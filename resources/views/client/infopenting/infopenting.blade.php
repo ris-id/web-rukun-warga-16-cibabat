@@ -20,19 +20,19 @@
     <section class="pt-3">
         <div class="row">
             <div class="col col-md-4">
-                <button type="button" class="btn btn-primary">
-                    <span>Post Terbaru</span>
-                </button>
+                <h5>Informasi Terbaru</h5>
             </div>
             <hr>
             @foreach($kegiatan as $kegiatan)
                 <div class="col">
-                    <div class="card card-background card-background-mask-dark align-items-start mt-4">
-                        <div class="full-background cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1604213410393-89f141bb96b8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA5fHxuYXR1cmV8ZW58MHx8MHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60')"></div>
-                        <div class="card-body">
-                            <h5 class="text-white mb-0"><a class="text-white" href="{{ url('/matakuliah/kegiatan/' . $kegiatan->id) }}"> {{ $kegiatan->judul_kegiatan }}</a></h5>
+                    <a href="{{ url('/kegiatan/' . $kegiatan->id) }}">
+                        <div class="card card-background card-background-mask-dark align-items-start">
+                            <div class="full-background cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1604213410393-89f141bb96b8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA5fHxuYXR1cmV8ZW58MHx8MHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60')"></div>
+                            <div class="card-body">
+                                <p class="text-lg text-white mb-0">{{ $kegiatan->judul_kegiatan }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </div>
@@ -48,8 +48,12 @@
                 <div class="card bg-gradient-default mt-5">
                     <div class="card-body px-5">
                         <h3 class="text-dark text-gradient">{{ $data->judul_info }}</h3>
-                        <p class="text-dark ms-3">{{ $data->deskripsi }}</p>
-                        <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
+                        <p class="text-dark ms-3" style="line-height: 1.5em; text-overflow: ellipsis;
+                        overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;">{{ $data->deskripsi }}</p>
+                        <a href="{{ url('/infopenting/' . $data->id) }}" class="text-primary icon-move-right">Baca Selengkapnya
                             <i class="fas fa-arrow-right text-sm ms-1"></i>
                         </a>
                     </div>
