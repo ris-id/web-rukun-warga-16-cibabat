@@ -22,8 +22,8 @@ class PageController extends Controller
     {
         return view('client.pages.profile');
     }
-    public function organisasi()
+    public function layanan()
     {
-        return view('client.pages.organisasi');
+        return view('client.pages.pelayanan');
     }
 }

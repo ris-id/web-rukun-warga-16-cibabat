@@ -7,8 +7,12 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\InfoPentingController;
 use App\Http\Controllers\KritikSaranController;
 
+use App\Http\Controllers\client\PageInfoPentingController;
+use App\Http\Controllers\Client\OrganisasiController;
 use App\Http\Controllers\Client\PageController;
 use App\Http\Controllers\Client\PageKegiatanController;
+use App\Http\Controllers\Client\PagePkkController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,11 +34,25 @@ Route::namespace('Client')->group(function () {
     // Main Page Routes
     Route::get('/', [PageController::class, 'index'])->name('client.home');
     Route::get('/profile', [PageController::class, 'profile'])->name('client.profile');
-    Route::get('/organisasi', [PageController::class, 'organisasi'])->name('client.organisasi');
+
+
+    // Organisasi Page Routes
+    Route::get('/organisasi', [OrganisasiController::class, 'organisasi'])->name('client.organisasi');
+
+    // Infromasi Penting Page Routes
+    Route::get('/infopenting', [PageInfoPentingController::class, 'index'])->name('client.infopenting');
+    Route::get('/infopenting/{id}', [PageInfoPentingController::class, 'show'])->name('client.infopenting.show');
+
+    Route::get('/pelayanan', [PageController::class, 'layanan'])->name('client.layanan');
 
     // Kegiatan Page Routes
     Route::get('/kegiatan', [PageKegiatanController::class, 'index'])->name('client.kegiatan');
     Route::get('/kegiatan/{id}', [PageKegiatanController::class, 'show'])->name('client.kegiatan.show');
+
+    //PKK Page Routes
+    Route::get('/pkk', [PagePkkController::class, 'index'])->name('client.pkk');
+    Route::get('/pkk/{id}', [PagePkkController::class, 'show'])->name('client.pkk.show');
+
 });
 
 // Admin Routes
