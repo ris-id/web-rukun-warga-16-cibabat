@@ -30,13 +30,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet"> <!-- Custom CSS - Edit in public/css/style.css -->
 
     <!-- Material Kit-->
     <link type="text/css" href="{{ asset('css/material-kit.min.css') }}" rel="stylesheet">
 
 </head>
 
-<body id="container">
+<body>
 
     <!-- Navbar -->
     <div class="container position-sticky z-index-sticky top-0">
@@ -48,7 +49,7 @@
                         <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ route('client.home') }}"
                             rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom">
                             <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" alt="AdminLTE Logo"
-                                width="45" style="opacity: .8" width>&nbspRukun Warga 16 - Cibabat
+                                width="20" style="opacity: .8" width>&nbspRukun Warga 16 - Cibabat
                         </a>
                         <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
@@ -81,6 +82,41 @@
                                         <div class="d-none d-lg-block">
                                             <h6
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
+                                                Info
+                                            </h6>
+                                            <a href="{{ route('client.kegiatan') }}"
+                                                class="dropdown-item border-radius-md">
+                                                <span>Kegiatan</span>
+                                            </a>
+                                            <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
+                                                <span>Info Penting</span>
+                                            </a>
+                                            <a href="./pages/author.html" class="dropdown-item border-radius-md">
+                                                <span>Pelayanan</span>
+                                            </a>
+                                            <a href="./pages/author.html" class="dropdown-item border-radius-md">
+                                                <span>Aset</span>
+                                            </a>
+                                            <h6
+                                                class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
+                                                Organisasi
+                                            </h6>
+                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
+                                                <span>Karang Taruna</span>
+                                            </a>
+                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
+                                                <span>PKK</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="d-lg-none">
+                                            <h6
+                                                class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
+                                                Landing Pages
+                                            </h6>
+
+                                            <h6
+                                                class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
                                                 Post
                                             </h6>
                                             <a href="{{ route('client.kegiatan') }}"
@@ -91,39 +127,21 @@
                                                 <span>Info Penting</span>
                                             </a>
                                             <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                                                <span>Author</span>
-                                            </a>
-                                            <h6
-                                                class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                                                Account
-                                            </h6>
-                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                                                <span>Sign In</span>
-                                            </a>
-                                        </div>
-
-                                        <div class="d-lg-none">
-                                            <h6
-                                                class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                                                Landing Pages
-                                            </h6>
-
-                                            <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                                                <span>About Us</span>
-                                            </a>
-                                            <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                                                <span>Contact Us</span>
+                                                <span>Pelayanan</span>
                                             </a>
                                             <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                                                <span>Author</span>
+                                                <span>Aset</span>
                                             </a>
 
                                             <h6
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                                                Account
+                                                Organisasi
                                             </h6>
                                             <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                                                <span>Sign In</span>
+                                                <span>Karang Taruna</span>
+                                            </a>
+                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
+                                                <span>PKK</span>
                                             </a>
 
                                         </div>
@@ -164,15 +182,15 @@
             <div class=" row">
                 <div class="col-md-3 mb-4 ms-auto">
                     <div class="row">
-                        <div class="col-md-4">
-                            <a href="/">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <center><a href="/">
                                 <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png"
                                     alt="AdminLTE Logo" width="50" style="opacity: .8" width>
-                            </a>
+                            </a></center>
                         </div>
-                        <div class="col-md-7">
-                            <h6 class="font-weight-bolder">Rukun Warga 16</h6>
-                            <h6 class="font-weight-bolder mb-4">Kelurahan Cibabat</h6>
+                        <div class="col-md-7 ">
+                            <h6 class="font-weight-bolder text-md">Rukun Warga 16</h6>
+                            <h6 class="font-weight-bolder text-sm mb-4">Kelurahan Cibabat</h6>
                         </div>
                     </div>
                     <div>
@@ -216,7 +234,7 @@
 
                 <div class="col-md-2 col-sm-6 col-6 mb-4">
                     <div>
-                        <h6 class="text-sm">Tentang Kami</h6>
+                        <h6 >Tentang Kami</h6>
                         <ul class="flex-column ms-n3 nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="#" target="_blank">
