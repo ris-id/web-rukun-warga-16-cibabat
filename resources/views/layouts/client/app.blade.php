@@ -29,12 +29,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet"> <!-- Custom CSS - Edit in public/css/style.css -->
+    <link type="text/css" href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('css/style.css') }}" rel="stylesheet"> <!-- Custom CSS - Edit in public/css/style.css -->
 
     <!-- Material Kit-->
     <link type="text/css" href="{{ asset('css/material-kit.min.css') }}" rel="stylesheet">
-
+    
 </head>
 
 <body>
@@ -88,7 +88,7 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Kegiatan</span>
                                             </a>
-                                            <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.infopenting') }}" class="dropdown-item border-radius-md">
                                                 <span>Info Penting</span>
                                             </a>
                                             <a href="./pages/author.html" class="dropdown-item border-radius-md">

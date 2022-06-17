@@ -10,15 +10,19 @@ class PageKegiatanController extends Controller
 {
     public function index()
     {
+        $listKegiatan = Kegiatan::all()->sortByDesc('id')->take(4);
         return view('client.kegiatan.index', [
-            'kegiatans' => Kegiatan::all()
+            'kegiatans' => Kegiatan::all(),
+            'listKegiatan' => $listKegiatan
         ]);
     }
 
-    public function show(Kegiatan $kegiatan)
+    public function show($id)
     {
+        $listKegiatan = Kegiatan::all()->sortByDesc('id')->take(4);
         return view('client.kegiatan.show', [
-            'kegiatan' => $kegiatan
+            'kegiatans' => Kegiatan::find($id),
+            'listKegiatan' => $listKegiatan
         ]);
     }
 }

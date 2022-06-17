@@ -25,7 +25,7 @@
             @foreach($data as $data)
                 <div class="col-lg my-auto py-3">
                     <h3>{{ $data->judul_kegiatan }}</h3>
-                    <p class="pe-5">{{ $data->deskripsi }}</p>
+                    <p class="pe-5 short-text">{{ $data->deskripsi }}</p>
                     <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
                         <i class="fas fa-arrow-right text-sm ms-1"></i>
                     </a>
