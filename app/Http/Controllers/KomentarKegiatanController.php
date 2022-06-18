@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kegiatan;
 use App\Models\KomentarKegiatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KomentarKegiatanController extends Controller
 {
@@ -14,7 +16,11 @@ class KomentarKegiatanController extends Controller
      */
     public function index()
     {
-        //
+        // SELECT tb_kegiatan.id, tb_kegiatan.judul_kegiatan, tb_kegiatan.created_at, tb_kegiatan.deskripsi, (SELECT COUNT(id_kegiatan) FROM tb_komentar_kegiatan WHERE id_kegiatan = tb_kegiatan.id) as count_komentar FROM tb_kegiatan ORDER BY tb_kegiatan.created_at ASC; 
+
+        $data = DB::select("SELECT tb_kegiatan.id, tb_kegiatan.judul_kegiatan, tb_kegiatan.created_at, tb_kegiatan.deskripsi, (SELECT COUNT(id_kegiatan) FROM tb_komentar_kegiatan WHERE id_kegiatan = tb_kegiatan.id) as count_komentar FROM tb_kegiatan ORDER BY tb_kegiatan.created_at ASC;");
+
+        return view('admin.komentar.kegiatan.index', compact('data'));
     }
 
     /**
@@ -44,9 +50,10 @@ class KomentarKegiatanController extends Controller
      * @param  \App\Models\KomentarKegiatan  $komentarKegiatan
      * @return \Illuminate\Http\Response
      */
-    public function show(KomentarKegiatan $komentarKegiatan)
+    public function show($id)
     {
-        //
+        $data = KomentarKegiatan::with('kegiatan')->where('id_kegiatan', $id)->get();
+        return view('admin.komentar.kegiatan.show', compact('data'));
     }
 
     /**
@@ -78,8 +85,10 @@ class KomentarKegiatanController extends Controller
      * @param  \App\Models\KomentarKegiatan  $komentarKegiatan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KomentarKegiatan $komentarKegiatan)
+    public function destroy($id)
     {
-        //
+        $data =  KomentarKegiatan::find($id);
+        $data::where("id", $id)->delete();
+        return back();
     }
 }

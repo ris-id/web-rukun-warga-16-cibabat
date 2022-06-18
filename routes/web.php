@@ -13,7 +13,8 @@ use App\Http\Controllers\Client\OrganisasiController;
 use App\Http\Controllers\Client\PageController;
 use App\Http\Controllers\Client\PageKegiatanController;
 use App\Http\Controllers\Client\PagePkkController;
-
+use App\Http\Controllers\KomentarKegiatanController;
+use App\Http\Controllers\ProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,7 @@ Route::namespace('Client')->group(function () {
     Route::get('/infopenting/{id}', [PageInfoPentingController::class, 'show'])->name('client.infopenting.show');
 
     Route::get('/pelayanan', [PageController::class, 'layanan'])->name('client.layanan');
-    
+
     // Informasi Karang Taruna
     Route::get('/karangtaruna', [InformasiKarangTarunaController::class, 'karangtaruna'])->name('client.karangtaruna');
 
@@ -56,7 +57,6 @@ Route::namespace('Client')->group(function () {
     //PKK Page Routes
     Route::get('/pkk', [PagePkkController::class, 'index'])->name('client.pkk');
     Route::get('/pkk/{id}', [PagePkkController::class, 'show'])->name('client.pkk.show');
-
 });
 
 // Admin Routes
@@ -64,3 +64,5 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::resource('admin/kegiatan', KegiatanController::class)->middleware('is_admin');
 Route::resource('admin/infoPenting', InfoPentingController::class)->middleware('is_admin');
 Route::resource('admin/kritikSaran', KritikSaranController::class)->middleware('is_admin');
+Route::resource('admin/komentar/komentar-kegiatan', KomentarKegiatanController::class)->middleware('is_admin');
+Route::resource('admin/profil', ProfilController::class)->middleware('is_admin');

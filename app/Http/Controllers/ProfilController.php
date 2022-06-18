@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Profil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProfilController extends Controller
 {
@@ -14,7 +15,8 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        //
+        $data = Profil::all();
+        return view('admin.profil.index', compact('data'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ProfilController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.profil.create');
     }
 
     /**
@@ -35,7 +37,21 @@ class ProfilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'deskripsi' => 'required',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $input = $request->all();
+        if ($image = $request->file('logo')) {
+            $destionationPath = 'image/logo/';
+            $logo = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionationPath, $logo);
+            $input['logo'] = $logo;
+        }
+
+        Profil::create($input);
+        return redirect()->route('profil.index')
+            ->with('Success', 'Data profil berhasil ditambahkan');
     }
 
     /**
@@ -69,7 +85,25 @@ class ProfilController extends Controller
      */
     public function update(Request $request, Profil $profil)
     {
-        //
+        $request->validate([
+            'deskripsi' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        if ($image = $request->file('logo')) {
+            $destinationPath = 'image/logo/';
+            $logo = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $logo);
+            $input['logo'] = "$logo";
+            unlink("image/logo/" . $profil->logo);
+        } else {
+            unset($input['logo']);
+        }
+
+        $profil->update($input);
+        return redirect()->route('profil.index')
+            ->with('success', 'profil berhasil di publish');
     }
 
     /**

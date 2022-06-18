@@ -30,11 +30,12 @@
 
     <!-- Styles -->
     <link type="text/css" href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link type="text/css" href="{{ asset('css/style.css') }}" rel="stylesheet"> <!-- Custom CSS - Edit in public/css/style.css -->
+    <link type="text/css" href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!-- Custom CSS - Edit in public/css/style.css -->
 
     <!-- Material Kit-->
     <link type="text/css" href="{{ asset('css/material-kit.min.css') }}" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -74,8 +75,8 @@
                                         id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="material-icons-round opacity-6 me-2 text-md">dashboard</i>
                                         Informasi
-                                        <img src="{{ asset('dist/img/client/down-arrow-dark.svg') }}" alt="down-arrow"
-                                            class="arrow ms-auto ms-md-2">
+                                        <img src="{{ asset('dist/img/client/down-arrow-dark.svg') }}"
+                                            alt="down-arrow" class="arrow ms-auto ms-md-2">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3"
                                         aria-labelledby="dropdownMenuPages">
@@ -88,7 +89,8 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Kegiatan</span>
                                             </a>
-                                            <a href="{{ route('client.infopenting') }}" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.infopenting') }}"
+                                                class="dropdown-item border-radius-md">
                                                 <span>Info Penting</span>
                                             </a>
                                             <a href="./pages/author.html" class="dropdown-item border-radius-md">
@@ -101,7 +103,8 @@
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                                 Organisasi
                                             </h6>
-                                            <a href="{{ route('client.karangtaruna') }}" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.karangtaruna') }}"
+                                                class="dropdown-item border-radius-md">
                                                 <span>Karang Taruna</span>
                                             </a>
                                             <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
@@ -123,7 +126,8 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Kegiatan</span>
                                             </a>
-                                            <a href="{{ route('client.infopenting') }}" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.infopenting') }}"
+                                                class="dropdown-item border-radius-md">
                                                 <span>Info Penting</span>
                                             </a>
                                             <a href="./pages/author.html" class="dropdown-item border-radius-md">
@@ -137,7 +141,8 @@
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                                 Organisasi
                                             </h6>
-                                            <a href="{{ route('client.karangtaruna') }}" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.karangtaruna') }}"
+                                                class="dropdown-item border-radius-md">
                                                 <span>Karang Taruna</span>
                                             </a>
                                             <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
@@ -150,24 +155,26 @@
                                 </li>
 
                                 <li class="nav-item ms-lg-auto">
-                                    <a class="nav-link ps-2 nav-link-icon me-2" href="{{route('client.profile')}}">
+                                    <a class="nav-link ps-2 nav-link-icon me-2" href="{{ route('client.profile') }}">
                                         <i class="fa-solid fa-building-columns opacity-6 me-1 text-sm"></i>
                                         <p class="d-inline text-sm z-index-1 font-weight-bold">Profil</p>
                                     </a>
                                 </li>
                                 <li class="nav-item ms-lg-auto">
-                                    <a class="nav-link ps-2 nav-link-icon me-2" href="{{ route('client.organisasi') }}">
+                                    <a class="nav-link ps-2 nav-link-icon me-2"
+                                        href="{{ route('client.organisasi') }}">
                                         <i class="fa-solid fa-sitemap opacity-6 me-1 text-sm"></i>
                                         <p class="d-inline text-sm z-index-1 font-weight-bold">Struktur Organisasi</p>
                                     </a>
                                 </li>
-                                
-                                 <li class="nav-item ms-lg-auto">
-                                    <a class="nav-link ps-2 nav-link-icon me-2" href="{{ route('client.layanan') }}">
+
+                                <li class="nav-item ms-lg-auto">
+                                    <a class="nav-link ps-2 nav-link-icon me-2"
+                                        href="{{ route('client.layanan') }}">
                                         <i class="fa-solid fa-headset opacity-6 me-1 text-sm"></i>
                                         <p class="d-inline text-sm z-index-1 font-weight-bold">Pelayanan</p>
                                     </a>
-                                 </li>
+                                </li>
 
 
                             </ul>
@@ -192,9 +199,9 @@
                     <div class="row">
                         <div class="col-md-4 d-flex justify-content-center">
                             <center><a href="/">
-                                <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png"
-                                    alt="AdminLTE Logo" width="50" style="opacity: .8" width>
-                            </a></center>
+                                    <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png"
+                                        alt="AdminLTE Logo" width="50" style="opacity: .8" width>
+                                </a></center>
                         </div>
                         <div class="col-md-7 ">
                             <h6 class="font-weight-bolder text-md">Rukun Warga 16</h6>
@@ -223,14 +230,15 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link pe-1" href="https://github.com/creativetimofficial" target="_blank">
+                                <a class="nav-link pe-1" href="https://github.com/creativetimofficial"
+                                    target="_blank">
                                     <i class="fab fa-github text-lg opacity-8"></i>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link pe-1" href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"
-                                    target="_blank">
+                                <a class="nav-link pe-1"
+                                    href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">
                                     <i class="fab fa-youtube text-lg opacity-8"></i>
                                 </a>
                             </li>
@@ -242,7 +250,7 @@
 
                 <div class="col-md-2 col-sm-6 col-6 mb-4">
                     <div>
-                        <h6 >Tentang Kami</h6>
+                        <h6>Tentang Kami</h6>
                         <ul class="flex-column ms-n3 nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="#" target="_blank">
@@ -294,7 +302,8 @@
                                             <div class="col-md">
                                                 <div class="input-group input-group-dynamic mb-4">
                                                     <label class="form-label">Nama</label>
-                                                    <input class="form-control" aria-label="First Name..." type="text">
+                                                    <input class="form-control" aria-label="First Name..."
+                                                        type="text">
                                                 </div>
                                             </div>
                                         </div>
@@ -306,8 +315,7 @@
                                         </div>
                                         <div class="input-group mb-4 input-group-static">
                                             <label>Pesan Anda</label>
-                                            <textarea name="message" class="form-control" id="message"
-                                                rows="4"></textarea>
+                                            <textarea name="message" class="form-control" id="message" rows="4"></textarea>
                                         </div>
                                         <div class="row">
                                             <!-- <div class="col-md-12">
@@ -337,9 +345,11 @@
                         <p class="text-dark my-4 text-sm font-weight-normal">
                             Build With Respect By <strong><a href="https://github.com/ris-id" target="_blank">RIS.ID x
                                     Hana
-                                </a></strong> | Copyright © <script>
+                                </a></strong> | Copyright ©
+                            <script>
                                 document.write(new Date().getFullYear())
-                            </script> | Material Kit by <a href="https://www.creative-tim.com" target="_blank">Creative
+                            </script> | Material Kit by <a href="https://www.creative-tim.com"
+                                target="_blank">Creative
                                 Tim</a>.
                         </p>
                     </div>
@@ -355,6 +365,9 @@
     <script src="{{ asset('js/core/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('js/plugins/perfect-scrollbar.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/plugins/moment.min.js') }}"></script>
+    <script src="https://cdn.tiny.cloud/1/k1crzih9u57tl6edqk0ky4jhq1kfy36vafhe1ybuho3dqn57/tinymce/5/tinymce.min.js">
+    </script>
+
 
 
 
@@ -377,9 +390,9 @@
     <!-- <script type="text/javascript">
         const ps = new
         PerfectScrollbar('#container', {
-          wheelSpeed: 2,
-          wheelPropagation: true,
-          minScrollbarLength: 20
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
         });
     </script> -->
 </body>

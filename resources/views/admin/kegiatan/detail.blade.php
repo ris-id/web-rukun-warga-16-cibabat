@@ -15,7 +15,7 @@
             <img src="/dist/img/default-150x150.png" class="w-50 img-responsive img-thumbnail">
         </div>
         <div class="content mt-3">
-            <p>{{ $kegiatan->deskripsi }}</p>
+            <p>{!! $kegiatan->deskripsi !!}</p>
         </div>
     </div>
 @endsection

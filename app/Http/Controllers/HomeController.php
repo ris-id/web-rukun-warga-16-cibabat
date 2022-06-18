@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profil;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,11 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
     }
 
     public function adminHome()
     {
-        return view('admin.home');
+        $data = Profil::all();
+        return view('admin.home', compact('data'));
     }
 }

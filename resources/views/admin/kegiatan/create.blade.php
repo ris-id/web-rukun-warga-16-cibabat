@@ -18,31 +18,53 @@
         @endif
         <form action="{{ route('kegiatan.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Judul Kegiatan:</strong>
-                        <input type="text" name="judul_kegiatan" class="form-control" placeholder="Name">
+                        <input type="text" name="judul_kegiatan" class="form-control" placeholder="Name" required>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Deskripsi:</strong>
-                        <textarea class="form-control" style="height:150px" name="deskripsi" placeholder="Detail"></textarea>
+                        {{-- <textarea class="form-control" style="height:150px" name="deskripsi" placeholder="Detail"></textarea> --}}
+                        <textarea name="deskripsi" rows="5" cols="40" class="form-control tinymce-editor"></textarea>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Foto Kegiatan:</strong>
-                        <input type="file" name="foto_kegiatan" class="form-control" placeholder="image">
+                        <input type="file" name="foto_kegiatan" class="form-control" placeholder="image" required>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
                     <button type="submit" class="btn btn-primary">Publish</button>
                 </div>
             </div>
-
         </form>
     </div>
+@endsection
+
+@section('script-tinymce')
+    <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea.tinymce-editor',
+            height: 400,
+            menubar: false,
+            image_title: true,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount',
+                'image'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_css: '//www.tiny.cloud/css/codepen.min.css',
+            a11y_advanced_options: true,
+        });
+    </script>
 @endsection

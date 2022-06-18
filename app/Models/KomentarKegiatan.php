@@ -9,4 +9,9 @@ class KomentarKegiatan extends Model
 {
     use HasFactory;
     protected $table = 'tb_komentar_kegiatan';
+
+    public function kegiatan()
+    {
+        return $this->belongsTo(Kegiatan::class, 'id_kegiatan', 'id');
+    }
 }

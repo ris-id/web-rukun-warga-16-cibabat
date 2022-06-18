@@ -16,7 +16,7 @@
                     <div class="col-md-4">
                         <div class="card p-4">
                             <a href={{ route('infoPenting.show', ['infoPenting' => $item->id]) }} class="mt-3">
-                                <h5>{{ $item->judul_info}}</h5>
+                                <h5>{{ $item->judul_info }}</h5>
                             </a>
                             <p class="text-truncate">{{ $item->deskripsi }}</p>
                             <form method="POST" action="{{ route('infoPenting.destroy', $item->id) }}">
@@ -33,7 +33,7 @@
     </div>
 @endsection
 
-@section('script-infoPenting')
+@section('script-sweetalert')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <script type="text/javascript" lang="javascript">
         $('.show_confirm').click(function(event) {
