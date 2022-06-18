@@ -101,7 +101,7 @@
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                                 Organisasi
                                             </h6>
-                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.karangtaruna') }}" class="dropdown-item border-radius-md">
                                                 <span>Karang Taruna</span>
                                             </a>
                                             <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
@@ -137,7 +137,7 @@
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                                                 Organisasi
                                             </h6>
-                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.karangtaruna') }}" class="dropdown-item border-radius-md">
                                                 <span>Karang Taruna</span>
                                             </a>
                                             <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">

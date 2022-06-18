@@ -7,6 +7,7 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\InfoPentingController;
 use App\Http\Controllers\KritikSaranController;
 
+use App\Http\Controllers\client\InformasiKarangTarunaController;
 use App\Http\Controllers\client\PageInfoPentingController;
 use App\Http\Controllers\Client\OrganisasiController;
 use App\Http\Controllers\Client\PageController;
@@ -44,6 +45,9 @@ Route::namespace('Client')->group(function () {
     Route::get('/infopenting/{id}', [PageInfoPentingController::class, 'show'])->name('client.infopenting.show');
 
     Route::get('/pelayanan', [PageController::class, 'layanan'])->name('client.layanan');
+    
+    // Informasi Karang Taruna
+    Route::get('/karangtaruna', [InformasiKarangTarunaController::class, 'karangtaruna'])->name('client.karangtaruna');
 
     // Kegiatan Page Routes
     Route::get('/kegiatan', [PageKegiatanController::class, 'index'])->name('client.kegiatan');
