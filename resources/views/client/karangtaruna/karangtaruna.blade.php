@@ -75,7 +75,7 @@
                             </div>
                             <div class="col-lg-7 my-auto py-3">
                                 <h3>{{ $item->judul_kegiatan }}</h3>
-                                <p class="pe-5 text-short">{{ $item->deskripsi }}</p>
+                                <p class="pe-5 short-text">{{ $item->deskripsi }}</p>
                                 <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
                                     <i class="fas fa-arrow-right text-sm ms-1"></i>
                                 </a>
@@ -86,7 +86,7 @@
                         <div class="row py-4">
                             <div class="col-lg my-auto py-3">
                                 <h3>{{ $item->judul_kegiatan }}</h3>
-                                <p class="pe-5 text-short">{{ $item->deskripsi }}</p>
+                                <p class="pe-5 short-text">{{ $item->deskripsi }}</p>
                                 <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
                                     <i class="fas fa-arrow-right text-sm ms-1"></i>
                                 </a>
