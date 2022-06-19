@@ -53,6 +53,7 @@ Route::namespace('Client')->group(function () {
 
     // Informasi Karang Taruna
     Route::get('/karangtaruna', [InformasiKarangTarunaController::class, 'karangtaruna'])->name('client.karangtaruna');
+    Route::get('/karangtaruna/{id}', [InformasiKarangTarunaController::class, 'show'])->name('client.karangtaruna.show');
 
     // Kegiatan Page Routes
     Route::get('/kegiatan', [PageKegiatanController::class, 'index'])->name('client.kegiatan');

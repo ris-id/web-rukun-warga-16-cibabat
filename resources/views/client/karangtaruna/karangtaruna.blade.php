@@ -2,7 +2,7 @@
 
 @section('content')
 <header>
-    <div class="page-header min-vh-90" style="background-image: url('{{asset('dist/img/client/village.jpg')}}'); max-width: 100%;" loading="lazy">
+    <div class="page-header min-vh-90" style="background-image: url('{{asset('dist/img/client/stephan.jpg')}}'); max-width: 100%;" loading="lazy">
         <span class="mask bg-gradient-dark opacity-5"> </span>
         <div class="container">
             <div class="row">
@@ -29,9 +29,13 @@
                 Lebih lanjut, ia mengungkapkan rasa syukurnya terhadap kegiatan keagamaan, yang masih bisa berjalan dengan baik. Sekalipun para anggota Katar RW6 Kemirimuka disibukan dengan berbagai aktivitasnya.
                 “Alhamdulillah, anggota Katar RW6 Kemirimuka akan rutin mengadakan kegiatan pengajian ini disetiap awal bulannya,” tandasnya.
             </p>
-            <p><a href="" class="text-primary icon-move-right">Baca Selengkapnya</a></p>
+            <p>
+                <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
+                    <i class="fas fa-arrow-right text-sm ms-1"></i>
+                </a>
+            </p>
         </div>
-        <div class="container">
+        <!-- <div class="container">
             <div class="pt-4">
                 <div class="row py-4">
                     <div class="col-lg my-auto py-3">
@@ -63,20 +67,19 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Disini nanti diganti menjadi kegiatan karang taruna -->
+        </div> -->
         <div class="container">
             <div class="pt-4">
-                @foreach($kegiatan as $item)
+                @foreach($katar as $item)
                     @if($loop->iteration % 2 == 0)
                         <div class="row py-4">
                             <div class="col-lg-5 my-auto py-4">
-                                <img class="img-fluid" src="/image/kegiatan/{{ $item->foto_kegiatan }}" alt="Kegiatan">
+                                <img class="img-fluid" src="/image/karangtaruna/{{ $item->foto }}" alt="KarangTaruna">
                             </div>
                             <div class="col-lg-7 my-auto py-3">
-                                <h3>{{ $item->judul_kegiatan }}</h3>
-                                <p class="pe-5 short-text">{{ $item->deskripsi }}</p>
-                                <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
+                                <!-- <h3>{{ $item->judul_kegiatan }}</h3> -->
+                                <p class="pe-5 short-text">{{ $item->konten }}</p>
+                                <a href="{{ url('/karangtaruna/' . $item->id) }}" class="text-primary icon-move-right">Baca Selengkapnya
                                     <i class="fas fa-arrow-right text-sm ms-1"></i>
                                 </a>
                                 </div>
@@ -85,14 +88,14 @@
                     @else
                         <div class="row py-4">
                             <div class="col-lg my-auto py-3">
-                                <h3>{{ $item->judul_kegiatan }}</h3>
-                                <p class="pe-5 short-text">{{ $item->deskripsi }}</p>
-                                <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
+                                <!-- <h3>{{ $item->judul_kegiatan }}</h3> -->
+                                <p class="pe-5 short-text">{{ $item->konten }}</p>
+                                <a href="{{ url('/karangtaruna/' . $item->id) }}" class="text-primary icon-move-right">Baca Selengkapnya
                                     <i class="fas fa-arrow-right text-sm ms-1"></i>
                                 </a>
                             </div>
                             <div class="col-lg my-auto py-4">
-                                <img class="img-fluid" src="/image/kegiatan/{{ $item->foto_kegiatan }}" alt="Kegiatan">
+                                <img class="img-fluid" src="/image/karangtaruna/{{ $item->foto }}" alt="KarangTaruna">
                             </div>
                         </div>
                     @endif
