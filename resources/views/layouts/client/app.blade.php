@@ -93,10 +93,7 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Info Penting</span>
                                             </a>
-                                            <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                                                <span>Pelayanan</span>
-                                            </a>
-                                            <a href="./pages/author.html" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.aset') }}" class="dropdown-item border-radius-md">
                                                 <span>Aset</span>
                                             </a>
                                             <h6
@@ -107,7 +104,7 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Karang Taruna</span>
                                             </a>
-                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.pkk') }}" class="dropdown-item border-radius-md">
                                                 <span>PKK</span>
                                             </a>
                                         </div>
