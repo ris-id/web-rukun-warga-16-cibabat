@@ -24,7 +24,6 @@
                 <section class="pt-3">
                     <div class="container">
                         <h1 class="mb-5">Kritik & Saran</h1>
-                        <hr>
                         <form action="{{ route('client.kritiksaran.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             

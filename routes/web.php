@@ -15,6 +15,7 @@ use App\Http\Controllers\Client\PageKegiatanController;
 use App\Http\Controllers\Client\PagePkkController;
 use App\Http\Controllers\KomentarKegiatanController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\StrukturOrganisasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,9 +60,9 @@ Route::namespace('Client')->group(function () {
     Route::get('/pkk/{id}', [PagePkkController::class, 'show'])->name('client.pkk.show');
 
     // Kritik Saran Page Routes
-    // Route::get('/kritiksaran', [PageKritikSaranController::class, 'index'])->name('client.kritiksaran');
-    // Route::post('/kritiksaran/store', [PageKritikSaranController::class, 'store'])->name('client.kritiksaran.store');
-    Route::resource('kritiksaran', PageKritikSaranController::class);
+    // Route::get('/kritiksaran', [PageKritikSaranController::class, 'kritiksaran'])->name('client.kritiksaran');
+    // Route::get('/kritiksaran/store', [PageKritikSaranController::class, 'store'])->name('client.kritiksaran.store');
+    Route::resource('kritiksaran', App\Http\Controllers\Client\PageKritikSaranController::class);
 });
 
 // Admin Routes
@@ -71,3 +72,4 @@ Route::resource('admin/infoPenting', InfoPentingController::class)->middleware('
 Route::resource('admin/kritikSaran', KritikSaranController::class)->middleware('is_admin');
 Route::resource('admin/komentar/komentar-kegiatan', KomentarKegiatanController::class)->middleware('is_admin');
 Route::resource('admin/profil', ProfilController::class)->middleware('is_admin');
+Route::resource('admin/strukturOrganisasi', StrukturOrganisasiController::class)->middleware('is_admin');

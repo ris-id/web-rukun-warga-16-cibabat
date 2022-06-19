@@ -16,6 +16,14 @@ class CreateStrukturOrganisasisTable extends Migration
         Schema::create('tb_struktur_organisasi', function (Blueprint $table) {
             $table->id();
             $table->string('foto');
+            $table->string('ketua_rw')->nullable();
+            $table->string('wakil_ketua')->nullable();
+            $table->string('sekretaris')->nullable();
+            $table->string('bendahara')->nullable();
+            $table->string('keamanan')->nullable();
+            $table->string('pelayanan_masyarakat')->nullable();
+            $table->string('pemuda_olahraga')->nullable();
+            $table->string('kesehatan_masyarakat')->nullable();
             $table->timestamps();
         });
     }
