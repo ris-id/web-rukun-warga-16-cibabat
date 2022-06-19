@@ -20,10 +20,12 @@
     <section class="pt-7">
         <div class="container">
             <div class="row align-items-center">
+            @foreach($organisasi as $item)
                 <div class="col">
                     <div class="card p-5">
                             <a class="d-block blur-shadow-image d-flex mt-3 mx-auto">
-                                <img src="../dist/img/client/struktur-organisasi.png" class="img-fluid" style="width: 700px;" alt="">
+                                <!-- <img class="img-fluid" src="/image/kegiatan/{{ $item->foto_kegiatan }}" alt="Kegiatan"> -->
+                                <img src="/image/organisasi/{{ $item->foto }}" class="img-fluid" style="width: 700px;" alt="">
                             </a>
                     </div>
                 </div>
@@ -37,60 +39,61 @@
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">manager</i>
                                 <h6>Ketua RW</h6>
-                                <p>Nama Ketua</p>
+                                <p>{{ $item->ketua_rw }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">people</i>
                                 <h6>Wakil Ketua RW</h6>
-                                <p>Nama Wakil Ketua</p>
+                                <p>{{ $item->wakil_ketua }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">people</i>
                                 <h6>Sekretaris</h6>
-                                <p>Nama Sekretaris</p>
+                                <p>{{ $item->sekretaris }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">people</i>
                                 <h6>Bendahara</h6>
-                                <p>Nama Bendahara</p>
+                                <p>{{ $item->bendahara }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">people</i>
                                 <h6>Seksi Keamanan</h6>
-                                <p>Nama Seksi Keamanan</p>
+                                <p>{{ $item->keamanan }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">people</i>
                                 <h6>Seksi Pelayanan Masyarakat</h6>
-                                <p>Nama Seksi Pelayanan Masyarakat</p>
+                                <p>{{ $item->pelayanan_masyarakat }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">people</i>
                                 <h6>Seksi Pemuda dan Olahraga</h6>
-                                <p>Nama Seksi Pemuda dan Olahraga</p>
+                                <p>{{ $item->pemuda_olahraga }}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info">
                                 <i class="material-icons text-3xl text-gradient text-info mb-3">people</i>
                                 <h6>Seksi Kesehatan Masyarakat</h6>
-                                <p>Nama Seksi Kesehatan Masyarakat</p>
+                                <p>{{ $item->kesehatan_masyarakat }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            @endforeach
             </div>
         </div>
     </section>
