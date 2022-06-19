@@ -237,7 +237,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('laporanKeuangan.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-credit-card"></i>
                                 <p>
                                     Keuangan
@@ -346,6 +346,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/k1crzih9u57tl6edqk0ky4jhq1kfy36vafhe1ybuho3dqn57/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
+    @yield('script-laporan-keuangan')
     @yield('script-infoPenting')
     @yield('script-struktur-organisasi')
     @yield('script-sweetalert')

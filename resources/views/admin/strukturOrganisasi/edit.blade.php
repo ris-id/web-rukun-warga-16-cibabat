@@ -27,7 +27,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Ketua RW</strong>
-                        <input type="text" name="foto" value="{{ $strukturOrganisasi->ketua_rw }}"
+                        <input type="text" name="ketua_rw" value="{{ $strukturOrganisasi->ketua_rw }}"
                             class="form-control">
                     </div>
                 </div>

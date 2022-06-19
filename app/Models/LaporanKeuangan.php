@@ -9,4 +9,8 @@ class LaporanKeuangan extends Model
 {
     use HasFactory;
     protected $table = 'tb_laporan_keuangan';
+    
+    protected $fillable = [
+        'gambar', 'informasi'
+    ];
 }

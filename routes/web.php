@@ -16,6 +16,7 @@ use App\Http\Controllers\Client\PagePkkController;
 use App\Http\Controllers\KomentarKegiatanController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\StrukturOrganisasiController;
+use App\Http\Controllers\LaporanKeuanganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,3 +74,4 @@ Route::resource('admin/kritikSaran', KritikSaranController::class)->middleware('
 Route::resource('admin/komentar/komentar-kegiatan', KomentarKegiatanController::class)->middleware('is_admin');
 Route::resource('admin/profil', ProfilController::class)->middleware('is_admin');
 Route::resource('admin/strukturOrganisasi', StrukturOrganisasiController::class)->middleware('is_admin');
+Route::resource('admin/laporanKeuangan', LaporanKeuanganController::class)->middleware('is_admin');

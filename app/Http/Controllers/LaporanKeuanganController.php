@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LaporanKeuangan;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LaporanKeuanganController extends Controller
 {
@@ -14,7 +15,8 @@ class LaporanKeuanganController extends Controller
      */
     public function index()
     {
-        //
+        $laporanKeuangan = LaporanKeuangan::orderBy('created_at', 'asc')->get();
+        return view('admin.laporanKeuangan.index', compact('laporanKeuangan'));
     }
 
     /**
@@ -24,7 +26,7 @@ class LaporanKeuanganController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.laporanKeuangan.create');
     }
 
     /**
@@ -35,7 +37,24 @@ class LaporanKeuanganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'informasi' => 'required',
+        ]);
+
+        $input = $request->all();
+        if ($image = $request->file('gambar')) {
+            $destionationPath = 'image/laporan-keuangan/';
+            $laporanKeuanganImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionationPath, $laporanKeuanganImg);
+            $input['gambar'] = $laporanKeuanganImg;
+        }
+
+        LaporanKeuangan::create($input);
+
+        Alert::success('Success', 'Data Laporan Keuangan Berhasi ditambahkan');
+
+        return redirect()->route('laporanKeuangan.index');
     }
 
     /**
@@ -57,7 +76,7 @@ class LaporanKeuanganController extends Controller
      */
     public function edit(LaporanKeuangan $laporanKeuangan)
     {
-        //
+        return view('admin.laporanKeuangan.edit', compact('laporanKeuangan'));
     }
 
     /**
@@ -69,7 +88,26 @@ class LaporanKeuanganController extends Controller
      */
     public function update(Request $request, LaporanKeuangan $laporanKeuangan)
     {
-        //
+        $request->validate([
+            'informasi' => 'required',
+        ]);
+        $input = $request->all();
+
+        if ($image = $request->file('gambar')) {
+            $destionationPath = 'image/laporan-keuangan/';
+            $laporanKeuanganImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionationPath, $laporanKeuanganImg);
+            $input['gamabr'] = $laporanKeuanganImg;
+        } else {
+            unset($input['foto']);
+        }
+
+        $laporanKeuangan->update($input);
+
+                
+        Alert::success('Success', 'Data Laporan Keuangan Berhasi diupdate');
+
+        return redirect()->route('laporanKeuangan.index');
     }
 
     /**
@@ -78,8 +116,13 @@ class LaporanKeuanganController extends Controller
      * @param  \App\Models\LaporanKeuangan  $laporanKeuangan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LaporanKeuangan $laporanKeuangan)
+    public function destroy($id)
     {
-        //
+        $data =  LaporanKeuangan::find($id);
+        unlink("image/laporan-keuangan/" . $data->gambar);
+        $data::where("id", $id)->delete();
+
+        Alert::success('Success', 'Data Laporan Keuangan Berhasi dihapus');
+        return redirect()->route('laporanKeuangan.index');
     }
 }
