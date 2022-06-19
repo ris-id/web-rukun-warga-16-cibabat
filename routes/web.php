@@ -60,9 +60,9 @@ Route::namespace('Client')->group(function () {
     Route::get('/pkk/{id}', [PagePkkController::class, 'show'])->name('client.pkk.show');
 
     // Kritik Saran Page Routes
-    // Route::get('/kritiksaran', [PageKritikSaranController::class, 'kritiksaran'])->name('client.kritiksaran');
-    // Route::get('/kritiksaran/store', [PageKritikSaranController::class, 'store'])->name('client.kritiksaran.store');
-    Route::resource('kritiksaran', App\Http\Controllers\Client\PageKritikSaranController::class);
+    Route::get('/kritiksaran', [PageKritikSaranController::class, 'index'])->name('client.kritiksaran');
+    Route::post('/kritiksaran/store', [PageKritikSaranController::class, 'store'])->name('client.kritiksaran.store');
+    // Route::resource('kritiksaran', App\Http\Controllers\Client\PageKritikSaranController::class);
 });
 
 // Admin Routes
