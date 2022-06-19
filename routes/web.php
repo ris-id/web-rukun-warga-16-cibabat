@@ -13,6 +13,7 @@ use App\Http\Controllers\Client\OrganisasiController;
 use App\Http\Controllers\Client\PageController;
 use App\Http\Controllers\Client\PageKegiatanController;
 use App\Http\Controllers\Client\PagePkkController;
+use App\Http\Controllers\Client\PageAsetController;
 use App\Http\Controllers\KomentarKegiatanController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\StrukturOrganisasiController;
@@ -60,6 +61,10 @@ Route::namespace('Client')->group(function () {
     //PKK Page Routes
     Route::get('/pkk', [PagePkkController::class, 'index'])->name('client.pkk');
     Route::get('/pkk/{id}', [PagePkkController::class, 'show'])->name('client.pkk.show');
+
+    //Aset Page Routes
+    Route::get('/aset', [PageAsetController::class, 'index'])->name('client.aset');
+    Route::get('/aset/{id}', [PageAsetController::class, 'show'])->name('client.aset.show');
 
     // Kritik Saran Page Routes
     Route::get('/kritiksaran', [PageKritikSaranController::class, 'index'])->name('client.kritiksaran');
