@@ -1,15 +1,16 @@
 @extends('layouts.admin.dashboard')
 @section('content')
 @include('sweetalert::alert')
-    <div class="container p-3">
-        <h1>Halaman Utama Struktur Organisasi</h1>
+    <div class="container p-5">
+        <h1>Halaman Struktur Organisasi</h1>
+        <p><small>Halaman ini digunakan jika akan melakukan perubahan terhadap Struktur Organisasi RW 16</small></p>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div>
         @endif
         <div class="ml-auto text-right">
-            <a href="{{ route('strukturOrganisasi.create') }}" class="btn btn-primary">Masukan Data Struktur Organisasi</a>
+            <a href="{{ route('strukturOrganisasi.create') }}" class="btn btn-outline-primary">Masukan Data Struktur Organisasi</a>
         </div>
         <div>
             <div class="row mt-4">

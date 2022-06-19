@@ -1,10 +1,6 @@
 @extends('layouts.admin.dashboard')
 @section('content')
     <div class="container pb-5">
-        <div class="pt-5 mb-2">
-            <a href="{{ route('infoPenting.index') }}"><span class="fa fa-arrow-left"></span> Kembali ke halaman utama info penting</a>
-        </div>
-        <h1>Tambah Info Penting</h1>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -15,6 +11,18 @@
                 </ul>
             </div>
         @endif
+
+        <div class="pt-4">
+            <div class="d-flex flex-row">
+                <h1>Tambah Info Penting</h1>
+
+                <div class="ml-auto text-right">
+                    <a href="{{ route('infoPenting.index') }}"><span class="fa fa-arrow-left"></span> Kembali </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card p-4">
         <form action="{{ route('infoPenting.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
@@ -22,13 +30,13 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Judul Info:</strong>
-                        <input type="text" name="judul_info" class="form-control" placeholder="Name">
+                        <input type="text" name="judul_info" class="form-control" placeholder="Judul">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Deskripsi:</strong>
-                        <textarea class="form-control" style="height:150px" name="deskripsi" placeholder="Deskripsi"></textarea>
+                        <textarea class="form-control" style="height:300px" name="deskripsi" placeholder="Deskripsi"></textarea>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
@@ -37,5 +45,6 @@
             </div>
 
         </form>
+        </div>
     </div>
 @endsection

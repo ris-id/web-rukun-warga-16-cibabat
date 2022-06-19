@@ -1,29 +1,41 @@
 @extends('layouts.admin.dashboard')
 @section('content')
+    @include('sweetalert::alert')
     <div class="container p-3">
-        <h1>Halaman Utama Info Penting Rukun Warga 16</h1>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div>
         @endif
-        <div class="ml-auto text-right">
-            <a href="{{ route('infoPenting.create') }}" class="btn btn-primary">Tambah Info Penting</a>
+        <div class="d-flex flex-row">
+            <h1>List Info Penting Yang Terpublikasikan</h1>
+            <div class="ml-auto text-right">
+                <a href="{{ route('infoPenting.create') }}" class="btn btn-primary">Tambah Info Penting</a>
+            </div>
         </div>
-        <div style="height: 500px;overflow-y: scroll;">
-            <div class="row mt-4">
+        <br>
+        <div>
+            <div class="row mt-12">
                 @foreach ($infoPenting as $item)
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="card p-4">
                             <a href={{ route('infoPenting.show', ['infoPenting' => $item->id]) }} class="mt-3">
-                                <h5>{{ $item->judul_info }}</h5>
+                                <h5 class="text-uppercase">{{ $item->judul_info }}</h5>
                             </a>
                             <p class="text-truncate">{{ $item->deskripsi }}</p>
                             <form method="POST" action="{{ route('infoPenting.destroy', $item->id) }}">
-                                @csrf
-                                <input name="_method" type="hidden" value="DELETE">
-                                <button type="submit" class="btn  btn-danger show_confirm" data-toggle="tooltip"
-                                    title='Delete'>Delete</button>
+                            <div class="d-flex flex-row">
+                                    <div class="col-md-6 justify-content-center">
+                                        <a href="{{ route('infoPenting.edit', $item->id) }}"
+                                            class="btn btn-outline-success btn-block"><span class="fa fa-pen"></span> Edit</a>
+                                    </div>
+                                    <div class="col-md-6 justify-content-center">
+                                        @csrf
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        <button type="submit" class="btn  btn-outline-danger btn-block show_confirm"
+                                            data-toggle="tooltip" title='Delete'><i class="fa fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>

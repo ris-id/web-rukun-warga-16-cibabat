@@ -1,8 +1,9 @@
 @extends('layouts.admin.dashboard')
 @section('content')
 @include('sweetalert::alert')
-    <div class="container p-3">
-        <h1>Halaman Utama Karang Taruna</h1>
+    <div class="container p-5">
+        <h1>Halaman Karang Taruna</h1>
+        <p><small>Halaman ini digunakan jika akan melakukan perubahan terhadap data Karang Taruna RW 16</small></p>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InfoPenting;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class InfoPentingController extends Controller
 {
@@ -45,8 +46,9 @@ class InfoPentingController extends Controller
 
         InfoPenting::create($input);
 
-        return redirect()->route('infoPenting.index')
-        ->with('Success', 'Info Penting berhasil diumumkan');
+        Alert::success('Success', 'Info Penting Berhasi diumumkan');
+
+        return redirect()->route('infoPenting.index');
 
     }
 
@@ -90,7 +92,8 @@ class InfoPentingController extends Controller
 
         $infoPenting->update($input);
 
-        return redirect()->route('infoPenting.index')->with('success', 'Info berhasil di update');
+        Alert::success('Success', 'Info Berhasil diupdate');
+        return redirect()->route('infoPenting.index');
     }
 
     /**
@@ -103,7 +106,8 @@ class InfoPentingController extends Controller
     {
         $data =  InfoPenting::find($id);
         $data::where("id", $id)->delete();
-        return redirect()->route('infoPenting.index')
-            ->with('success', 'Info Berhasil di hapus');
+
+        Alert::success('Success', 'Info Berhasil dihapus');
+        return redirect()->route('infoPenting.index');
     }
 }
