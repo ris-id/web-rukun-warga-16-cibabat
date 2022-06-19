@@ -17,6 +17,7 @@ use App\Http\Controllers\KomentarKegiatanController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LaporanKeuanganController;
+use App\Http\Controllers\KarangTarunaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,4 @@ Route::resource('admin/komentar/komentar-kegiatan', KomentarKegiatanController::
 Route::resource('admin/profil', ProfilController::class)->middleware('is_admin');
 Route::resource('admin/strukturOrganisasi', StrukturOrganisasiController::class)->middleware('is_admin');
 Route::resource('admin/laporanKeuangan', LaporanKeuanganController::class)->middleware('is_admin');
+Route::resource('admin/karangTaruna', KarangTarunaController::class)->middleware('is_admin');

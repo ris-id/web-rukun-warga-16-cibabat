@@ -97,7 +97,7 @@ class LaporanKeuanganController extends Controller
             $destionationPath = 'image/laporan-keuangan/';
             $laporanKeuanganImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destionationPath, $laporanKeuanganImg);
-            $input['gamabr'] = $laporanKeuanganImg;
+            $input['gambar'] = $laporanKeuanganImg;
         } else {
             unset($input['foto']);
         }

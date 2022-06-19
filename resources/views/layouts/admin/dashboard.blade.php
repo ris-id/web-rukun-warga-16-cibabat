@@ -244,7 +244,6 @@
                                 </p>
                             </a>
                         </li>
-
                     </ul>
 
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -300,6 +299,15 @@
                                 </p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('karangTaruna.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Karang Taruna
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -347,6 +355,7 @@
     <script src="https://cdn.tiny.cloud/1/k1crzih9u57tl6edqk0ky4jhq1kfy36vafhe1ybuho3dqn57/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     @yield('script-laporan-keuangan')
+    @yield('script-karang-taruna')
     @yield('script-infoPenting')
     @yield('script-struktur-organisasi')
     @yield('script-sweetalert')
