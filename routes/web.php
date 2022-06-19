@@ -6,7 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\InfoPentingController;
 use App\Http\Controllers\KritikSaranController;
-
+use App\Http\Controllers\Client\PageKritikSaranController;
 use App\Http\Controllers\client\InformasiKarangTarunaController;
 use App\Http\Controllers\client\PageInfoPentingController;
 use App\Http\Controllers\Client\OrganisasiController;
@@ -57,6 +57,11 @@ Route::namespace('Client')->group(function () {
     //PKK Page Routes
     Route::get('/pkk', [PagePkkController::class, 'index'])->name('client.pkk');
     Route::get('/pkk/{id}', [PagePkkController::class, 'show'])->name('client.pkk.show');
+
+    // Kritik Saran Page Routes
+    // Route::get('/kritiksaran', [PageKritikSaranController::class, 'index'])->name('client.kritiksaran');
+    // Route::post('/kritiksaran/store', [PageKritikSaranController::class, 'store'])->name('client.kritiksaran.store');
+    Route::resource('kritiksaran', PageKritikSaranController::class);
 });
 
 // Admin Routes

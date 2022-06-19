@@ -175,7 +175,14 @@
                                         <p class="d-inline text-sm z-index-1 font-weight-bold">Pelayanan</p>
                                     </a>
                                 </li>
-
+                                
+                                <li class="nav-item ms-lg-auto">
+                                    <a class="nav-link ps-2 nav-link-icon me-2"
+                                        href="{{ route('client.kritiksaran') }}">
+                                        <i class="fa-solid fa-comment opacity-6 me-1 text-sm"></i>
+                                        <p class="d-inline text-sm z-index-1 font-weight-bold">Kritik & Saran</p>
+                                    </a>
+                                </li>
 
                             </ul>
                         </div>
@@ -296,45 +303,9 @@
                         <div class="row">
                             <div class="col-lg mx-auto d-flex justify-content-center flex-column">
                                 <h6 class="">Kritik & Saran</h6>
-                                <form role="form" id="contact-form" method="post" autocomplete="off">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md">
-                                                <div class="input-group input-group-dynamic mb-4">
-                                                    <label class="form-label">Nama</label>
-                                                    <input class="form-control" aria-label="First Name..."
-                                                        type="text">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mb-4">
-                                            <div class="input-group input-group-dynamic">
-                                                <label class="form-label">Alamat Email</label>
-                                                <input type="email" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="input-group mb-4 input-group-static">
-                                            <label>Pesan Anda</label>
-                                            <textarea name="message" class="form-control" id="message" rows="4"></textarea>
-                                        </div>
-                                        <div class="row">
-                                            <!-- <div class="col-md-12">
-                                                <div class="form-check form-switch mb-4 d-flex align-items-center">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="flexSwitchCheckDefault" checked="">
-                                                    <label class="form-check-label ms-3 mb-0"
-                                                        for="flexSwitchCheckDefault">I agree to the <a
-                                                            href="javascript:;" class="text-dark"><u>Terms and
-                                                                Conditions</u></a>.</label>
-                                                </div>
-                                            </div> -->
-                                            <div class="col-md-12">
-                                                <button type="submit" class="btn bg-gradient-primary w-100">Kirim
-                                                    Pesan</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                                    <a class="nav-link" href="">
+                                        Kirim Kritik & Saran
+                                    </a>
                             </div>
                         </div>
                     </div>

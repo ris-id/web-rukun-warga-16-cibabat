@@ -13,9 +13,10 @@
                     <div class="col-md-4">
                         <div class="card p-4">
                             <a href={{ route('kritikSaran.show', ['kritikSaran' => $item->id]) }} class="mt-3">
-                                <h5>{{ $item->kritik }}</h5>
+                                <h5>{{ $item->name }}</h5>
                             </a>
-                            <p class="text-truncate">{{ $item->saran }}</p>
+                            <p>{{ $item->email }}</p>
+                            <p class="text-truncate">{{ $item->pesan }}</p>
                             <form method="POST" action="{{ route('kritikSaran.destroy', $item->id) }}">
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">

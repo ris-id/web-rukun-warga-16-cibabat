@@ -11,6 +11,6 @@ class KritikSaran extends Model
     protected $table = 'tb_kritik_saran';
 
     protected $fillable = [
-        'kritik', 'saran'
+        'name', 'email', 'pesan',
     ];
 }

@@ -5,9 +5,10 @@
             <a href="{{ route('kritikSaran.index') }}"><span class="fa fa-arrow-left"></span> Kembali ke halaman utama
                 kritik saran</a>
         </div>
-        <h1>{{ $kritikSaran->kritik }}</h1>
+        <h1>{{ $kritikSaran->name }}</h1>
         <div class="content mt-3">
-            <p>{{ $kritikSaran->saran }}</p>
+            <p>{{ $kritikSaran->email }}</p>
+            <p>{{ $kritikSaran->pesan }}</p>
         </div>
     </div>
 @endsection

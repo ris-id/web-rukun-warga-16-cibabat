@@ -15,8 +15,9 @@ class CreateKritikSaransTable extends Migration
     {
         Schema::create('tb_kritik_saran', function (Blueprint $table) {
             $table->id();
-            $table->text('kritik')->nullable();
-            $table->text('saran')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->text('pesan')->nullable();
             $table->timestamps();
         });
     }
