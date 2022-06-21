@@ -74,7 +74,7 @@
                     @if($loop->iteration % 2 == 0)
                         <div class="row py-4">
                             <div class="col-lg-5 my-auto py-4">
-                                <img class="img-fluid" src="/image/karangtaruna/{{ $item->foto }}" alt="KarangTaruna">
+                                <img class="img-fluid" src="/image/karang-taruna/{{ $item->foto }}" alt="KarangTaruna">
                             </div>
                             <div class="col-lg-7 my-auto py-3">
                                 <!-- <h3>{{ $item->judul_kegiatan }}</h3> -->
@@ -95,7 +95,7 @@
                                 </a>
                             </div>
                             <div class="col-lg my-auto py-4">
-                                <img class="img-fluid" src="/image/karangtaruna/{{ $item->foto }}" alt="KarangTaruna">
+                                <img class="img-fluid" src="/image/karang-taruna/{{ $item->foto }}" alt="KarangTaruna">
                             </div>
                         </div>
                     @endif

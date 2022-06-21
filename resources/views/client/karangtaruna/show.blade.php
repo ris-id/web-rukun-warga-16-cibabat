@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12 mx-auto">
                     <div class="mt-n8 mt-md-n9 text-center">
-                        <img class="img-fluid w-50" src="{{asset('dist/img/client/bg.jpg')}}" alt="Karangtaruna">
+                        <img class="img-fluid w-50" src="/image/karang-taruna/{{ $katar->foto }}" alt="Karangtaruna">
                     </div>
                     <div class="row py-5">
                         <div class="d-flex justify-content-between align-items-center mb-2">
@@ -46,7 +46,7 @@
                         <div class="card card-plain">
                             <div class="card-header p-0 position-relative">
                                 <a class="dblock">
-                                    <img src="" alt="Karangtaruna" class="img-fluid shadow border-radius-lg" loading="lazy">
+                                    <img src="/image/karang-taruna/{{ $item->foto }}" alt="Karangtaruna" class="img-fluid shadow border-radius-lg" loading="lazy">
                                 </a>
                             </div>
                             <div class="card-body px-0">

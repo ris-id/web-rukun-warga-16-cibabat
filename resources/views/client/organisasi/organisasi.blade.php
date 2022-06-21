@@ -25,7 +25,7 @@
                     <div class="card p-5">
                             <a class="d-block blur-shadow-image d-flex mt-3 mx-auto">
                                 <!-- <img class="img-fluid" src="/image/kegiatan/{{ $item->foto_kegiatan }}" alt="Kegiatan"> -->
-                                <img src="/image/organisasi/{{ $item->foto }}" class="img-fluid" style="width: 700px;" alt="">
+                                <img src="/image/struktu-organisasi/{{ $item->foto }}" class="img-fluid" style="width: 700px;" alt="">
                             </a>
                     </div>
                 </div>
