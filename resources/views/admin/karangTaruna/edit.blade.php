@@ -27,8 +27,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Konten</strong>
-                        <input type="text" name="konten" value="{{ $karangTaruna->konten }}"
-                            class="form-control">
+                        <input type="text" name="konten" value="{!! $karangTaruna->konten !!}" class="form-control">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">

@@ -20,7 +20,7 @@
                             <form method="POST" action="{{ route('kritikSaran.destroy', $item->id) }}">
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">
-                                <button type="submit" class="btn  btn-danger show_confirm" data-toggle="tooltip"
+                                <button type="submit" class="btn btn-outline-danger show_confirm" data-toggle="tooltip"
                                     title='Delete'>Delete</button>
                             </form>
                         </div>
@@ -32,7 +32,6 @@
 @endsection
 
 @section('script-sweetalert')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
     <script type="text/javascript" lang="javascript">
         $('.show_confirm').click(function(event) {
             let form = $(this).closest("form");

@@ -1,6 +1,6 @@
 @extends('layouts.admin.dashboard')
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
     <div class="container p-3">
         <h1>Halaman Utama Laporan Keuangan</h1>
         @if ($message = Session::get('success'))
@@ -9,28 +9,31 @@
             </div>
         @endif
         <div class="ml-auto text-right">
-            <a href="{{ route('laporanKeuangan.create') }}" class="btn btn-primary">Masukan Data Laporan Keuangan</a>
+            <a href="{{ route('laporanKeuangan.create') }}" class="btn btn-outline-primary">Masukan Data Laporan
+                Keuangan</a>
         </div>
-        <div style="height: 500px;overflow-y: scroll;">
+        @if (count($laporanKeuangan) < 1)
+            <p>Tidak ada data, silahkan <a href="{{ route('laporanKeuangan.create') }}">entri data baru</a></p>
+        @else
             <div class="row mt-4">
                 @foreach ($laporanKeuangan as $item)
                     <div class="col-md-4">
                         <div class="card p-4">
                             <img src="/image/laporan-keuangan/{{ $item->gambar }}" class="card-img-top" height="200" />
-                                <p class="card-text">{{ $item->informasi }}</p>
+                            <p class="card-text">{!! $item->informasi !!}</p>
                             <form method="POST" action="{{ route('laporanKeuangan.destroy', $item->id) }}">
                                 <a href="{{ route('laporanKeuangan.edit', $item->id) }}"
-                                    class="btn btn-primary">Edit</a>
+                                    class="btn btn-outline-primary">Edit</a>
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">
-                                <button type="submit" class="btn  btn-danger show_confirm" data-toggle="tooltip"
+                                <button type="submit" class="btn  btn-outline-danger show_confirm" data-toggle="tooltip"
                                     title='Delete'>Delete</button>
                             </form>
                         </div>
                     </div>
                 @endforeach
             </div>
-        </div>
+        @endIf
     </div>
 @endsection
 

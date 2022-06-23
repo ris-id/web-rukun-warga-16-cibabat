@@ -1,9 +1,9 @@
 @extends('layouts.admin.dashboard')
 @section('content')
     <div class="container p-5">
-        <h1>Halaman Kelola Komentar kegiatan</h1>
+        <h1>Halaman Kelola Komentar Info Penting</h1>
         <p><small>Halaman yang digunakan untuk mengatur dan melihat komentar yang diberikan oleh warga pada postingan
-                kegiatan</small></p>
+                info penting</small></p>
         @if ($data[0]->count_komentar < 1)
             <p>Tidak ada data</p>
         @else
@@ -19,10 +19,11 @@
                     @if ($item->count_komentar > 0)
                         <tbody>
                             <tr>
-                                <td>{{ $item->judul_kegiatan }}</td>
+                                <td>{{ $item->judul_info }}</td>
                                 <td>{{ $item->count_komentar }} komentar</td>
                                 <td>
-                                    <a href="{{ route('komentar-kegiatan.show', [$item->id]) }}">Lihat Semua komentar</a>
+                                    <a href="{{ route('komentar-infoPenting.show', [$item->id]) }}">Lihat Semua
+                                        komentar</a>
                                 </td>
                         </tbody>
                     @endif

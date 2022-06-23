@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary show_confirm" data-toggle="tooltip">Publish</button>
+                <button type="submit" class="btn btn-outline-primary show_confirm" data-toggle="tooltip">Publish</button>
             </form>
         @else
             <div class="text-right">

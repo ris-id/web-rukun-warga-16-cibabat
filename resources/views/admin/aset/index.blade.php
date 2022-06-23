@@ -12,32 +12,36 @@
         <div class="ml-auto text-right">
             <a href="{{ route('aset.create') }}" class="btn btn-outline-primary">Masukan Data Aset</a>
         </div>
-        <table class="table table-bordered mt-4">
-            <thead>
-                <tr>
-                    <th scope="col">Informasi </th>
-                    <th scope="col">Aksi</th>
-                </tr>
-            </thead>
-            @foreach ($data as $item)
-                <tbody>
+        @if (count($data) < 1)
+            <p>Tidak ada data, silahkan <a href="{{ route('aset.create') }}">entri data baru</a></p>
+        @else
+            <table class="table table-bordered mt-4">
+                <thead>
                     <tr>
-                        <td>{!! $item->informasi !!}</td>
-                        <td>
-                            <div class="d-grid gap-2 d-md-flex">
-                                <a href="{{ route('aset.show', [$item->id]) }}"class="btn btn-outline-primary me-md-2 mr-2"
-                                    type="button">Lihat detail aset</a>
-                                <form method="POST" action="{{ route('aset.destroy', $item->id) }}">
-                                    @csrf
-                                    <input name="_method" type="hidden" value="DELETE">
-                                    <button type="submit" class="btn btn-outline-danger show_confirm" data-toggle="tooltip"
-                                        title='Delete'>Hapus data aset</button>
-                                </form>
-                            </div>
-                        </td>
-                </tbody>
-            @endforeach
-        </table>
+                        <th scope="col">Informasi </th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                @foreach ($data as $item)
+                    <tbody>
+                        <tr>
+                            <td>{!! $item->informasi !!}</td>
+                            <td>
+                                <div class="d-grid gap-2 d-md-flex">
+                                    <a href="{{ route('aset.show', [$item->id]) }}"class="btn btn-outline-primary me-md-2 mr-2"
+                                        type="button">Lihat detail aset</a>
+                                    <form method="POST" action="{{ route('aset.destroy', $item->id) }}">
+                                        @csrf
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        <button type="submit" class="btn btn-outline-danger show_confirm"
+                                            data-toggle="tooltip" title='Delete'>Hapus data aset</button>
+                                    </form>
+                                </div>
+                            </td>
+                    </tbody>
+                @endforeach
+            </table>
+        @endIf
     </div>
 @endsection
 

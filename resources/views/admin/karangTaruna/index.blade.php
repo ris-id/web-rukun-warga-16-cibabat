@@ -1,6 +1,6 @@
 @extends('layouts.admin.dashboard')
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
     <div class="container p-5">
         <h1>Halaman Karang Taruna</h1>
         <p><small>Halaman ini digunakan jika akan melakukan perubahan terhadap data Karang Taruna RW 16</small></p>
@@ -10,27 +10,31 @@
             </div>
         @endif
         <div class="ml-auto text-right">
-            <a href="{{ route('karangTaruna.create') }}" class="btn btn-primary">Masukan Data Karang Taruna</a>
+            <a href="{{ route('karangTaruna.create') }}" class="btn btn-outline-primary">Masukan Data Karang Taruna</a>
         </div>
         <div>
-            <div class="row mt-4">
-                @foreach ($karangTaruna as $item)
-                    <div class="col-md-12">
-                        <div class="card p-4">
-                            <img src="/image/karang-taruna/{{ $item->foto }}" class="card-img-top" height="400" />
+            @if (count($karangTaruna) < 1)
+                <p>Tidak ada data, silahkan <a href="{{ route('karangTaruna.create') }}">entri data baru</a></p>
+            @else
+                <div class="row mt-4">
+                    @foreach ($karangTaruna as $item)
+                        <div class="col-md-12">
+                            <div class="card p-4">
+                                <img src="/image/karang-taruna/{{ $item->foto }}" class="card-img-top" height="400" />
                                 <p class="card-text">{{ $item->konten }}</p>
-                            <form method="POST" action="{{ route('karangTaruna.destroy', $item->id) }}">
-                                <a href="{{ route('karangTaruna.edit', $item->id) }}"
-                                    class="btn btn-primary">Edit</a>
-                                @csrf
-                                <input name="_method" type="hidden" value="DELETE">
-                                <button type="submit" class="btn  btn-danger show_confirm" data-toggle="tooltip"
-                                    title='Delete'>Delete</button>
-                            </form>
+                                <form method="POST" action="{{ route('karangTaruna.destroy', $item->id) }}">
+                                    <a href="{{ route('karangTaruna.edit', $item->id) }}" class="btn btn-primary">Edit</a>
+                                    @csrf
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <button type="submit" class="btn  btn-danger show_confirm" data-toggle="tooltip"
+                                        title='Delete'>Delete</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
+            @endIf
+
         </div>
     </div>
 @endsection

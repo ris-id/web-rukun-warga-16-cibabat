@@ -8,30 +8,36 @@
             </div>
         @endif
         <div class="d-flex flex-row">
-            <h1 class="mr-auto">Halaman Utama Kegiatan Rukun Warga 16</h1>
+            <h1 class="mr-auto">Daftar Kegiatan Rukun Warga 16 Yang Terpublikasikan
+            </h1>
             <div>
                 <a href="{{ route('kegiatan.create') }}" class="mt-2 mb-3 btn btn-outline-primary">Tambah Kegiatan</a>
             </div>
         </div>
-        <table class="table table-bordered mt-4">
-            <thead>
-                <tr>
-                    <th scope="col">Judul Postingan</th>
-                    <th scope="col">Deskripsi</th>
-                    <th scope="col">Aksi</th>
-                </tr>
-            </thead>
-            @foreach ($data as $item)
-                <tbody>
+        @if (count($data) < 1)
+            <p>Tidak ada data, silahkan <a href="{{ route('kegiatan.create') }}">entri data baru</a></p>
+        @else
+            <table class="table table-bordered mt-4">
+                <thead>
                     <tr>
-                        <td>{{ $item->judul_kegiatan }}</td>
-                        <td>{!! $item->deskripsi !!} </td>
-                        <td>
-                            <a href="{{ route('kegiatan.show', [$item->id]) }}">Lihat detail postingan</a>
-                        </td>
-                </tbody>
-            @endforeach
-        </table>
+                        <th scope="col">Judul Postingan</th>
+                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                @foreach ($data as $item)
+                    <tbody>
+                        <tr>
+                            <td>{{ $item->judul_kegiatan }}</td>
+                            <td>{!! $item->deskripsi !!} </td>
+                            <td>
+                                <a href="{{ route('kegiatan.show', [$item->id]) }}">Lihat detail postingan</a>
+                            </td>
+                    </tbody>
+                @endforeach
+            </table>
+        @endIf
+
     </div>
 @endsection
 

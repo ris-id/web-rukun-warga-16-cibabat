@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KritikSaran;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KritikSaranController extends Controller
 {
@@ -25,7 +26,6 @@ class KritikSaranController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -83,7 +83,7 @@ class KritikSaranController extends Controller
     {
         $data =  KritikSaran::find($id);
         $data::where("id", $id)->delete();
-        return redirect()->route('kritikSaran.index')
-            ->with('success', 'Kritik & Saran Berhasil di hapus');
+        Alert::success('Success', 'Kritik dan saran berhasil dihapus');
+        return redirect()->route('kritikSaran.index');
     }
 }

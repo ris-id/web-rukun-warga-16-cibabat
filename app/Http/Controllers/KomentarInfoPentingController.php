@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KomentarInfoPenting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KomentarInfoPentingController extends Controller
 {
@@ -14,7 +15,8 @@ class KomentarInfoPentingController extends Controller
      */
     public function index()
     {
-        //
+        $data = DB::select("SELECT tb_info_penting.id, tb_info_penting.judul_info, tb_info_penting.created_at, tb_info_penting.deskripsi, (SELECT COUNT(id_info) FROM tb_komentar_info_penting WHERE id_info = tb_info_penting.id) as count_komentar FROM tb_info_penting ORDER BY tb_info_penting.created_at ASC;");
+        return view('admin.komentar.infoPenting.index', compact('data'));
     }
 
     /**

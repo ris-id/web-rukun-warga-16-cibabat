@@ -22,7 +22,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Judul Kegiatan:</strong>
-                        <input type="text" name="judul_kegiatan" class="form-control" placeholder="Name" required>
+                        <input type="text" name="judul_kegiatan" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                    <button type="submit" class="btn btn-primary">Publish</button>
+                    <button type="submit" class="btn btn-outline-primary">Publish</button>
                 </div>
             </div>
         </form>

@@ -1,6 +1,6 @@
 @extends('layouts.admin.dashboard')
 @section('content')
-@include('sweetalert::alert')
+    @include('sweetalert::alert')
     <div class="container p-5">
         <h1>Halaman Struktur Organisasi</h1>
         <p><small>Halaman ini digunakan jika akan melakukan perubahan terhadap Struktur Organisasi RW 16</small></p>
@@ -10,14 +10,19 @@
             </div>
         @endif
         <div class="ml-auto text-right">
-            <a href="{{ route('strukturOrganisasi.create') }}" class="btn btn-outline-primary">Masukan Data Struktur Organisasi</a>
+            <a href="{{ route('strukturOrganisasi.create') }}" class="btn btn-outline-primary">Masukan Data Struktur
+                Organisasi</a>
         </div>
         <div>
-            <div class="row mt-4">
-                @foreach ($strukturOrganisasi as $item)
-                    <div class="col-md-12">
-                        <div class="card p-4">
-                            <img src="/image/struktu-organisasi/{{ $item->foto }}" class="card-img-top" height="400" />
+            @if (count($strukturOrganisasi) < 1)
+                <p>Tidak ada data, silahkan <a href="{{ route('strukturOrganisasi.create') }}">entri data baru</a></p>
+            @else
+                <div class="row mt-4">
+                    @foreach ($strukturOrganisasi as $item)
+                        <div class="col-md-12">
+                            <div class="card p-4">
+                                <img src="/image/struktur-organisasi/{{ $item->foto }}" class="card-img-top"
+                                    height="400" />
                                 <p class="card-text">{{ $item->ketua_rw }}</p>
                                 <p class="card-text">{{ $item->wakil_ketua }}</p>
                                 <p class="card-text">{{ $item->sekretaris }}</p>
@@ -26,18 +31,19 @@
                                 <p class="card-text">{{ $item->pelayanan_masyarakat }}</p>
                                 <p class="card-text">{{ $item->pemuda_olahraga }}</p>
                                 <p class="card-text">{{ $item->kesehatan_masyarakat }}</p>
-                            <form method="POST" action="{{ route('strukturOrganisasi.destroy', $item->id) }}">
-                                <a href="{{ route('strukturOrganisasi.edit', $item->id) }}"
-                                    class="btn btn-primary">Edit</a>
-                                @csrf
-                                <input name="_method" type="hidden" value="DELETE">
-                                <button type="submit" class="btn  btn-danger show_confirm" data-toggle="tooltip"
-                                    title='Delete'>Delete</button>
-                            </form>
+                                <form method="POST" action="{{ route('strukturOrganisasi.destroy', $item->id) }}">
+                                    <a href="{{ route('strukturOrganisasi.edit', $item->id) }}"
+                                        class="btn btn-primary">Edit</a>
+                                    @csrf
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <button type="submit" class="btn  btn-danger show_confirm" data-toggle="tooltip"
+                                        title='Delete'>Delete</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
+            @endIf
         </div>
     </div>
 @endsection

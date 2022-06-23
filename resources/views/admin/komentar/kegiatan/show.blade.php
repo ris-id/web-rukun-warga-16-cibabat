@@ -19,7 +19,7 @@
                             <form method="POST" action="{{ route('komentar-kegiatan.destroy', $item->id) }}">
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">
-                                <button type="submit" class="btn  btn-outline-danger show_confirm" data-toggle="tooltip"
+                                <button type="submit" class="btn btn-outline-danger show_confirm" data-toggle="tooltip"
                                     title='Delete'>Hapus Komentar</button>
                             </form>
                         </td>

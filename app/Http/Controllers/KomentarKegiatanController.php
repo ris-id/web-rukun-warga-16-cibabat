@@ -89,6 +89,6 @@ class KomentarKegiatanController extends Controller
     {
         $data =  KomentarKegiatan::find($id);
         $data::where("id", $id)->delete();
-        return back();
+        return redirect()->route('komentar-kegiatan.index');
     }
 }

@@ -124,7 +124,7 @@ class KegiatanController extends Controller
         $data =  Kegiatan::find($id);
         unlink("image/kegiatan/" . $data->foto_kegiatan);
         $data::where("id", $id)->delete();
-        Alert::success('Success', 'Data Kegiatan Berhasil ditambahkan');
+        Alert::success('Success', 'Data Kegiatan Berhasil dihapus');
         return redirect()->route('kegiatan.index');
     }
 }

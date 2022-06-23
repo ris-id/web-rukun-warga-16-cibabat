@@ -20,6 +20,7 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LaporanKeuanganController;
 use App\Http\Controllers\KarangTarunaController;
+use App\Http\Controllers\KomentarInfoPentingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,7 @@ Route::resource('admin/kegiatan', KegiatanController::class)->middleware('is_adm
 Route::resource('admin/infoPenting', InfoPentingController::class)->middleware('is_admin');
 Route::resource('admin/kritikSaran', KritikSaranController::class)->middleware('is_admin');
 Route::resource('admin/komentar/komentar-kegiatan', KomentarKegiatanController::class)->middleware('is_admin');
+Route::resource('admin/komentar/komentar-infoPenting', KomentarInfoPentingController::class)->middleware('is_admin');
 Route::resource('admin/profil', ProfilController::class)->middleware('is_admin');
 Route::resource('admin/strukturOrganisasi', StrukturOrganisasiController::class)->middleware('is_admin');
 Route::resource('admin/laporanKeuangan', LaporanKeuanganController::class)->middleware('is_admin');
