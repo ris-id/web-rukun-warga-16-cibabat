@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aset;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AsetController extends Controller
 {
@@ -14,7 +15,8 @@ class AsetController extends Controller
      */
     public function index()
     {
-        //
+        $data = Aset::orderBy('created_at', 'asc')->get();
+        return view('admin.aset.index', compact('data'));
     }
 
     /**
@@ -24,7 +26,7 @@ class AsetController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.aset.create');
     }
 
     /**
@@ -35,7 +37,14 @@ class AsetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'informasi' => 'required',
+        ]);
+
+        $input = $request->all();
+        Aset::create($input);
+        Alert::success('Success', 'Data aset berhasil ditambahkan');
+        return redirect()->route('aset.index');
     }
 
     /**
@@ -46,7 +55,7 @@ class AsetController extends Controller
      */
     public function show(Aset $aset)
     {
-        //
+        return view('admin.aset.show', compact('aset'));
     }
 
     /**
@@ -57,7 +66,7 @@ class AsetController extends Controller
      */
     public function edit(Aset $aset)
     {
-        //
+        return view('admin.aset.edit', compact('aset'));
     }
 
     /**
@@ -69,7 +78,16 @@ class AsetController extends Controller
      */
     public function update(Request $request, Aset $aset)
     {
-        //
+        $request->validate([
+            'informasi' => 'required',
+        ]);
+        $input = $request->all();
+
+        $aset->update($input);
+
+        Alert::success('Success', 'Data aset berhasil diupdate');
+
+        return redirect()->route('aset.index');
     }
 
     /**
@@ -78,8 +96,11 @@ class AsetController extends Controller
      * @param  \App\Models\Aset  $aset
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aset $aset)
+    public function destroy($id)
     {
-        //
+        $data =  Aset::find($id);
+        $data::where("id", $id)->delete();
+        Alert::success('Success', 'Data aset berhasil dihapus');
+        return redirect()->route('aset.index');
     }
 }

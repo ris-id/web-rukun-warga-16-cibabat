@@ -5,14 +5,14 @@
             <a href="{{ route('kegiatan.index') }}"><span class="fa fa-arrow-left"></span> Kembali ke halaman utama
                 kegiatan</a>
             <div class="text-right">
-                <a href="{{ route('kegiatan.edit', ['kegiatan' => $kegiatan->id]) }}" class="btn btn-primary"><span
+                <a href="{{ route('kegiatan.edit', ['kegiatan' => $kegiatan->id]) }}" class="btn btn-outline-primary"><span
                         class="fa fa-pencil"></span> Edit
                     Postingan</a>
             </div>
         </div>
         <h1>{{ $kegiatan->judul_kegiatan }}</h1>
         <div class="m-auto text-center">
-            <img src="/dist/img/default-150x150.png" class="w-50 img-responsive img-thumbnail">
+            <img src="/image/kegiatan/{{ $kegiatan->foto_kegiatan }}" class="w-50 img-responsive img-thumbnail">
         </div>
         <div class="content mt-3">
             <p>{!! $kegiatan->deskripsi !!}</p>

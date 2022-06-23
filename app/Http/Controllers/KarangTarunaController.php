@@ -104,7 +104,7 @@ class KarangTarunaController extends Controller
 
         $karangTaruna->update($input);
 
-                
+
         Alert::success('Success', 'Data Karang Taruna Berhasi diupdate');
 
         return redirect()->route('karangTaruna.index');

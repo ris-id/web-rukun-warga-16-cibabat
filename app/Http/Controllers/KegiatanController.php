@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 use Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KegiatanController extends Controller
 {
@@ -53,9 +54,9 @@ class KegiatanController extends Controller
 
         Kegiatan::create($input);
 
+        Alert::success('Success', 'Data Kegiatan Berhasil ditambahkan');
 
-        return redirect()->route('kegiatan.index')
-            ->with('Success', 'Kegiatan berhasil dibuat');
+        return redirect()->route('kegiatan.index');
     }
 
     /**
@@ -107,8 +108,9 @@ class KegiatanController extends Controller
 
         $kegiatan->update($input);
 
-        return redirect()->route('kegiatan.index')
-            ->with('success', 'kegiatan berhasil di update');
+        Alert::success('Success', 'Data Kegiatan Berhasil diupdate');
+
+        return redirect()->route('kegiatan.index');
     }
 
     /**
@@ -122,7 +124,7 @@ class KegiatanController extends Controller
         $data =  Kegiatan::find($id);
         unlink("image/kegiatan/" . $data->foto_kegiatan);
         $data::where("id", $id)->delete();
-        return redirect()->route('kegiatan.index')
-            ->with('success', 'Kegiatan berhasil di hapus');
+        Alert::success('Success', 'Data Kegiatan Berhasil ditambahkan');
+        return redirect()->route('kegiatan.index');
     }
 }

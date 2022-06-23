@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AsetController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
@@ -83,3 +84,4 @@ Route::resource('admin/profil', ProfilController::class)->middleware('is_admin')
 Route::resource('admin/strukturOrganisasi', StrukturOrganisasiController::class)->middleware('is_admin');
 Route::resource('admin/laporanKeuangan', LaporanKeuanganController::class)->middleware('is_admin');
 Route::resource('admin/karangTaruna', KarangTarunaController::class)->middleware('is_admin');
+Route::resource('admin/aset', AsetController::class)->middleware('is_admin');

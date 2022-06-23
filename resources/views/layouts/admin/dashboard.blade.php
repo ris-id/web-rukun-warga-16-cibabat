@@ -244,6 +244,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('aset.index') }}" class="nav-link">
+                                <i class="nav-icon fa fa-bars"></i>
+                                <p>
+                                    Aset
+                                </p>
+                            </a>
+                        </li>
                     </ul>
 
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
