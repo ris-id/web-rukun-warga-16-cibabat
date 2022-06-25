@@ -316,9 +316,10 @@
                                 </a></strong> | Copyright ©
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> | Material Kit by <a href="https://www.creative-tim.com"
+                            </script> 
+                            {{-- | Material Kit by <a href="https://www.creative-tim.com"
                                 target="_blank">Creative
-                                Tim</a>.
+                                Tim</a>. --}}
                         </p>
                     </div>
                 </div>

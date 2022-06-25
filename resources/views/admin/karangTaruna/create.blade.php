@@ -16,6 +16,7 @@
                 </ul>
             </div>
         @endif
+        <div class="card p-4">
         <form action="{{ route('karangTaruna.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
@@ -38,6 +39,7 @@
             </div>
 
         </form>
+        </div>
     </div>
 @endsection
 

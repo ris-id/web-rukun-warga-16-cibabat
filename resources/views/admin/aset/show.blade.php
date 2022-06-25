@@ -10,8 +10,10 @@
                     data aset</a>
             </div>
         </div>
-        <div class="content mt-3">
-            <p>{!! $aset->informasi !!}</p>
+        <div class="card p-4">
+            <div class="content mt-3">
+                <p>{!! $aset->informasi !!}</p>
+            </div>
         </div>
     </div>
 @endsection

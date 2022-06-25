@@ -20,7 +20,7 @@
             <div>
                 <div class="row mt-12">
                     @foreach ($infoPenting as $item)
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card p-4">
                                 <a href={{ route('infoPenting.show', ['infoPenting' => $item->id]) }} class="mt-3">
                                     <h5 class="text-uppercase">{{ $item->judul_info }}</h5>

@@ -7,6 +7,7 @@
         @if ($data[0]->count_komentar < 1)
             <p>Tidak ada data</p>
         @else
+        <div class="card p-4">
             <table class="table table-bordered mt-4">
                 <thead>
                     <tr>
@@ -29,6 +30,7 @@
                     @endif
                 @endforeach
             </table>
+        </div>
         @endIf
     </div>
 @endsection

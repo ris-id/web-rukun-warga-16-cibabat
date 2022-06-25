@@ -1,7 +1,7 @@
 @extends('layouts.admin.dashboard')
 @section('content')
     @include('sweetalert::alert')
-    <div class="container p-3">
+    <div class="container p-3 ">
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
@@ -17,6 +17,7 @@
         @if (count($data) < 1)
             <p>Tidak ada data, silahkan <a href="{{ route('kegiatan.create') }}">entri data baru</a></p>
         @else
+        <div class="card p-4">
             <table class="table table-bordered mt-4">
                 <thead>
                     <tr>
@@ -36,6 +37,7 @@
                     </tbody>
                 @endforeach
             </table>
+        </div>
         @endIf
 
     </div>

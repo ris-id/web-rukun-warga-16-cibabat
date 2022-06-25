@@ -7,7 +7,7 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
-        <div style="height: 500px;overflow-y: scroll;">
+        <div>
             <div class="row mt-4">
                 @foreach ($kritikSaran as $item)
                     <div class="col-md-4">
@@ -21,7 +21,7 @@
                                 @csrf
                                 <input name="_method" type="hidden" value="DELETE">
                                 <button type="submit" class="btn btn-outline-danger show_confirm" data-toggle="tooltip"
-                                    title='Delete'>Delete</button>
+                                    title='Delete'><i class="fa fa-trash"></i> Delete</button>
                             </form>
                         </div>
                     </div>

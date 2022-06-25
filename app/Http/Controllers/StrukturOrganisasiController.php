@@ -116,7 +116,7 @@ class StrukturOrganisasiController extends Controller
     {
         $data =  StrukturOrganisasi::find($id);
         $data::where("id", $id)->delete();
-        return redirect()->route('strukturOrganisasi.index')
-            ->with('success', 'Struktur Organisasi Berhasil di hapus');
+        Alert::success('Success', 'Struktur Organisasi Berhasil di hapus');
+        return redirect()->route('strukturOrganisasi.index');
     }
 }

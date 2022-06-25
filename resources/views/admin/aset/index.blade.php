@@ -15,6 +15,7 @@
         @if (count($data) < 1)
             <p>Tidak ada data, silahkan <a href="{{ route('aset.create') }}">entri data baru</a></p>
         @else
+        <div class="card p-4">
             <table class="table table-bordered mt-4">
                 <thead>
                     <tr>
@@ -41,6 +42,7 @@
                     </tbody>
                 @endforeach
             </table>
+        </div>
         @endIf
     </div>
 @endsection

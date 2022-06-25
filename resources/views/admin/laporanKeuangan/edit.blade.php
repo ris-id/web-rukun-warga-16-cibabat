@@ -17,34 +17,36 @@
                 <a href="{{ route('laporanKeuangan.index') }}"><span class="fa fa-arrow-left"></span> Kembali </a>
             </div>
             <div class="d-flex flex-row">
-                <h1>Tambah Info Penting</h1>
+                <h1>Edit Laporan Keuangan</h1>
             </div>
         </div>
-
-        <form action="{{ route('laporanKeuangan.update', $laporanKeuangan->id) }}" method="POST"
-            enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Foto</strong>
-                        <input type="file" name="gambar" class="form-control" placeholder="Gambar">
-                        <img src="/image/laporan-keuangan/{{ $laporanKeuangan->gambar }}" width="300px">
+        <div class="card p-4">
+            <form action="{{ route('laporanKeuangan.update', $laporanKeuangan->id) }}" method="POST"
+                enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+    
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Foto</strong>
+                            <input type="file" name="gambar" class="form-control" placeholder="Gambar">
+                            <br>
+                            <img src="/image/laporan-keuangan/{{ $laporanKeuangan->gambar }}" width="300px">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Informasi</strong>
+                            <textarea name="informasi" rows="5" cols="40" class="form-control tinymce-editor">{!! $laporanKeuangan->informasi !!}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary">Publish</button>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Informasi</strong>
-                        <textarea name="informasi" rows="5" cols="40" class="form-control tinymce-editor">{!! $laporanKeuangan->informasi !!}</textarea>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                    <button type="submit" class="btn btn-primary">Publish</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 @endsection
 

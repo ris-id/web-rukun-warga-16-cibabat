@@ -18,17 +18,26 @@
             <div class="row mt-4">
                 @foreach ($laporanKeuangan as $item)
                     <div class="col-md-4">
-                        <div class="card p-4">
-                            <img src="/image/laporan-keuangan/{{ $item->gambar }}" class="card-img-top" height="200" />
-                            <p class="card-text">{!! $item->informasi !!}</p>
-                            <form method="POST" action="{{ route('laporanKeuangan.destroy', $item->id) }}">
-                                <a href="{{ route('laporanKeuangan.edit', $item->id) }}"
-                                    class="btn btn-outline-primary">Edit</a>
-                                @csrf
-                                <input name="_method" type="hidden" value="DELETE">
-                                <button type="submit" class="btn  btn-outline-danger show_confirm" data-toggle="tooltip"
-                                    title='Delete'>Delete</button>
-                            </form>
+                        <div class="card">
+                            <img src="/image/laporan-keuangan/{{ $item->gambar }}" class="card-img-top">
+                            <div class="card-bory p-4">
+                                <p class="card-text">{!! $item->informasi !!}</p>
+                                <form method="POST" action="{{ route('laporanKeuangan.destroy', $item->id) }}">
+                                    <div class="d-flex flex-row">
+                                        <div class="col-md-6 justify-content-center">
+                                                <a href="{{ route('laporanKeuangan.edit', $item->id) }}"
+                                                    class="btn btn-outline-success btn-block"><span class="fa fa-pen"></span> Edit</a>
+                                                @csrf
+                                                <input name="_method" type="hidden" value="DELETE">
+                                            </div>
+                                            <div class="col-md-6 justify-content-center">
+                                                @csrf
+                                                <button type="submit" class="btn  btn-outline-danger btn-block show_confirm" data-toggle="tooltip"
+                                                    title='Delete'><i class="fa fa-trash"></i> Delete</button>
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 @endforeach
