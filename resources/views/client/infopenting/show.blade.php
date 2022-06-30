@@ -38,7 +38,7 @@
                                     <h5>Informasi Terbaru</h5>
                                 </div>
                                 <hr>
-                                @foreach($listkegiatan as $kegiatan)
+                                @foreach($kegiatan as $kegiatan)
                                     <div class="col-md-6">
                                         <a href="{{ url('/kegiatan/' . $kegiatan->id) }}">
                                             <div class="card card-background card-background-mask-dark align-items-start mt-2">
