@@ -19,14 +19,24 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+
+    @if (count($profil) > 0)
+        <link rel="icon" type="image/x-icon" href="/image/logo/{{ $profil[0]->logo }}">
+    @endIf
 </head>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" width="30" height="30"
-                    class="d-inline-block align-top">
+                @if (count($profil) < 0)
+                    <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" width="30"
+                        height="30">
+                @else
+                    <img src="/image/logo/{{ $profil[0]->logo }}" width="30" height="30">
+                @endIf
                 <a class="navbar-brand" href="{{ url('/admin/home') }}">
                     Rukun Warga 16
                 </a>
@@ -49,12 +59,6 @@
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    @if (count($profil) > 0)
+        <link rel="icon" type="image/x-icon" href="/image/logo/{{ $profil[0]->logo }}">
+    @endIf
 </head>
 
 <body class="hold-transition sidebar-mini">
