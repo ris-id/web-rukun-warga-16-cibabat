@@ -12,4 +12,9 @@ class Kegiatan extends Model
     protected $fillable = [
         'judul_kegiatan', 'deskripsi', 'foto_kegiatan'
     ];
+
+    public function komentar()
+    {
+        return $this->hasMany(KomentarKegiatan::class, 'id_kegiatan');
+    }
 }

@@ -49,50 +49,32 @@
                         <hr class="mb-3">
                         <div class="col-lg py-4">
                             <div class="row justify-content-start">
+
+                                @foreach ($komentar as $data)
                                 <div class="row justify-content-start">
                                     <div class="col">
                                         <div class="info">
-                                            <h6 class="text-dark text-gradient">User@mail.com</h6>
-                                            <p class="mt-n2" style="font-size: 12px;">20 Januari 2022 | 20.22</p>
-                                            <p class="text-dark">asdadwqafasd</p>
+                                            <h6 class="text-dark text-gradient">Anonim</h6>
+                                            <p class="mt-n2" style="font-size: 12px;">{{$data->kegiatan->created_at->diffForHumans()}}</p>
+                                            <p class="text-dark">{{$data->komentar}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row justify-content-start">
-                                    <div class="col">
-                                        <div class="info">
-                                            <h6 class="text-dark text-gradient">User@mail.com</h6>
-                                            <p class="mt-n2" style="font-size: 12px;">20 Januari 2022 | 20.22</p>
-                                            <p class="text-dark">asdadwqafasd</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
+                                
                                 <div class="card shadow">
                                     <div class="card-body">
                                     <div class="col">
                                     <h6 class="">Tulis Komentar</h6>
-                                    <form role="form" id="contact-form" method="post" autocomplete="off">
+                                    <form role="form" action="{{ route('client.kegiatan.create.komentar') }}" id="contact-form" method="post" autocomplete="off">
+                                        @csrf
                                         <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md">
-                                                    <div class="input-group input-group-dynamic mb-4">
-                                                        <label class="form-label">Nama</label>
-                                                        <input class="form-control" aria-label="First Name..."
-                                                            type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-4">
-                                                <div class="input-group input-group-dynamic">
-                                                    <label class="form-label">Alamat Email</label>
-                                                    <input type="email" class="form-control">
-                                                </div>
-                                            </div>
                                             <div class="input-group mb-4 input-group-static">
                                                 <label>Komentar Anda</label>
-                                                <textarea name="message" class="form-control" id="message"
+                                                <textarea name="komentar" class="form-control" id="message" placeholder="Tulis Komentar Anda Disini"
                                                     rows="4"></textarea>
+                                                <input type="text" name="id_kegiatan" class="form-control" hidden value="{{ $kegiatans->id }}">
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12">

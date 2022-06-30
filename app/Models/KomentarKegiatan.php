@@ -12,6 +12,6 @@ class KomentarKegiatan extends Model
 
     public function kegiatan()
     {
-        return $this->belongsTo(Kegiatan::class, 'id_kegiatan', 'id');
+        return $this->belongsTo(Kegiatan::class, 'id_kegiatan');
     }
 }

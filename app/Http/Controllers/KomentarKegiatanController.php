@@ -6,6 +6,7 @@ use App\Models\Kegiatan;
 use App\Models\KomentarKegiatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KomentarKegiatanController extends Controller
 {
@@ -41,7 +42,7 @@ class KomentarKegiatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

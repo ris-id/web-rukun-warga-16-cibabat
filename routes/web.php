@@ -60,6 +60,8 @@ Route::namespace('Client')->group(function () {
     // Kegiatan Page Routes
     Route::get('/kegiatan', [PageKegiatanController::class, 'index'])->name('client.kegiatan');
     Route::get('/kegiatan/{id}', [PageKegiatanController::class, 'show'])->name('client.kegiatan.show');
+    Route::post('/kegiatan/komentar', [PageKegiatanController::class, 'create'])->name('client.kegiatan.create.komentar');
+    Route::post('/kegiatan/{id}/komentar', [KomentarKegiatanController::class, 'create'])->name('client.kegiatan.komentar');
 
     //PKK Page Routes
     Route::get('/pkk', [PagePkkController::class, 'index'])->name('client.pkk');
