@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/image/kegiatan
+/public/image/logo
 /storage/*.key
 /vendor
 .env

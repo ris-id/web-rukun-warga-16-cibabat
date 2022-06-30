@@ -49,8 +49,11 @@
                     <div class="container-fluid px-0">
                         <a class="navbar-brand font-weight-bolder ms-sm-3" href="{{ route('client.home') }}"
                             rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom">
-                            <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" alt="AdminLTE Logo"
-                                width="20" style="opacity: .8" width>&nbspRukun Warga 16 - Cibabat
+                            @foreach (\App\Models\Profil::all() as $profil)
+                            <img src="{{ asset('image/logo')}}/{{$profil->logo}}" alt="AdminLTE Logo"
+                                width="20" style="opacity: .8" width>
+                            @endforeach
+                            &nbspRukun Warga 16 - Cibabat
                         </a>
                         <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
@@ -203,8 +206,10 @@
                     <div class="row">
                         <div class="col-md-4 d-flex justify-content-center">
                             <center><a href="/">
-                                    <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png"
-                                        alt="AdminLTE Logo" width="50" style="opacity: .8" width>
+                            @foreach(\App\Models\Profil::all() as $profil)
+                            <img src="image/logo/{{ $profil->logo }}" alt="AdminLTE Logo"
+                                class="img-fluid" style="opacity: .8" width>
+                            @endforeach
                                 </a></center>
                         </div>
                         <div class="col-md-7 ">

@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // view()->composer('layouts.client.app', function ($view) {
+        //     $logo = \App\Models\profil::all;
+        //     $view->logo = $logo;
+        // });
     }
 }
