@@ -8,9 +8,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">
-                    <h1 class="text-white mb-1">Informasi Penting</h1>
+                    <h1 class="text-white mb-1">Kegiatan</h1>
                     <h5 class="text-white mb-4">Kelurahan Cibabat</h5>
-                    <p class="text-white opacity-8 lead pe-5 me-5">Ini adalah halaman informasi-informasi penting</p>
+                    <p class="text-white opacity-8 lead pe-5 me-5">Ini adalah halaman Kegiatan</p>
                 </div>
             </div>
         </div>
@@ -38,6 +38,9 @@
                             </a>
                         </div>
                         @endforeach
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        {{$kegiatans->links()}}
                     </div>
                 </div>
             </section>

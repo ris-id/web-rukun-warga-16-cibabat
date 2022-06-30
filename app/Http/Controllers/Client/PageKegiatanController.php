@@ -8,13 +8,14 @@ use App\Models\Kegiatan;
 use App\Models\KomentarKegiatan;
 use RealRashid\SweetAlert\Facades\Alert;
 
+
 class PageKegiatanController extends Controller
 {
     public function index()
     {
         $listKegiatan = Kegiatan::all()->sortByDesc('id')->take(4);
         return view('client.kegiatan.index', [
-            'kegiatans' => Kegiatan::all(),
+            'kegiatans' => Kegiatan::latest()->paginate(4),
             'listKegiatan' => $listKegiatan
         ]);
     }
