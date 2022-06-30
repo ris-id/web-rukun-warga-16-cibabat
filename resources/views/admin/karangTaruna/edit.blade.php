@@ -17,10 +17,11 @@
             </div>
         @endif
         <div class="card p-4">
-            <form action="{{ route('karangTaruna.update', $karangTaruna->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('karangTaruna.update', $karangTaruna->id) }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-    
+
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
@@ -28,6 +29,13 @@
                             <input type="file" name="gambar" class="form-control" placeholder="Gambar">
                             <br>
                             <img src="/image/karang-taruna/{{ $karangTaruna->foto }}" width="300px">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Judul</strong>
+                            <input type="text" name="judul" class="form-control" placeholder="judul" required>
+                            {{ $karangTaruna->judul }}
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -40,7 +48,7 @@
                         <button type="submit" class="btn btn-primary">Publish</button>
                     </div>
                 </div>
-    
+
             </form>
         </div>
     </div>

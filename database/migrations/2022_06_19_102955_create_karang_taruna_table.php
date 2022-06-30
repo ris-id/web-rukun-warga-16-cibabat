@@ -15,6 +15,7 @@ class CreateKarangTarunaTable extends Migration
     {
         Schema::create('tb_karang_taruna', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
             $table->string('foto');
             $table->text('konten');
             $table->timestamps();

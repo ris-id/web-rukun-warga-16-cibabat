@@ -38,6 +38,7 @@ class KarangTarunaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'judul' => 'required',
             'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'konten' => 'required',
         ]);
@@ -89,6 +90,7 @@ class KarangTarunaController extends Controller
     public function update(Request $request, KarangTaruna $karangTaruna)
     {
         $request->validate([
+            'judul' => 'required',
             'konten' => 'required',
         ]);
         $input = $request->all();
