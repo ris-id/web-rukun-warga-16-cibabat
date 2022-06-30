@@ -21,22 +21,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
-
-    @if (count($profil) > 0)
-        <link rel="icon" type="image/x-icon" href="/image/logo/{{ $profil[0]->logo }}">
-    @endIf
 </head>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
-                @if (count($profil) < 0)
-                    <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" width="30"
-                        height="30">
-                @else
-                    <img src="/image/logo/{{ $profil[0]->logo }}" width="30" height="30">
-                @endIf
+                @foreach (\App\Models\Profil::all() as $profil)
+                    <img src="{{ asset('image/logo') }}/{{ $profil->logo }}" alt="AdminLTE Logo" width="20"
+                        style="opacity: .8" width>
+                @endforeach
                 <a class="navbar-brand" href="{{ url('/admin/home') }}">
                     Rukun Warga 16
                 </a>

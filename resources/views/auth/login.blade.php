@@ -12,11 +12,10 @@
                 <div class="card">
                     <div class="card-body" style="padding: 4rem !important">
                         <div class="text-center mb-5 mt-5">
-                            @if (count($profil) < 0)
-                                <img src="/image/logo/{{ $profil[0]->logo }}" width="100">
-                            @else
-                                <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" width="100">
-                            @endIf
+                            @foreach (\App\Models\Profil::all() as $profil)
+                                <img src="{{ asset('image/logo') }}/{{ $profil->logo }}" alt="AdminLTE Logo" width="20"
+                                    style="opacity: .8" width>
+                            @endforeach
                             <h5 class="mt-4">Silahkan login untuk mengakses dashboard admin Sistem Rukun Warga 16 Cibabat
                             </h5>
                         </div>

@@ -27,8 +27,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        $profil = Profil::all();
-
-        View::share('profil', $profil);
     }
 }
