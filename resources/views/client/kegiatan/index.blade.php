@@ -30,6 +30,7 @@
                     <div class="row py-4">
                         <div class="col-lg my-auto py-3">
                             <h3>{{ $data->judul_kegiatan }}</h3>
+                            <p class="text-xs text-muted">Posted {{ $data->created_at->diffForHumans() }}</p>
                             <img src="/image/kegiatan/{{$data->foto_kegiatan}}" alt="" class="py-4 img-fluid">
                             <p class="pe-5 short-text">{!! $data->deskripsi !!}</p>
                             <a href="{{ url('/kegiatan/' . $data->id) }}" class="text-primary icon-move-right">Baca
