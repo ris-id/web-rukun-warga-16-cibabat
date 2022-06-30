@@ -13,8 +13,8 @@
                     <div class="card-body" style="padding: 4rem !important">
                         <div class="text-center mb-5 mt-5">
                             @foreach (\App\Models\Profil::all() as $profil)
-                                <img src="{{ asset('image/logo') }}/{{ $profil->logo }}" alt="AdminLTE Logo" width="20"
-                                    style="opacity: .8" width>
+                                <img src="{{ asset('image/logo') }}/{{ $profil->logo }}" alt="AdminLTE Logo"
+                                    width="20" style="opacity: .8" width>
                             @endforeach
                             <h5 class="mt-4">Silahkan login untuk mengakses dashboard admin Sistem Rukun Warga 16 Cibabat
                             </h5>
@@ -69,11 +69,11 @@
                                         {{ __('Login') }}
                                     </button>
 
-                                    @if (Route::has('password.request'))
+                                    {{-- @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                             Lupa password?
                                         </a>
-                                    @endif
+                                    @endif --}}
                                 </div>
                             </div>
                         </form>
