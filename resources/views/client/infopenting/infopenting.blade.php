@@ -19,43 +19,54 @@
 <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
     <section class="pt-3">
         <div class="row">
-            <div class="col col-md-4">
+            <div class="col col-lg">
                 <h5>Informasi Terbaru</h5>
             </div>
-            <hr>
-            @foreach($kegiatan as $kegiatan)
-                <div class="col">
-                    <a href="{{ url('/kegiatan/' . $kegiatan->id) }}">
-                        <div class="card card-background card-background-mask-dark align-items-start">
-                            <div class="full-background cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1604213410393-89f141bb96b8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA5fHxuYXR1cmV8ZW58MHx8MHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60')"></div>
-                            <div class="card-body">
-                                <p class="text-lg text-white mb-0">{{ $kegiatan->judul_kegiatan }}</p>
+            <div class="row mb-2 mx-auto">
+                @foreach($kegiatan as $kegiatan)
+                    <div class="col col-md-3">
+                        <a href="{{ url('/kegiatan/' . $kegiatan->id) }}">
+                            <div class="card card-background card-background-mask-dark align-items-start">
+                                <div class="full-background cursor-pointer" style="background-image: url('/image/kegiatan/{{ $kegiatan->foto_kegiatan }}')"></div>
+                                <div class="card-body">
+                                    <p class="text-lg text-white mb-0">{{ $kegiatan->judul_kegiatan }}</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-        </div>
-        <div class="container">
-            <div class="row py-4">
-                
-            @foreach($data as $data)
-                <!-- <div class="col-lg my-auto py-3">
-                    <h3></h3>
-                    <p class="pe-5"></p>
-                </div> -->
-    
-                <div class="card bg-gradient-default mt-5">
-                    <div class="card-body px-5">
-                        <h3 class="text-dark text-gradient">{{ $data->judul_info }}</h3>
-                        <p class="text-dark ms-3 short-text">{{ $data->deskripsi }}</p>
-                        <a href="{{ url('/infopenting/' . $data->id) }}" class="text-primary icon-move-right">Baca Selengkapnya
-                            <i class="fas fa-arrow-right text-sm ms-1"></i>
                         </a>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
+            <hr>
         </div>
+        <div class="container">
+
+            @if (count($data) > 0)
+                <div class="row py-4">    
+                    @foreach($data as $data)
+                        <div class="card bg-gradient-default mt-5">
+                            <div class="card-body px-5">
+                                <h3 class="text-dark text-gradient">{{ $data->judul_info }}</h3>
+                                <p class="text-dark ms-3 short-text">{{ $data->deskripsi }}</p>
+                                <a href="{{ url('/infopenting/' . $data->id) }}" class="text-primary icon-move-right">Baca Selengkapnya
+                                    <i class="fas fa-arrow-right text-sm ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="row py-4">
+                    <div class="card bg-gradient-default mt-5">
+                        <div class="card-body px-5">
+                            <h3 class="text-dark text-gradient">Informasi Penting</h3>
+                            <p class="text-dark ms-3 short-text">Disini adalah tempat untuk melihat informasi-informasi penting dari Rukun Warga 16</p>
+                            <a href="" class="text-primary icon-move-right">Baca Selengkapnya
+                                <i class="fas fa-arrow-right text-sm ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endIf
         </div>
     </section>
 </div>
