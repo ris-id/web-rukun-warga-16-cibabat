@@ -55,7 +55,7 @@
                                     <div class="col">
                                         <div class="info">
                                             <h6 class="text-dark text-gradient">Anonim</h6>
-                                            <p class="mt-n2" style="font-size: 12px;">{{$data->kegiatan->created_at->diffForHumans()}}</p>
+                                            <p class="mt-n2" style="font-size: 12px;">{{$data->created_at->diffForHumans()}}</p>
                                             <p class="text-dark">{{$data->komentar}}</p>
                                         </div>
                                     </div>

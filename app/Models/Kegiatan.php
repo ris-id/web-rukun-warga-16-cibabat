@@ -15,6 +15,6 @@ class Kegiatan extends Model
 
     public function komentar()
     {
-        return $this->hasMany(KomentarKegiatan::class, 'id_kegiatan');
+        return $this->hasMany(KomentarKegiatan::class, 'id');
     }
 }
