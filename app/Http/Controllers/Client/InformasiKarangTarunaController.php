@@ -4,8 +4,6 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use App\Models\KarangTaruna;
-use App\Models\Kegiatan;
-use Illuminate\Http\Request;
 
 class InformasiKarangTarunaController extends Controller
 {
