@@ -30,7 +30,8 @@
                                 <div class="col">
                                     <div class="info">
                                         <h3 class="text-dark text-gradient">{{ $kegiatans->judul_kegiatan }}</h3>
-                                        <img src="/image/kegiatan/{{$kegiatans->foto_kegiatan}}" alt="" class="py-4">
+                                        <p class="text-xs text-muted">Posted {{ $kegiatans->created_at->diffForHumans() }}</p>
+                                        <img src="/image/kegiatan/{{$kegiatans->foto_kegiatan}}" alt="" class="py-4 img-fluid">
                                         <p class="text-dark ms-3">{!! $kegiatans->deskripsi !!}</p>
                                     </div>
                                 </div>
