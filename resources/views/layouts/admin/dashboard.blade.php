@@ -269,7 +269,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('komentar-infoPenting.index') }}" class="nav-link">
+                                    <a href="{{ route('anggota.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Anggota PKK</p>
                                     </a>

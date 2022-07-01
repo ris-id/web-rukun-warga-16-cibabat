@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AnggotaPKK;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AnggotaPKKController extends Controller
 {
@@ -14,7 +15,8 @@ class AnggotaPKKController extends Controller
      */
     public function index()
     {
-        //
+        $data = AnggotaPKK::orderBy('created_at', 'asc')->get();
+        return view('admin.anggota-pkk.index', compact('data'));
     }
 
     /**
@@ -24,7 +26,7 @@ class AnggotaPKKController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.anggota-pkk.create');
     }
 
     /**
@@ -35,7 +37,18 @@ class AnggotaPKKController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_anggota' => 'required',
+            'jabatan' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        AnggotaPKK::create($input);
+
+        Alert::success('Success', 'Data Anggota Berhasil ditambahkan');
+
+        return redirect()->route('anggota.index');
     }
 
     /**
@@ -55,9 +68,10 @@ class AnggotaPKKController extends Controller
      * @param  \App\Models\AnggotaPKK  $anggotaPKK
      * @return \Illuminate\Http\Response
      */
-    public function edit(AnggotaPKK $anggotaPKK)
+    public function edit($id)
     {
-        //
+        $anggotaPKK = AnggotaPKK::where('id', $id)->get();
+        return view('admin.anggota-pkk.edit', compact('anggotaPKK'));
     }
 
     /**
@@ -67,9 +81,21 @@ class AnggotaPKKController extends Controller
      * @param  \App\Models\AnggotaPKK  $anggotaPKK
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AnggotaPKK $anggotaPKK)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_anggota' => 'required',
+            'jabatan' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        $data = AnggotaPKK::where('id', $id)->firstOrFail();
+        $data->update($input);
+
+        Alert::success('Success', 'Data Anggota Berhasil diupdate');
+
+        return redirect()->route('anggota.index');
     }
 
     /**
@@ -78,8 +104,11 @@ class AnggotaPKKController extends Controller
      * @param  \App\Models\AnggotaPKK  $anggotaPKK
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AnggotaPKK $anggotaPKK)
+    public function destroy($id)
     {
-        //
+        $data = AnggotaPKK::find($id);
+        $data::where("id", $id)->delete();
+        Alert::success('Success', 'Data Anggota Berhasil dihapus');
+        return redirect()->route('anggota.index');
     }
 }

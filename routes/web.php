@@ -93,5 +93,5 @@ Route::resource('admin/laporanKeuangan', LaporanKeuanganController::class)->midd
 Route::resource('admin/karangTaruna', KarangTarunaController::class)->middleware('is_admin');
 Route::resource('admin/aset', AsetController::class)->middleware('is_admin');
 Route::resource('admin/pkk', PKKController::class)->middleware('is_admin');
-Route::resource('admin/pkk/anggota', AnggotaPKKController::class)->middleware('is_admin');
+Route::resource('admin/anggota', AnggotaPKKController::class)->middleware('is_admin');
 Route::resource('admin/pelayanan', PelayananController::class)->middleware('is_admin');
