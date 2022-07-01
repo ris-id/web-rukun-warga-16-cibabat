@@ -9,7 +9,7 @@
             </div>
         @endif
         <div class="ml-auto text-right">
-            <a href="{{ route('laporanKeuangan.create') }}" class="btn btn-outline-primary">Masukan Data Laporan
+            <a href="{{ route('laporanKeuangan.create') }}" class="btn btn-outline-primary mb-3">Masukan Data Laporan
                 Keuangan</a>
         </div>
         @if (count($laporanKeuangan) < 1)
