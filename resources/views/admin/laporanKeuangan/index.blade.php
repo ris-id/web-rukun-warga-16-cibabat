@@ -15,8 +15,25 @@
         @if (count($laporanKeuangan) < 1)
             <p>Tidak ada data, silahkan <a href="{{ route('laporanKeuangan.create') }}">entri data baru</a></p>
         @else
-            <div class="row mt-4">
-                @foreach ($laporanKeuangan as $item)
+            <div class="card p-4">
+                <table class="table table-bordered mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Deskripsi</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    @foreach ($laporanKeuangan as $item)
+                        <tbody>
+                            <tr>
+                                <td>{!! $item->informasi !!} </td>
+                                <td>
+                                    <a href="{{ route('laporanKeuangan.show', [$item->id]) }}">Lihat detail postingan</a>
+                                </td>
+                        </tbody>
+                    @endforeach
+                </table>
+                {{-- @foreach ($laporanKeuangan as $item)
                     <div class="col-md-4">
                         <div class="card">
                             <img src="/image/laporan-keuangan/{{ $item->gambar }}" class="card-img-top">
@@ -40,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @endforeach --}}
             </div>
         @endIf
     </div>

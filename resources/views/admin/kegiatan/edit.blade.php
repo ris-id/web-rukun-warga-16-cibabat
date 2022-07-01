@@ -1,8 +1,10 @@
 @extends('layouts.admin.dashboard')
 @section('content')
     <div class="container pb-5">
+        <a href="{{ route('kegiatan.show', [$kegiatan->id]) }}" class="mt-3">Kembali</a>
+
         <div class="pt-3 mb-3">
-            <h1 class="mr-auto">Daftar Kegiatan Rukun Warga 16 Yang Terpublikasikan
+            <h1 class="mr-auto">Edit Kegiatan Rukun Warga 16 Yang Terpublikasikan
             </h1>
         </div>
         @if ($errors->any())
@@ -31,7 +33,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Deskripsi</strong>
-                            <textarea class="form-control" style="height:150px" name="deskripsi" placeholder="Detail">{{ $kegiatan->deskripsi }}</textarea>
+                            <textarea class="form-control" style="height:150px" name="deskripsi" placeholder="Detail">{!! $kegiatan->deskripsi !!}</textarea>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

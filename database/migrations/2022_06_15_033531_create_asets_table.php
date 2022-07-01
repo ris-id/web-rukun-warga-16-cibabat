@@ -16,6 +16,7 @@ class CreateAsetsTable extends Migration
         Schema::create('tb_aset', function (Blueprint $table) {
             $table->id();
             $table->text('informasi');
+            $table->string('foto');
             $table->timestamps();
         });
     }

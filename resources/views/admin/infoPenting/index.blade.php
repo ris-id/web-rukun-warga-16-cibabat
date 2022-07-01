@@ -18,8 +18,28 @@
             <p>Tidak ada data, silahkan <a href="{{ route('infoPenting.create') }}">entri data baru</a></p>
         @else
             <div>
-                <div class="row mt-12">
-                    @foreach ($infoPenting as $item)
+                <div class="card p-4">
+                    <table class="table table-bordered mt-4">
+                        <thead>
+                            <tr>
+                                <th scope="col">Judul Info</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        @foreach ($infoPenting as $item)
+                            <tbody>
+                                <tr>
+                                    <td>{{ $item->judul_info }}</td>
+                                    <td>{!! $item->deskripsi !!} </td>
+                                    <td>
+                                        <a href="{{ route('infoPenting.show', [$item->id]) }}">Lihat detail info</a>
+                                    </td>
+                            </tbody>
+                        @endforeach
+                    </table>
+                </div>
+                {{-- @foreach ($infoPenting as $item)
                         <div class="col-md-4">
                             <div class="card p-4">
                                 <a href={{ route('infoPenting.show', ['infoPenting' => $item->id]) }} class="mt-3">
@@ -44,8 +64,7 @@
                                 </form>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    @endforeach --}}
             </div>
         @endIf
     </div>

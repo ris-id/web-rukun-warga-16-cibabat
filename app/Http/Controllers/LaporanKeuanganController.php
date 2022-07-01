@@ -65,7 +65,7 @@ class LaporanKeuanganController extends Controller
      */
     public function show(LaporanKeuangan $laporanKeuangan)
     {
-        //
+        return view('admin.laporanKeuangan.show', compact('laporanKeuangan'));
     }
 
     /**
@@ -104,7 +104,7 @@ class LaporanKeuanganController extends Controller
 
         $laporanKeuangan->update($input);
 
-                
+
         Alert::success('Success', 'Data Laporan Keuangan Berhasi diupdate');
 
         return redirect()->route('laporanKeuangan.index');

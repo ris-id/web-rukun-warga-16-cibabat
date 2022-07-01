@@ -9,13 +9,12 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
-
+        <div class="ml-auto text-right">
+            <a href="{{ route('karangTaruna.create') }}" class="btn btn-outline-primary">Masukan Data Karang
+                Taruna</a>
+        </div>
         <div>
             @if (count($karangTaruna) < 1)
-                <div class="ml-auto text-right">
-                    <a href="{{ route('karangTaruna.create') }}" class="btn btn-outline-primary">Masukan Data Karang
-                        Taruna</a>
-                </div>
                 <p>Tidak ada data, silahkan <a href="{{ route('karangTaruna.create') }}">entri data baru</a></p>
             @else
                 <div class="row mt-4">
