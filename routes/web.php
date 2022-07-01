@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnggotaPKKController;
 use App\Http\Controllers\AsetController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +22,8 @@ use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LaporanKeuanganController;
 use App\Http\Controllers\KarangTarunaController;
 use App\Http\Controllers\KomentarInfoPentingController;
+use App\Http\Controllers\PelayananController;
+use App\Http\Controllers\PKKController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +92,6 @@ Route::resource('admin/strukturOrganisasi', StrukturOrganisasiController::class)
 Route::resource('admin/laporanKeuangan', LaporanKeuanganController::class)->middleware('is_admin');
 Route::resource('admin/karangTaruna', KarangTarunaController::class)->middleware('is_admin');
 Route::resource('admin/aset', AsetController::class)->middleware('is_admin');
+Route::resource('admin/pkk', PKKController::class)->middleware('is_admin');
+Route::resource('admin/pkk/anggota', AnggotaPKKController::class)->middleware('is_admin');
+Route::resource('admin/pelayanan', PelayananController::class)->middleware('is_admin');

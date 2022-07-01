@@ -16,7 +16,7 @@ class CreateInfoPentingsTable extends Migration
         Schema::create('tb_info_penting', function (Blueprint $table) {
             $table->id();
             $table->string('judul_info');
-            $table->text('deskripsi');
+            $table->longText('deskripsi');
             $table->timestamps();
         });
     }

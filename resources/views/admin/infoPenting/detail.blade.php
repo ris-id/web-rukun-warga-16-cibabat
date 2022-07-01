@@ -8,7 +8,7 @@
                 <div class="ml-auto text-right">
                     <a href="{{ route('infoPenting.edit', ['infoPenting' => $infoPenting->id]) }}"
                         class="btn btn-outline-success">
-                        <span class="fa fa-pen"></span> Edit Info</a>
+                        <span class="fa fa-pen"></span> Edit Data</a>
                 </div>
             </div>
         </div>

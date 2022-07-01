@@ -17,7 +17,7 @@ class CreateKegiatansTable extends Migration
         Schema::create('tb_kegiatan', function (Blueprint $table) {
             $table->id();
             $table->string('judul_kegiatan');
-            $table->text('deskripsi');
+            $table->longText('deskripsi');
             $table->string('foto_kegiatan')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));

@@ -14,42 +14,44 @@
 
         <div class="pt-4">
             <div>
-                <a href="{{ route('infoPenting.index') }}"><span class="fa fa-arrow-left"></span> Kembali </a>
+                <a href="{{ route('pkk.index') }}"><span class="fa fa-arrow-left"></span> Kembali </a>
             </div>
             <div class="d-flex flex-row">
-                <h1>Edit Data Penting</h1>
+                <h1>Edit Data PKK</h1>
             </div>
         </div>
-        <br>
         <div class="card p-4">
-            <form action="{{ route('infoPenting.update', $infoPenting->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('pkk.update', $pkk->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Judul Info</strong>
-                            <input type="text" name="judul_info" value="{{ $infoPenting->judul_info }}"
-                                class="form-control" placeholder="judul_info">
+                            <strong>Foto</strong>
+                            <input type="file" name="gambar" class="form-control" placeholder="Gambar">
+                            <br>
+                            <img src="/image/pkk/{{ $pkk->foto }}" width="300px">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Deskripsi</strong>
-                            <textarea class="form-control tinymce-editor" name="deskripsi" placeholder="Detail">{!! $infoPenting->deskripsi !!}</textarea>
+                            <strong>Agenda</strong>
+                            <textarea name="agenda" rows="5" cols="40" class="form-control tinymce-editor">{!! $pkk->agenda !!}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal</label>
+                            <input type="date" id="tanggal" name="tanggal" value="{{ $pkk->tanggal }}">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                        <button type="submit" class="btn btn-outline-success">Update</button>
+                        <button type="submit" class="btn btn-outline-primary">Publish</button>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>
 @endsection
-
 
 @section('script-tinymce')
     <script type="text/javascript">

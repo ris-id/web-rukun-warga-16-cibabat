@@ -17,7 +17,7 @@ class CreateKarangTarunaTable extends Migration
             $table->id();
             $table->string('judul');
             $table->string('foto');
-            $table->text('konten');
+            $table->longText('konten');
             $table->timestamps();
         });
     }

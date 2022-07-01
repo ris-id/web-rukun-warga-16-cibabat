@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Aset extends Model
+class Pelayanan extends Model
 {
     use HasFactory;
-    protected $table = 'tb_aset';
+    protected $table = 'tb_pelayanan';
     protected $fillable = [
-        'nama_aset', 'jumlah', 'informasi', 'foto'
+        'jenis_pelayanan', 'informasi'
     ];
 }

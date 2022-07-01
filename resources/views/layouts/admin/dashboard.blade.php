@@ -253,6 +253,29 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-comments"></i>
+                                <p>
+                                    PKK
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('pkk.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>PKK</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('komentar-infoPenting.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Anggota PKK</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"

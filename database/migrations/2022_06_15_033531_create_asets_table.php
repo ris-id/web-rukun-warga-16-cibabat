@@ -15,7 +15,9 @@ class CreateAsetsTable extends Migration
     {
         Schema::create('tb_aset', function (Blueprint $table) {
             $table->id();
-            $table->text('informasi');
+            $table->string('nama_aset');
+            $table->integer('jumlah');
+            $table->longText('informasi');
             $table->string('foto');
             $table->timestamps();
         });
