@@ -16,19 +16,19 @@
                 </ul>
             </div>
         @endif
-        <form action="{{ route('anggota.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('pelayanan.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Nama Anggota</strong>
-                        <input type="text" name="nama_anggota" class="form-control" placeholder="Nama Anggota" required>
+                        <strong>Jenis Pelayanan</strong>
+                        <input type="text" name="jenis_pelayanan" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Jabatan</strong>
-                        <input type="text" name="jabatan" class="form-control" placeholder="Jabatan" required>
+                        <strong>Informasi</strong>
+                        <textarea name="informasi" rows="5" cols="40" class="form-control tinymce-editor"></textarea>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-right">
                         <button type="submit" class="btn btn-outline-primary">Publish</button>
@@ -37,4 +37,27 @@
             </div>
         </form>
     </div>
+@endsection
+
+@section('script-tinymce')
+    <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea.tinymce-editor',
+            height: 400,
+            menubar: false,
+            image_title: true,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount',
+                'image'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_css: '//www.tiny.cloud/css/codepen.min.css',
+            a11y_advanced_options: true,
+        });
+    </script>
 @endsection

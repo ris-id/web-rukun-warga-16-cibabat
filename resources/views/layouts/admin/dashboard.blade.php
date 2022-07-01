@@ -276,6 +276,14 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('pelayanan.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-info"></i>
+                                <p>
+                                    Pelayanan
+                                </p>
+                            </a>
+                        </li>
                     </ul>
 
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
