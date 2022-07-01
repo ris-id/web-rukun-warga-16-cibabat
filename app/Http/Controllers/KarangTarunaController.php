@@ -66,7 +66,7 @@ class KarangTarunaController extends Controller
      */
     public function show(KarangTaruna $karangTaruna)
     {
-        //
+        return view('admin.karangTaruna.show', compact('karangTaruna'));
     }
 
     /**

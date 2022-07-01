@@ -33,7 +33,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Deskripsi</strong>
-                            <textarea class="form-control" style="height:150px" name="deskripsi" placeholder="Detail">{!! $kegiatan->deskripsi !!}</textarea>
+                            <textarea class="form-control tinymce-editor" style="height:150px" name="deskripsi" placeholder="Detail">{!! $kegiatan->deskripsi !!}</textarea>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -53,24 +53,25 @@
     </div>
 @endsection
 
-@section('script-sweetalert')
-    <script type="text/javascript" lang="javascript">
-        $('.show_confirm').click(function(event) {
-            let form = $(this).closest("form");
-            let name = $(this).data("name");
-            event.preventDefault();
-            swal({
-                    title: `Apakah anda akan menghapus data postingan kegiatan ini?`,
-                    text: "Jika anda menghapusnya, maka data akan hilang selamanya.",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        form.submit();
-                    }
-                });
+@section('script-tinymce')
+    <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea.tinymce-editor',
+            height: 400,
+            menubar: false,
+            image_title: true,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount',
+                'image'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_css: '//www.tiny.cloud/css/codepen.min.css',
+            a11y_advanced_options: true,
         });
     </script>
 @endsection
