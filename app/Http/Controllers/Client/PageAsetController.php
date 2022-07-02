@@ -11,9 +11,8 @@ class PageAsetController extends Controller
     //
     public function index()
     {
-        return view('client.aset.index', [
-            'asets' => Aset::all()
-        ]);
+        $aset = Aset::all()->sortByDesc('id');
+        return view('client.aset.index', compact('aset'));
     }
 
     public function show(aset $aset)
