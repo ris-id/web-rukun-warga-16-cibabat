@@ -207,7 +207,7 @@
                         <div class="col-md-4 d-flex justify-content-center">
                             <center><a href="/">
                             @foreach(\App\Models\Profil::all() as $profil)
-                            <img src="image/logo/{{ $profil->logo }}" alt="AdminLTE Logo"
+                            <img src="{{asset('image/logo/')}}/{{ $profil->logo }}" alt="AdminLTE Logo"
                                 class="img-fluid" style="opacity: .8" width>
                             @endforeach
                                 </a></center>
