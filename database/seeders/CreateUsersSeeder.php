@@ -34,9 +34,9 @@ class CreateUsersSeeder extends Seeder
         $admin = [
             [
                 'name' => 'Admin RW 16',
-                'email' => 'adminrw16@gmail.com',
+                'email' => 'rukunwarga16admin@gmail.com',
                 'is_admin' => 1,
-                'password' => Hash::make('sisrw16admin123'),
+                'password' => Hash::make('rukunwarga16admin'),
             ],
         ];
 
