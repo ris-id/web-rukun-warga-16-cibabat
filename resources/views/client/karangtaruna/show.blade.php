@@ -23,7 +23,7 @@
                     </div>
                     <div class="row py-5">
                         <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h3 class="mb-0">Judul Konten</h3>
+                            <h3 class="mb-0">{{ $katar->judul }}</h3>
                         </div>
                         <p class="text-lg mb-0">
                             {{ $katar->konten }}
@@ -51,7 +51,7 @@
                             </div>
                             <div class="card-body px-0">
                                 <h5>
-                                    <a href="javascript:;" class="text-dark font-weight-bold">Judul</a>
+                                    <a href="" class="text-dark font-weight-bold">{{ $item->judul }}</a>
                                 </h5>
                                 <p class="short-text">{{ $item->konten }}</p>
                                 <a href="{{ url('/karangtaruna/' . $item->id) }}" class="text-info text-sm icon-move-right">

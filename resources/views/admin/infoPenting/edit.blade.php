@@ -17,7 +17,7 @@
                 <a href="{{ route('infoPenting.index') }}"><span class="fa fa-arrow-left"></span> Kembali </a>
             </div>
             <div class="d-flex flex-row">
-                <h1>Edit Info Penting</h1>
+                <h1>Edit Data Penting</h1>
             </div>
         </div>
         <br>

@@ -10,6 +10,6 @@ class Aset extends Model
     use HasFactory;
     protected $table = 'tb_aset';
     protected $fillable = [
-        'informasi'
+        'nama_aset', 'jumlah', 'informasi', 'foto'
     ];
 }

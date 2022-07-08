@@ -9,4 +9,7 @@ class PKK extends Model
 {
     use HasFactory;
     protected $table = 'tb_pkk';
+    protected $fillable = [
+        'agenda', 'tanggal', 'foto'
+    ];
 }

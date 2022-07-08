@@ -36,7 +36,7 @@
   <!-- -------- START Features w/ icons and text on left & gradient title and text on right -------- -->
   <div class="container py-3">
     <div class="row justify-content-center">
-      <div class="col-md-2">
+      <!-- <div class="col-md-2">
         <div class="card shadow-lg">
           <div class="card-header text-center pt-4 pb-3">
             <i class="fa-solid fa-people-carry-box fa-5x" style="color:darkblue"></i></br></br>
@@ -49,9 +49,9 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="col-md-2">
+      <div class="col-lg-2">
         <div class="card shadow-lg">
           <div class="card-header text-center pt-4 pb-3">
             <i class="fa-solid fa-list-check fa-5x"></i></br></br>
@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-lg-2">
         <div class="card shadow-lg">
           <div class="card-header text-center pt-4 pb-3">
             <i class="fa-solid fa-people-group fa-5x" style="color:red"></i></br></br>
@@ -81,7 +81,7 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-lg-2">
         <div class="card shadow-lg">
           <div class="card-header text-center pt-4 pb-3">
             <i class="fa-solid fa-calendar-days fa-5x" style="color:green"></i></br></br>
@@ -96,7 +96,7 @@
         </div>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-lg-2">
         <div class="card shadow-lg">
           <div class="card-header text-center pt-4 pb-3">
             <i class="fa-solid fa-images fa-5x"></i></br></br>
@@ -122,7 +122,7 @@
 
 
 <!-- AREA MODAL -->
-<div class="modal fade" id="modal-pokja" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+<!-- <div class="modal fade" id="modal-pokja" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -157,7 +157,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="modal fade" id="modal-tupoksi" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
@@ -214,6 +214,7 @@
 </div>
 </div>
 
+
 <div class="modal fade" id="modal-Anggota" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
     <div class="modal-content">
@@ -224,10 +225,32 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <table class="table align-items-center mb-0">
+          <thead>
+            <tr>
+              <th class="text-uppercase text-secondary text-xxs text-center font-weight-bolder opacity-7">no.</th>
+              <th class="text-uppercase text-secondary text-xxs text-center font-weight-bolder opacity-7">Nama Anggota</th>
+              <th class="text-uppercase text-secondary text-xxs text-center font-weight-bolder opacity-7">Jabatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $no=1; ?>
+            @foreach($AnggotaPKK as $data)
+            <tr>
+              <td class="align-middle text-center text-sm">
+                <p class="text-xs font-weight-bold mb-0">{{$no++}}</p>
+              </td>
+              <td class="align-middle text-center">
+                <span class="text-secondary text-xs font-weight-normal">{{$data->nama_anggota}}</span>
+              </td>
+              <td class="align-middle text-center text-sm">
+                <p class="text-xs font-weight-bold mb-0">{{$data->jabatan}}</p>
+              </td>
+            </tr>
+
+            @endforeach
+          </tbody>
+        </table>
       </div>
       <div class="modal-footer">
 
@@ -236,6 +259,8 @@
     </div>
   </div>
 </div>
+
+
 
 <div class="modal fade" id="modal-kegiatan" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
@@ -247,31 +272,32 @@
         </button>
       </div>
       <div class="modal-body">
-
         <div class="card">
           <div class="table-responsive">
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th class="text-uppercase text-secondary text-xxs text-center font-weight-bolder opacity-7">no</th>
-                  <th class="text-uppercase text-secondary text-xxs text-center font-weight-bolder opacity-7">Agenda</th>
+                  <th class="text-uppercase text-secondary text-xxs text-center font-weight-bolder opacity-7">no.</th>
+                  <th class="text-uppercase text-secondary text-xxs text-center font-weight-bolder opacity-7">nama kegiatan</th>
                   <th class="text-uppercase text-secondary text-xxs text-center font-weight-bolder opacity-7">tanggal</th>
                 </tr>
               </thead>
               <tbody>
+                <?php $no=1; ?>
+                @foreach($pkk as $row)
                 <tr>
                   <td class="align-middle text-center text-sm">
-                    <p class="text-xs font-weight-bold mb-0">1</p>
+                    <p class="text-xs font-weight-bold mb-0">{{$no++}}</p>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-normal">Posyandu</span>
+                    <span class="text-secondary text-xs font-weight-normal">{{$row->agenda}}</span>
                   </td>
                   <td class="align-middle text-center text-sm">
-                    <p class="text-xs font-weight-bold mb-0">02/05/2022</p>
+                    <p class="text-xs font-weight-bold mb-0">{{$row->tanggal}}</p>
                   </td>
                 </tr>
 
-                
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -286,6 +312,8 @@
   </div>
 </div>
 
+
+
 <div class="modal fade" id="modal-galeri" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
     <div class="modal-content">
@@ -298,18 +326,11 @@
       <div class="modal-body">
         <div class="container">
           <div class="row">
+          @foreach($pkk as $galeri)
             <div class="col-lg-4">
-              <img src ="{{asset('dist/img/client/bg3.jpg')}}" class="img-thumbnail" alt="...">
+              <img src ="/image/pkk/{{$galeri->foto}}" class="img-thumbnail" alt="...">
             </div>
-            <div class="col-lg-4">
-              <img src ="{{asset('dist/img/client/bg.jpg')}}" class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-lg-4">
-              <img src ="{{asset('dist/img/client/bg9.jpg')}}" class="img-thumbnail" alt="...">
-            </div>
-            <div class="col-lg-4">
-              <img src ="{{asset('dist/img/client/bg4.jpg')}}" class="img-thumbnail" alt="...">
-            </div>
+            @endforeach
           </div>
         </div>
 

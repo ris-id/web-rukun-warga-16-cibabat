@@ -4,13 +4,22 @@
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-8">
+                @if (Session::has('error'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('error') }}
+                    </div>
+                @endif
                 <div class="card">
                     <div class="card-body" style="padding: 4rem !important">
                         <div class="text-center mb-5 mt-5">
-                            <img src="https://rukunwarga06.files.wordpress.com/2015/08/logo-dki.png" width="100">
+                            @foreach (\App\Models\Profil::all() as $profil)
+                                <img src="{{ asset('image/logo') }}/{{ $profil->logo }}" alt="AdminLTE Logo"
+                                    width="20" style="opacity: .8" width>
+                            @endforeach
                             <h5 class="mt-4">Silahkan login untuk mengakses dashboard admin Sistem Rukun Warga 16 Cibabat
                             </h5>
                         </div>
+
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="row mb-3">
@@ -38,16 +47,10 @@
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <input type="checkbox" onclick="myFunction()" class="mt-3"> Tampilkan password
                                 </div>
                             </div>
-
-                            <div class="row mb-3">
+                            {{-- <div class="row mb-3">
                                 <div class="col-md-6 offset-md-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
@@ -58,7 +61,7 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="row mb-0">
                                 <div class="col-md-8 offset-md-4">
@@ -66,11 +69,11 @@
                                         {{ __('Login') }}
                                     </button>
 
-                                    @if (Route::has('password.request'))
+                                    {{-- @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                             Lupa password?
                                         </a>
-                                    @endif
+                                    @endif --}}
                                 </div>
                             </div>
                         </form>
@@ -80,3 +83,13 @@
         </div>
     </div>
 @endsection
+<script>
+    const myFunction = () => {
+        const x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    };
+</script>

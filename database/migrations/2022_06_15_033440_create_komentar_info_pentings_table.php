@@ -15,7 +15,7 @@ class CreateKomentarInfoPentingsTable extends Migration
     {
         Schema::create('tb_komentar_info_penting', function (Blueprint $table) {
             $table->id();
-            $table->text('komentar');
+            $table->longText('komentar');
             $table->unsignedBigInteger('id_info');
             $table->foreign('id_info')->references('id')->on('tb_info_penting')->onDelete('cascade');
             $table->timestamps();

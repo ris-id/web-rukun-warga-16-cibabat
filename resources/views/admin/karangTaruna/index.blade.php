@@ -3,37 +3,61 @@
     @include('sweetalert::alert')
     <div class="container p-5">
         <h1>Halaman Karang Taruna</h1>
-        <p><small>Halaman ini digunakan jika akan melakukan perubahan terhadap data Karang Taruna RW 16</small></p>
+        <p><small>Halaman data Karang Taruna RW 16</small></p>
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div>
         @endif
-
+        <div class="ml-auto text-right">
+            <a href="{{ route('karangTaruna.create') }}" class="btn btn-outline-primary mb-3">Masukan Data Karang
+                Taruna</a>
+        </div>
         <div>
             @if (count($karangTaruna) < 1)
-            <div class="ml-auto text-right">
-                <a href="{{ route('karangTaruna.create') }}" class="btn btn-outline-primary">Masukan Data Karang Taruna</a>
-            </div>
                 <p>Tidak ada data, silahkan <a href="{{ route('karangTaruna.create') }}">entri data baru</a></p>
             @else
-                <div class="row mt-4">
+                {{-- <div class="row mt-4">
                     @foreach ($karangTaruna as $item)
                         <div class="col-md-12">
                             <div class="card p-4">
-                                <img src="/image/karang-taruna/{{ $item->foto }}" class="card-img-top"/>
+                                <img src="/image/karang-taruna/{{ $item->foto }}" class="card-img-top" />
                                 <br>
-                                <p class="card-text">{{ $item->konten }}</p>
+                                <p class="card-text">{!! $item->konten !!}</p>
                                 <form method="POST" action="{{ route('karangTaruna.destroy', $item->id) }}">
-                                    <a href="{{ route('karangTaruna.edit', $item->id) }}" class="btn btn-outline-primary">Edit</a>
+                                    <a href="{{ route('karangTaruna.edit', $item->id) }}"
+                                        class="btn btn-outline-primary">Edit</a>
                                     @csrf
                                     <input name="_method" type="hidden" value="DELETE">
-                                    <button type="submit" class="btn  btn-outline-danger show_confirm" data-toggle="tooltip"
-                                        title='Delete'>Delete</button>
+                                    <button type="submit" class="btn  btn-outline-danger show_confirm"
+                                        data-toggle="tooltip" title='Delete'>Delete</button>
                                 </form>
                             </div>
                         </div>
                     @endforeach
+                </div> --}}
+
+                <div class="card p-4">
+                    <table class="table table-bordered mt-4">
+                        <thead>
+                            <tr>
+                                <th scope="col">Judul Kegiatan</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        @foreach ($karangTaruna as $item)
+                            <tbody>
+                                <tr>
+                                    <td>{{ $item->judul }}</td>
+                                    <td>{!! $item->konten !!} </td>
+                                    <td>
+                                        <a href="{{ route('karangTaruna.show', [$item->id]) }}">Lihat detail karang
+                                            taruna</a>
+                                    </td>
+                            </tbody>
+                        @endforeach
+                    </table>
                 </div>
             @endIf
 

@@ -30,74 +30,28 @@
 
   <!-- -------- START Features w/ icons and text on left & gradient title and text on right -------- -->
   <div class="container py-3">
-    <div class="row mb-2">
-      <div class="col-md-6">
+    @foreach($aset as $data)
+    <div class="row mb-0">
+      <div class="col-md-12">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-
-            <h3 class="mb-0">Nama Aset 1</h3>
-            <div class="mb-1 text-muted">Jumlah : 5</div>
-            <p class="card-text mb-auto">aset ini di berikan oleh kelurahan sebagai sarana untuk masyarakat RW 16</p>
+          <div class="col p-2 d-flex flex-column position-static">
+            <h3 class="mb-0">{{ $data->nama_aset}}</h3>
+            <div class="mb-1 text-muted">Jumlah : {{ $data->jumlah}}</div>
+            <p class="card-text mb-auto">{{ $data->informasi}}</p>
             
           </div>
           <div class="col-auto d-none d-lg-block">
 
-            <img src ="{{asset('dist/img/client/bg4.jpg')}}" class="bd-placeholder-img" width="200" height="250">
+            <img src ="/image/aset/{{$data->foto}}" class="bd-placeholder-img" width="200" height="100">
             
             
           </div>
         </div>
       </div>
-
-
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-
-            <h3 class="mb-0">Nama Aset 2</h3>
-            <div class="mb-1 text-muted">Jumlah : 2</div>
-            <p class="mb-auto">aset ini di berikan oleh kelurahan sebagai sarana untuk masyarakat RW 16</p>
-            
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img src ="{{asset('dist/img/client/bg.jpg')}}" class="bd-placeholder-img" width="200" height="250">
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-
-            <h3 class="mb-0">Nama Aset 5</h3>
-            <div class="mb-1 text-muted">Jumlah : 10</div>
-            <p class="mb-auto">aset ini di berikan oleh kelurahan sebagai sarana untuk masyarakat RW 16</p>
-            
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img src ="{{asset('dist/img/client/bg3.jpg')}}" class="bd-placeholder-img" width="200" height="250">
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-
-            <h3 class="mb-0">Nama Aset 4</h3>
-            <div class="mb-1 text-muted">Jumlah : 1</div>
-            <p class="mb-auto">aset ini di berikan oleh kelurahan sebagai sarana untuk masyarakat RW 16</p>
-            
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img src ="{{asset('dist/img/client/bg9.jpg')}}" class="bd-placeholder-img" width="200" height="250">
-          </div>
-        </div>
-      </div>
-      
     </div>
-
+    @endforeach
   </div>
+  
 
 </div>
 
@@ -107,4 +61,4 @@
 <!-- -------- END Features w/ icons and text on left & gradient title and text on right -------- -->
 
 
-@endsection         
+@endsection        

@@ -4,32 +4,33 @@
         <h1>Halaman Kelola Komentar kegiatan</h1>
         <p><small>Halaman yang digunakan untuk mengatur dan melihat komentar yang diberikan oleh warga pada postingan
                 kegiatan</small></p>
-        @if ($data[0]->count_komentar < 1)
+        @if (count($data) < 1)
             <p>Tidak ada data</p>
         @else
-        <div class="card p-4">
-            <table class="table table-bordered mt-4">
-                <thead>
-                    <tr>
-                        <th scope="col">Judul Postingan</th>
-                        <th scope="col">Jumlah Komentar</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                @foreach ($data as $item)
-                    @if ($item->count_komentar > 0)
-                        <tbody>
-                            <tr>
-                                <td>{{ $item->judul_kegiatan }}</td>
-                                <td>{{ $item->count_komentar }} komentar</td>
-                                <td>
-                                    <a href="{{ route('komentar-kegiatan.show', [$item->id]) }}">Lihat Semua komentar</a>
-                                </td>
-                        </tbody>
-                    @endif
-                @endforeach
-            </table>
-        </div>
+            <div class="card p-4">
+                <table class="table table-bordered mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Judul Postingan</th>
+                            <th scope="col">Jumlah Komentar</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    @foreach ($data as $item)
+                        @if ($item->count_komentar > 0)
+                            <tbody>
+                                <tr>
+                                    <td>{{ $item->judul_kegiatan }}</td>
+                                    <td>{{ $item->count_komentar }} komentar</td>
+                                    <td>
+                                        <a href="{{ route('komentar-kegiatan.show', [$item->id]) }}">Lihat Semua
+                                            komentar</a>
+                                    </td>
+                            </tbody>
+                        @endif
+                    @endforeach
+                </table>
+            </div>
         @endIf
     </div>
 @endsection

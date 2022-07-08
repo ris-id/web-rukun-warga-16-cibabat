@@ -18,7 +18,7 @@
 
 @include('sweetalert::alert')
     <div class="col-md-8 mx-auto">
-        <div class="card card-body blur shadow-blur mt-n10">
+        <div class="card card-body blur shadow-blur mt-n7">
             <section class="pt-3">
                 <div class="container">
                     <h1 class="mb-2">Kritik & Saran</h1>

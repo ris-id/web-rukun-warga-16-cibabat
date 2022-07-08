@@ -21,6 +21,12 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
+                        <strong>Foto Aset:</strong>
+                        <input type="file" name="foto" class="form-control" placeholder="Foto Aset" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
                         <strong>Informasi:</strong>
                         <textarea name="informasi" rows="5" cols="40" class="form-control tinymce-editor"></textarea>
                     </div>

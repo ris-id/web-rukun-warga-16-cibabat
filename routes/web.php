@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnggotaPKKController;
 use App\Http\Controllers\AsetController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -15,12 +16,15 @@ use App\Http\Controllers\Client\PageController;
 use App\Http\Controllers\Client\PageKegiatanController;
 use App\Http\Controllers\Client\PagePkkController;
 use App\Http\Controllers\Client\PageAsetController;
+use App\Http\Controllers\Client\PagePelayananController;
 use App\Http\Controllers\KomentarKegiatanController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\LaporanKeuanganController;
 use App\Http\Controllers\KarangTarunaController;
 use App\Http\Controllers\KomentarInfoPentingController;
+use App\Http\Controllers\PelayananController;
+use App\Http\Controllers\PKKController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +75,10 @@ Route::namespace('Client')->group(function () {
     Route::get('/aset', [PageAsetController::class, 'index'])->name('client.aset');
     Route::get('/aset/{id}', [PageAsetController::class, 'show'])->name('client.aset.show');
 
+    //Pelayanan Page Routes
+    Route::get('/pelayanan', [PagePelayananController::class, 'index'])->name('client.pelayanan');
+    Route::get('/pelayanan/{id}', [PagePelayananController::class, 'show'])->name('client.pelayanan.show');
+
     // Kritik Saran Page Routes
     Route::get('/kritiksaran', [PageKritikSaranController::class, 'index'])->name('client.kritiksaran');
     Route::post('/kritiksaran/store', [PageKritikSaranController::class, 'store'])->name('client.kritiksaran.store');
@@ -89,3 +97,6 @@ Route::resource('admin/strukturOrganisasi', StrukturOrganisasiController::class)
 Route::resource('admin/laporanKeuangan', LaporanKeuanganController::class)->middleware('is_admin');
 Route::resource('admin/karangTaruna', KarangTarunaController::class)->middleware('is_admin');
 Route::resource('admin/aset', AsetController::class)->middleware('is_admin');
+Route::resource('admin/pkk', PKKController::class)->middleware('is_admin');
+Route::resource('admin/anggota', AnggotaPKKController::class)->middleware('is_admin');
+Route::resource('admin/pelayanan', PelayananController::class)->middleware('is_admin');

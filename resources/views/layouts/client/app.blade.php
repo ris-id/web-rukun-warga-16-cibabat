@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>RW16-Cibabat</title>
 
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
@@ -170,7 +170,7 @@
 
                                 <li class="nav-item ms-lg-auto">
                                     <a class="nav-link ps-2 nav-link-icon me-2"
-                                        href="{{ route('client.layanan') }}">
+                                        href="{{ route('client.pelayanan') }}">
                                         <i class="fa-solid fa-headset opacity-6 me-1 text-sm"></i>
                                         <p class="d-inline text-sm z-index-1 font-weight-bold">Pelayanan</p>
                                     </a>

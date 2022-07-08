@@ -17,28 +17,34 @@
             </div>
         @endif
         <div class="card p-4">
-        <form action="{{ route('karangTaruna.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+            <form action="{{ route('karangTaruna.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Foto / Gambar</strong>
-                        <input type="file" name="foto" class="form-control" placeholder="image" required>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Foto / Gambar</strong>
+                            <input type="file" name="foto" class="form-control" placeholder="image" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Judul</strong>
+                            <input type="text" name="judul" class="form-control" placeholder="judul" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Konten</strong>
+                            <textarea name="konten" rows="5" cols="40" class="form-control tinymce-editor"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-right">
+                        <button type="submit" class="btn btn-outline-primary">Publish</button>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Konten</strong>
-                        <textarea name="konten" rows="5" cols="40" class="form-control tinymce-editor"></textarea>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                    <button type="submit" class="btn btn-outline-primary">Publish</button>
-                </div>
-            </div>
 
-        </form>
+            </form>
         </div>
     </div>
 @endsection

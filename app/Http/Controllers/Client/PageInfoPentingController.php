@@ -21,8 +21,8 @@ class PageInfoPentingController extends Controller
     public function show($id)
     {
         $info = InfoPenting::find($id);
-        $listkegiatan = Kegiatan::all()->sortByDesc('id')->take(4);
+        $kegiatan = Kegiatan::all()->sortByDesc('id')->take(4);
         $infopenting = InfoPenting::all()->sortByDesc('id')->take(2);
-        return view('client.infopenting.show', compact('info', 'listkegiatan', 'infopenting'));
+        return view('client.infopenting.show', compact('info', 'kegiatan', 'infopenting'));
     }
 }

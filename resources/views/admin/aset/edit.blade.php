@@ -12,13 +12,20 @@
             </div>
         @endif
 
+        <a href="{{ route('aset.show', [$aset->id]) }}">Kembali </a>
+
         <form action="{{ route('aset.update', $aset->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
-
+                    <div class="form-group">
+                        <strong>Foto Aset</strong>
+                        <input type="file" name="foto" class="form-control" placeholder="Foto Kegiatan">
+                        <br>
+                        <img src="/image/aset/{{ $aset->foto }}" width="300px">
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">

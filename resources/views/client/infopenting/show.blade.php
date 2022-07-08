@@ -38,11 +38,11 @@
                                     <h5>Informasi Terbaru</h5>
                                 </div>
                                 <hr>
-                                @foreach($listkegiatan as $kegiatan)
+                                @foreach($kegiatan as $kegiatan)
                                     <div class="col-md-6">
                                         <a href="{{ url('/kegiatan/' . $kegiatan->id) }}">
                                             <div class="card card-background card-background-mask-dark align-items-start mt-2">
-                                                <div class="full-background cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1604213410393-89f141bb96b8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA5fHxuYXR1cmV8ZW58MHx8MHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60')"></div>
+                                                <div class="full-background cursor-pointer" style="background-image: url('/image/kegiatan/{{ $kegiatan->foto_kegiatan }}')"></div>
                                                 <div class="card-body">
                                                     <h5 class="text-white mb-0" style="font-size: 15px;"><a class="text-white" href="{{ url('/kegiatan/' . $kegiatan->id) }}"> {{ $kegiatan->judul_kegiatan }}</a></h5>
                                                 </div>
@@ -58,7 +58,7 @@
                                 <hr>
                                 @foreach($infopenting as $info)
                                     <div class="col-md-6">
-                                        <a href="{{ url('/kegiatan/' . $kegiatan->id) }}">
+                                        <a href="{{ url('/infopenting/' . $info->id) }}">
                                             <div class="card card-background card-background-mask-dark align-items-start mt-2">
                                                 <div class="full-background cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1604213410393-89f141bb96b8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA5fHxuYXR1cmV8ZW58MHx8MHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60')"></div>
                                                 <div class="card-body">

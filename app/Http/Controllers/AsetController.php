@@ -39,9 +39,16 @@ class AsetController extends Controller
     {
         $request->validate([
             'informasi' => 'required',
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $input = $request->all();
+        if ($image = $request->file('foto')) {
+            $destionationPath = 'image/aset/';
+            $foto = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionationPath, $foto);
+            $input['foto'] = $foto;
+        }
         Aset::create($input);
         Alert::success('Success', 'Data aset berhasil ditambahkan');
         return redirect()->route('aset.index');
@@ -80,8 +87,18 @@ class AsetController extends Controller
     {
         $request->validate([
             'informasi' => 'required',
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $input = $request->all();
+
+        if ($image = $request->file('foto')) {
+            $destinationPath = 'image/aset/';
+            $fotoAset = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $fotoAset);
+            $input['foto'] = "$fotoAset";
+        } else {
+            unset($input['foto']);
+        }
 
         $aset->update($input);
 
@@ -99,6 +116,7 @@ class AsetController extends Controller
     public function destroy($id)
     {
         $data =  Aset::find($id);
+        unlink("image/aset/" . $data->foto);
         $data::where("id", $id)->delete();
         Alert::success('Success', 'Data aset berhasil dihapus');
         return redirect()->route('aset.index');
