@@ -16,7 +16,7 @@ class CreatePelayanansTable extends Migration
         Schema::create('tb_pelayanan', function (Blueprint $table) {
             $table->id();
             $table->string('jenis_pelayanan');
-            $table->longText('informasi');
+            $table->text('informasi');
             $table->timestamps();
         });
     }

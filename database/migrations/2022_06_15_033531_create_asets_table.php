@@ -17,7 +17,7 @@ class CreateAsetsTable extends Migration
             $table->id();
             $table->string('nama_aset');
             $table->integer('jumlah');
-            $table->longText('informasi');
+            $table->text('informasi');
             $table->string('foto');
             $table->timestamps();
         });

@@ -15,7 +15,7 @@ class CreatePKKSTable extends Migration
     {
         Schema::create('tb_pkk', function (Blueprint $table) {
             $table->id();
-            $table->text('agenda');
+            $table->string('agenda');
             $table->date('tanggal');
             $table->string('foto');
             $table->timestamps();

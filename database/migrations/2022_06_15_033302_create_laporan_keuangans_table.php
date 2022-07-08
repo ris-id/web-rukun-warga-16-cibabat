@@ -16,7 +16,7 @@ class CreateLaporanKeuangansTable extends Migration
         Schema::create('tb_laporan_keuangan', function (Blueprint $table) {
             $table->id();
             $table->string('gambar');
-            $table->longText('informasi')->nullable();
+            $table->text('informasi')->nullable();
             $table->timestamps();
         });
     }
