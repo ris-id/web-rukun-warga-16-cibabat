@@ -22,7 +22,7 @@ class PageKegiatanController extends Controller
 
     public function show($id)
     {
-        $listKegiatan = Kegiatan::all()->sortByDesc('id')->take(4);
+        $listKegiatan = Kegiatan::latest()->take(4);
         $data = KomentarKegiatan::all()->where('id_kegiatan', $id);
         return view('client.kegiatan.show', [
             'kegiatans' => Kegiatan::find($id),
