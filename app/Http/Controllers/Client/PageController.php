@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kegiatan;
+use App\Models\InfoPenting;
+use App\Models\Profil;
 
 class PageController extends Controller
 {
@@ -15,12 +17,14 @@ class PageController extends Controller
      */
     public function index()
     {
-        $data = Kegiatan::all();
-        return view('home', ['data' => $data]);
+        $data = Kegiatan::all()->sortByDesc('created_at')->take(4);
+        $infoPenting = InfoPenting::all();
+        return view('home', ['data' => $data, 'infoPenting' => $infoPenting]);
     }
     public function profile()
     {
-        return view('client.pages.profile');
+        $profil = Profil::all();
+        return view('client.pages.profile', ['profil' => $profil]);
     }
     public function layanan()
     {

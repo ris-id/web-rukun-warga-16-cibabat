@@ -32,12 +32,12 @@
                                     <p class="text-lg text-white mb-0">{{ $kegiatan->judul_kegiatan }}</p>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-            <hr>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
+        
         <div class="container">
 
             @if (count($data) > 0)
@@ -46,7 +46,7 @@
                         <div class="card bg-gradient-default mt-5">
                             <div class="card-body px-5">
                                 <h3 class="text-dark text-gradient">{{ $data->judul_info }}</h3>
-                                <p class="text-dark ms-3 short-text">{{ $data->deskripsi }}</p>
+                                <p class="text-dark ms-3 short-text">{!! $data->deskripsi !!}</p>
                                 <a href="{{ url('/infopenting/' . $data->id) }}" class="text-primary icon-move-right">Baca Selengkapnya
                                     <i class="fas fa-arrow-right text-sm ms-1"></i>
                                 </a>
@@ -58,11 +58,7 @@
                 <div class="row py-4">
                     <div class="card bg-gradient-default mt-5">
                         <div class="card-body px-5">
-                            <h3 class="text-dark text-gradient">Informasi Penting</h3>
-                            <p class="text-dark ms-3 short-text">Disini adalah tempat untuk melihat informasi-informasi penting dari Rukun Warga 16</p>
-                            <a href="" class="text-primary icon-move-right">Baca Selengkapnya
-                                <i class="fas fa-arrow-right text-sm ms-1"></i>
-                            </a>
+                            <h3 class="text-dark text-gradient">Belum ada informasi!</h3>
                         </div>
                     </div>
                 </div>

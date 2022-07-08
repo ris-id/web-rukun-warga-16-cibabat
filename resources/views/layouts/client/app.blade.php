@@ -207,7 +207,7 @@
                         <div class="col-md-4 d-flex justify-content-center">
                             <center><a href="/">
                             @foreach(\App\Models\Profil::all() as $profil)
-                            <img src="image/logo/{{ $profil->logo }}" alt="AdminLTE Logo"
+                            <img src="{{asset('image/logo/')}}/{{ $profil->logo }}" alt="AdminLTE Logo"
                                 class="img-fluid" style="opacity: .8" width>
                             @endforeach
                                 </a></center>
@@ -218,39 +218,37 @@
                         </div>
                     </div>
                     <div>
-                        <ul class="d-flex flex-row ms-n3 nav">
-                            <li class="nav-item">
-                                <a class="nav-link pe-1" href="https://www.facebook.com/CreativeTim" target="_blank">
-                                    <i class="fab fa-facebook text-lg opacity-8"></i>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link pe-1" href="https://twitter.com/creativetim" target="_blank">
-                                    <i class="fab fa-twitter text-lg opacity-8"></i>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link pe-1" href="https://dribbble.com/creativetim" target="_blank">
-                                    <i class="fab fa-dribbble text-lg opacity-8"></i>
-                                </a>
-                            </li>
-
-
-                            <li class="nav-item">
-                                <a class="nav-link pe-1" href="https://github.com/creativetimofficial"
-                                    target="_blank">
-                                    <i class="fab fa-github text-lg opacity-8"></i>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link pe-1"
-                                    href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">
-                                    <i class="fab fa-youtube text-lg opacity-8"></i>
-                                </a>
-                            </li>
+                        <ul class="d-flex flex-row ms-n3 nav py-3">
+                        @foreach (\App\Models\Profil::all() as $profil)
+                            @if($profil->link_facebook != null)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ $profil->link_facebook }}">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if($profil->link_instagram != null)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ $profil->link_instagram }}">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if($profil->link_twitter != null)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ $profil->link_twitter }}">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if($profil->link_email != null)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ $profil->youtube }}">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                </li>
+                            @endif
+                        @endforeach
                         </ul>
                     </div>
                 </div>
@@ -282,23 +280,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
-                    <div>
-                        <h6 class="text-sm">Help & Support</h6>
-                        <ul class="flex-column ms-n3 nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" target="_blank">
-                                    Kritik & Saran
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-md-2 col-sm-6 col-6 mb-4">
-                    
-                </div> -->
 
                 <div class="col-md-7 col-sm-6 col-6 mb-4">
                     <div class="">
