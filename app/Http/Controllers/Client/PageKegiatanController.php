@@ -13,7 +13,7 @@ class PageKegiatanController extends Controller
 {
     public function index()
     {
-        $listKegiatan = Kegiatan::all()->sortByDesc('id')->take(4);
+        $listKegiatan = Kegiatan::latest()->take(4);
         return view('client.kegiatan.index', [
             'kegiatans' => Kegiatan::latest()->paginate(4),
             'listKegiatan' => $listKegiatan

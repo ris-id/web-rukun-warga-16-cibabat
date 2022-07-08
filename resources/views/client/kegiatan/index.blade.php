@@ -17,37 +17,37 @@
     </div>
 </header>
 
-
+@if(count($kegiatans))
 <div class="container-fluid">
-<div class="row">
-    <div class="col-md-8 mt-n6">
-        <div class="card card-body blur shadow-blur">
-            <section class="pt-3">
-                <div class="container">
-                    <h1 class="mb-5">Kegiatan kami</h1>
-                    <hr>
-                    @foreach ($kegiatans as $data)
-                    <div class="row py-4">
-                        <div class="col-lg my-auto py-3">
-                            <h3>{{ $data->judul_kegiatan }}</h3>
-                            <p class="text-xs text-muted">Posted {{ $data->created_at->diffForHumans() }}</p>
-                            <img src="/image/kegiatan/{{$data->foto_kegiatan}}" alt="" class="py-4 img-fluid">
-                            <p class="pe-5 short-text">{!! $data->deskripsi !!}</p>
-                            <a href="{{ url('/kegiatan/' . $data->id) }}" class="text-primary icon-move-right">Baca
-                                Selengkapnya
-                                <i class="fas fa-arrow-right text-sm ms-1"></i>
-                            </a>
+    <div class="row">
+        <div class="col-md mt-n6">
+            <div class="card card-body blur shadow-blur">
+                <section class="pt-3">
+                    <div class="container">
+                        <h1 class="mb-5">Kegiatan kami</h1>
+                        <hr>
+                        @foreach ($kegiatans as $data)
+                        <div class="row py-4">
+                            <div class="col-lg my-auto py-3">
+                                <h3>{{ $data->judul_kegiatan }}</h3>
+                                <p class="text-xs text-muted">Posted {{ $data->created_at->diffForHumans() }}</p>
+                                <img src="/image/kegiatan/{{$data->foto_kegiatan}}" alt="" class="py-4 img-fluid">
+                                <div id="desc" class="pe-5 short-text">{!! $data->deskripsi !!}</div>
+                                <a href="{{ url('/kegiatan/' . $data->id) }}" class="text-primary icon-move-right">Baca
+                                    Selengkapnya
+                                    <i class="fas fa-arrow-right text-sm ms-1"></i>
+                                </a>
+                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
+                        <div class="d-flex justify-content-center">
+                            {{$kegiatans->links()}}
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        {{$kegiatans->links()}}
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
-        <div class="col-md-4 mt-n6">
+        <!-- <div class="col-md-4 mt-n6">
             <div class="card card-body blur shadow-blur">
                 <section class="pt-3">
                     <div class="container">
@@ -77,8 +77,33 @@
                     </div>
                 </section>
             </div>
+        </div> -->
+    </div>
+</div>
+@else
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md mt-n6">
+            <div class="card card-body blur shadow-blur">
+                <section class="pt-3">
+                    <div class="container">
+                        <h1 class="mb-5">Kegiatan kami</h1>
+                        <hr>
+                        <div class="row">
+                            <div class="d-flex col-lg my-auto py-3 justify-content-center">
+                                <h1 class="heading-1"><i class="fa-solid fa-exclamation"></i></h1>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="d-flex col-lg my-auto py-3 justify-content-center">
+                                <h3 class="text-muted">Belum ada Kegiatan, stay tuned ya!!</h3>
+                            </div>
+                        </div>                        
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 </div>
-</div>
+@endif
 @endsection

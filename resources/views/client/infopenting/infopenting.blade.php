@@ -48,7 +48,7 @@
                 <div class="card bg-gradient-default mt-5">
                     <div class="card-body px-5">
                         <h3 class="text-dark text-gradient">{{ $data->judul_info }}</h3>
-                        <p class="text-dark ms-3 short-text">{{ $data->deskripsi }}</p>
+                        <div id="desc" class="text-dark ms-3 short-text">{!! $data->deskripsi !!}</div>
                         <a href="{{ url('/infopenting/' . $data->id) }}" class="text-primary icon-move-right">Baca Selengkapnya
                             <i class="fas fa-arrow-right text-sm ms-1"></i>
                         </a>
