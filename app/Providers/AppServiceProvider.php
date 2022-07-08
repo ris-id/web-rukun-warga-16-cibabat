@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Composer\Autoload\ClassLoader;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\URL;
