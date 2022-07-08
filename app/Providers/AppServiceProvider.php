@@ -2,10 +2,8 @@
 
 namespace App\Providers;
 
-use App\Models\Profil;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (config('app.env') === 'production') {
-            \URL::forceScheme('https');
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
         }
         Paginator::useBootstrap();
     }
