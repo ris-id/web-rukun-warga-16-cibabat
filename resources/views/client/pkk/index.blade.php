@@ -288,7 +288,7 @@
                     <p class="text-xs font-weight-bold mb-0">{{$no++}}</p>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-normal">{!! $row->agenda !!}</span>
+                    <span class="text-secondary text-xs font-weight-normal">{{ $row->agenda }}</span>
                   </td>
                   <td class="align-middle text-center text-sm">
                     <p class="text-xs font-weight-bold mb-0">{{$row->tanggal}}</p>
