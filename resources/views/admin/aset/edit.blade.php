@@ -29,6 +29,19 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
+                        <strong>Nama aset:</strong>
+                        <input type="text" name="nama_aset" class="form-control" required
+                            value="{{ $aset->nama_aset }}">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Jumlah aset:</strong>
+                        <input type="number" name="jumlah" class="form-control" required value="{{ $aset->jumlah }}">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
                         <strong>Informasi:</strong>
                         <textarea class="form-control tinymce-editor" style="height:150px" name="informasi" placeholder="Detail">{!! $aset->informasi !!}</textarea>
                     </div>

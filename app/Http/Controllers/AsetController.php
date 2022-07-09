@@ -39,7 +39,9 @@ class AsetController extends Controller
     {
         $request->validate([
             'informasi' => 'required',
-            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'nama_aset' => 'required',
+            'jumlah' => 'required|min:0'
         ]);
 
         $input = $request->all();
@@ -87,7 +89,9 @@ class AsetController extends Controller
     {
         $request->validate([
             'informasi' => 'required',
-            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'nama_aset' => 'required',
+            'jumlah' => 'required|min:0'
         ]);
         $input = $request->all();
 

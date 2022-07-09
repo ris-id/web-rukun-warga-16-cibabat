@@ -52,7 +52,7 @@ class LaporanKeuanganController extends Controller
 
         LaporanKeuangan::create($input);
 
-        Alert::success('Success', 'Data Laporan Keuangan Berhasi ditambahkan');
+        Alert::success('Success', 'Data laporan keuangan berhasil ditambahkan');
 
         return redirect()->route('laporanKeuangan.index');
     }
@@ -105,7 +105,7 @@ class LaporanKeuanganController extends Controller
         $laporanKeuangan->update($input);
 
 
-        Alert::success('Success', 'Data Laporan Keuangan Berhasi diupdate');
+        Alert::success('Success', 'Data laporan keuangan berhasil diperbarui');
 
         return redirect()->route('laporanKeuangan.index');
     }
@@ -122,7 +122,7 @@ class LaporanKeuanganController extends Controller
         unlink("image/laporan-keuangan/" . $data->gambar);
         $data::where("id", $id)->delete();
 
-        Alert::success('Success', 'Data Laporan Keuangan Berhasi dihapus');
+        Alert::success('Success', 'Data laporan keuangan berhasil dihapus');
         return redirect()->route('laporanKeuangan.index');
     }
 }

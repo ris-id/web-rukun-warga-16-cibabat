@@ -27,8 +27,8 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Judul Info:</strong>
-                            <input type="text" name="judul_info" class="form-control" placeholder="Judul">
+                            <strong>Judul Info Penting:</strong>
+                            <input type="text" name="judul_info" class="form-control">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

@@ -1,0 +1,14 @@
+version: '3.0'
+
+services:
+ rukun-warga-16-cibabat-db:
+    container_name: "rukun-warga-16-cibabat-db"
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_ROOT_PASSWORD: mhBMHAevM2YLcLDAHwpb
+      POSTGRES_DB: rukun-warga-db
+      POSTGRES_USER: rukun-warga-16
+      POSTGRES_PASSWORD: mhBMHAevM2YLcLDAHwpb
+  

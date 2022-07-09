@@ -26,7 +26,14 @@
                     @foreach ($data as $item)
                         <tbody>
                             <tr>
-                                <td>{!! $item->informasi !!}</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                                            {!! $item->informasi !!}
+                                        </span>
+                                        ...
+                                    </div>
+                                </td>
                                 <td>
                                     <div class="d-grid gap-2 d-md-flex">
                                         <a href="{{ route('aset.show', [$item->id]) }}"class="btn btn-outline-primary me-md-2 mr-2"

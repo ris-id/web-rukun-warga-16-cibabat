@@ -46,7 +46,7 @@ class AnggotaPKKController extends Controller
 
         AnggotaPKK::create($input);
 
-        Alert::success('Success', 'Data Anggota Berhasil ditambahkan');
+        Alert::success('Success', 'Data anggota berhasil ditambahkan');
 
         return redirect()->route('anggota.index');
     }
@@ -93,7 +93,7 @@ class AnggotaPKKController extends Controller
         $data = AnggotaPKK::where('id', $id)->firstOrFail();
         $data->update($input);
 
-        Alert::success('Success', 'Data Anggota Berhasil diupdate');
+        Alert::success('Success', 'Data anggota berhasil diupdate');
 
         return redirect()->route('anggota.index');
     }
@@ -108,7 +108,7 @@ class AnggotaPKKController extends Controller
     {
         $data = AnggotaPKK::find($id);
         $data::where("id", $id)->delete();
-        Alert::success('Success', 'Data Anggota Berhasil dihapus');
+        Alert::success('Success', 'Data anggota berhasil dihapus');
         return redirect()->route('anggota.index');
     }
 }
