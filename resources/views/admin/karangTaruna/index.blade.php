@@ -50,7 +50,14 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $item->judul }}</td>
-                                    <td>{!! $item->konten !!} </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                                                {!! $item->konten !!}
+                                            </span>
+                                            ...
+                                        </div>
+                                    </td>
                                     <td>
                                         <a href="{{ route('karangTaruna.show', [$item->id]) }}">Lihat detail karang
                                             taruna</a>

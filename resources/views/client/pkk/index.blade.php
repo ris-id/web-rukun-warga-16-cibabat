@@ -1,8 +1,6 @@
 @extends('layouts.client.app')
 <style>
-  .container-menu{
-
-  }
+  .container-menu {}
 </style>
 
 @section('content')
@@ -13,7 +11,7 @@
       <div class="row">
         <div class="col-lg-7 text-center mx-auto">
           <h1 class="text-white pt-3 mt-n5">PKK Rukun Warga 16</h1>
-          <p class="lead text-white mt-3">Siap Melayani sepenuh Hati <br/> ------- </p>
+          <p class="lead text-white mt-3">Siap Melayani sepenuh Hati <br /> ------- </p>
         </div>
       </div>
     </div>
@@ -159,7 +157,7 @@
   </div>
 </div> -->
 
-<div class="modal fade" id="modal-tupoksi" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+<div class="modal fade" id="modal-tupoksi" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -174,16 +172,16 @@
           <th><b>Tugas</b></th>
           <tr>
             <td class="align-middle text-center"> a.</td>
-            <td>  Merencanakan, melaksanakan dan membina pelaksanaan program-program kerja TP PKK, sesuai dengan keadaan dan kebutuhan masyarakat.</td>
+            <td> Merencanakan, melaksanakan dan membina pelaksanaan program-program kerja TP PKK, sesuai dengan keadaan dan kebutuhan masyarakat.</td>
           </tr>
           <tr>
             <td class="align-middle text-center"> b.</td>
-            <td>  Menghimpun, menggerakkan dan membina potensi masyarakat, khususnya keluarga untuk terlaksananya program-program TP PKK.</td>
+            <td> Menghimpun, menggerakkan dan membina potensi masyarakat, khususnya keluarga untuk terlaksananya program-program TP PKK.</td>
           </tr>
           <tr>
             <td class="align-middle text-center"> c.</td>
-            <td>   Menghimpun, menggerakkan dan membina potensi masyarakat, khususnya keluarga untuk terlaksananya program-program TP PKK.
-            Memberikan bimbingan, motivasi dan memfasilitasi TP PKK/Kelompok-kelompok PKK di bawahnya.</td>
+            <td> Menghimpun, menggerakkan dan membina potensi masyarakat, khususnya keluarga untuk terlaksananya program-program TP PKK.
+              Memberikan bimbingan, motivasi dan memfasilitasi TP PKK/Kelompok-kelompok PKK di bawahnya.</td>
           </tr>
           <tr>
             <td class="align-middle text-center"> d.</td>
@@ -191,31 +189,31 @@
           </tr>
           <tr>
             <td class="align-middle text-center"> e.</td>
-            <td>  Mengadakan supervise, monitoring, evaluasi dan pelaporan (SMEP), terhadap pelaksanaan program-program TP PKK.</td>
+            <td> Mengadakan supervise, monitoring, evaluasi dan pelaporan (SMEP), terhadap pelaksanaan program-program TP PKK.</td>
           </tr>
 
           <th>Fungsi</th>
           <tr>
-           <td class="align-middle text-center"> a.</td>
-           <td>Penyuluh, motivator, dan penggerak masyarakat agar mau dan mampu melaksanakan program TP PKK.</td>
-         </tr>
-         <tr>
-           <td class="align-middle text-center"> b.</td>
-           <td>Fasilitator, perencana, pelaksana, pengendali, Pembina, dan pembimbing TP PKK.</td>
-         </tr>
-       </table>
+            <td class="align-middle text-center"> a.</td>
+            <td>Penyuluh, motivator, dan penggerak masyarakat agar mau dan mampu melaksanakan program TP PKK.</td>
+          </tr>
+          <tr>
+            <td class="align-middle text-center"> b.</td>
+            <td>Fasilitator, perencana, pelaksana, pengendali, Pembina, dan pembimbing TP PKK.</td>
+          </tr>
+        </table>
 
-     </div>
-     <div class="modal-footer">
+      </div>
+      <div class="modal-footer">
 
-      <button type="button" class="btn btn-link  ml-auto" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-link  ml-auto" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
-</div>
 
 
-<div class="modal fade" id="modal-Anggota" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+<div class="modal fade" id="modal-Anggota" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -234,7 +232,7 @@
             </tr>
           </thead>
           <tbody>
-            <?php $no=1; ?>
+            <?php $no = 1; ?>
             @foreach($AnggotaPKK as $data)
             <tr>
               <td class="align-middle text-center text-sm">
@@ -262,7 +260,7 @@
 
 
 
-<div class="modal fade" id="modal-kegiatan" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+<div class="modal fade" id="modal-kegiatan" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -283,14 +281,14 @@
                 </tr>
               </thead>
               <tbody>
-                <?php $no=1; ?>
+                <?php $no = 1; ?>
                 @foreach($pkk as $row)
                 <tr>
                   <td class="align-middle text-center text-sm">
                     <p class="text-xs font-weight-bold mb-0">{{$no++}}</p>
                   </td>
                   <td class="align-middle text-center">
-                    <span class="text-secondary text-xs font-weight-normal">{{$row->agenda}}</span>
+                    <span class="text-secondary text-xs font-weight-normal">{{ $row->agenda }}</span>
                   </td>
                   <td class="align-middle text-center text-sm">
                     <p class="text-xs font-weight-bold mb-0">{{$row->tanggal}}</p>
@@ -314,7 +312,7 @@
 
 
 
-<div class="modal fade" id="modal-galeri" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+<div class="modal fade" id="modal-galeri" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
   <div class="modal-dialog modal- modal-lg " role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -326,9 +324,9 @@
       <div class="modal-body">
         <div class="container">
           <div class="row">
-          @foreach($pkk as $galeri)
+            @foreach($pkk as $galeri)
             <div class="col-lg-4">
-              <img src ="/image/pkk/{{$galeri->foto}}" class="img-thumbnail" alt="...">
+              <img src="/image/pkk/{{$galeri->foto}}" class="img-thumbnail" alt="...">
             </div>
             @endforeach
           </div>
@@ -346,4 +344,4 @@
 <!-- -------- END Features w/ icons and text on left & gradient title and text on right -------- -->
 
 
-@endsection         
+@endsection

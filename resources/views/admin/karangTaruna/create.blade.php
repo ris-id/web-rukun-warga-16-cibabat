@@ -24,13 +24,13 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Foto / Gambar</strong>
-                            <input type="file" name="foto" class="form-control" placeholder="image" required>
+                            <input type="file" name="foto" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Judul</strong>
-                            <input type="text" name="judul" class="form-control" placeholder="judul" required>
+                            <input type="text" name="judul" class="form-control"required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

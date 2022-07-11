@@ -31,7 +31,14 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $item->judul_info }}</td>
-                                    <td>{!! $item->deskripsi !!} </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                                                {!! $item->deskripsi !!}
+                                            </span>
+                                            ...
+                                        </div>
+                                    </td>
                                     <td>
                                         <a href="{{ route('infoPenting.show', [$item->id]) }}">Lihat detail info</a>
                                     </td>

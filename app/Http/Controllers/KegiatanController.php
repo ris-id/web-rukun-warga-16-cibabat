@@ -54,7 +54,7 @@ class KegiatanController extends Controller
 
         Kegiatan::create($input);
 
-        Alert::success('Success', 'Data Kegiatan Berhasil ditambahkan');
+        Alert::success('Success', 'Data kegiatan berhasil ditambahkan');
 
         return redirect()->route('kegiatan.index');
     }
@@ -108,7 +108,7 @@ class KegiatanController extends Controller
 
         $kegiatan->update($input);
 
-        Alert::success('Success', 'Data Kegiatan Berhasil diupdate');
+        Alert::success('Success', 'Data kegiatan berhasil diupdate');
 
         return redirect()->route('kegiatan.index');
     }
@@ -124,7 +124,7 @@ class KegiatanController extends Controller
         $data =  Kegiatan::find($id);
         unlink("image/kegiatan/" . $data->foto_kegiatan);
         $data::where("id", $id)->delete();
-        Alert::success('Success', 'Data Kegiatan Berhasil dihapus');
+        Alert::success('Success', 'Data kegiatan berhasil dihapus');
         return redirect()->route('kegiatan.index');
     }
 }
