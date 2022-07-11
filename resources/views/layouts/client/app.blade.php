@@ -243,7 +243,7 @@
                             @endif
                             @if($profil->link_email != null)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ $profil->youtube }}">
+                                    <a class="nav-link" href="mailto: {{ $profil->link_email }}">
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
                                 </li>

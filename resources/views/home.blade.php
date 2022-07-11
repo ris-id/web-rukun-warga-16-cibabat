@@ -53,7 +53,7 @@
         <div class="container">
         <div class="row">
                 <div class="col">
-                    <h1 class="mb-5">Kegiatan kami</h1>
+                    <h1 class="mb-5">Informasi Penting</h1>
                 </div>
                 <div class="col d-flex justify-content-end">
                     <a href="{{ url('/infopenting/') }}" class="text-primary icon-move-right">Lihat Semua Info Penting
