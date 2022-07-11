@@ -28,6 +28,6 @@ class PageController extends Controller
     }
     public function layanan()
     {
-        return view('client.pages.pelayanan');
+        return view('client.Pages.pelayanan');
     }
 }
