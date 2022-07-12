@@ -33,6 +33,10 @@ class PageKegiatanController extends Controller
 
     public function create(Request $request)
     {
+        $request->validate([
+            'komentar' => 'required',
+        ]);
+
         $komentar = new KomentarKegiatan;
         $komentar->id_kegiatan = $request->id_kegiatan;
         $komentar->komentar = $request->komentar;
