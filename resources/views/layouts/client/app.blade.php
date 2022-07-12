@@ -113,10 +113,6 @@
                                         </div>
 
                                         <div class="d-lg-none">
-                                            <h6
-                                                class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                                                Landing Pages
-                                            </h6>
 
                                             <h6
                                                 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
@@ -130,10 +126,8 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Info Penting</span>
                                             </a>
-                                            <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                                                <span>Pelayanan</span>
-                                            </a>
-                                            <a href="./pages/author.html" class="dropdown-item border-radius-md">
+                                        
+                                            <a href="{{ route('client.aset') }}" class="dropdown-item border-radius-md">
                                                 <span>Aset</span>
                                             </a>
 
@@ -145,7 +139,7 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Karang Taruna</span>
                                             </a>
-                                            <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
+                                            <a href="{{ route('client.pkk') }}" class="dropdown-item border-radius-md">
                                                 <span>PKK</span>
                                             </a>
 
@@ -298,7 +292,7 @@
                     <div class="text-center">
                         <p class="text-dark my-4 text-sm font-weight-normal">
                             Build With Respect By <strong><a href="https://github.com/ris-id" target="_blank">RIS.ID x
-                                    Hana
+                                    Rukun Warga 16 Kelurahan Cibabat
                                 </a></strong> | Copyright ©
                             <script>
                                 document.write(new Date().getFullYear())
