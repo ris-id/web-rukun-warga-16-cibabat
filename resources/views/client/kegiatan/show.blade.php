@@ -18,20 +18,20 @@
 </header>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-lg col-md col-sm">
         <div class="card card-body blur shadow-blur mx-3 mb-5 mt-n6">
             <section class="pt-3">
                 <div class="container">
                     <div class="row">
-                        <h2 class="mb-5">Detail Informasi Penting</h2>
+                        <h2 class="mb-1">{{ $kegiatans->judul_kegiatan }}</h2>
+                        <p class="text-xs text-muted">Posted {{ $kegiatans->created_at->diffForHumans() }}</p>
                         <hr class="mb-3">
                         <div class="col-lg py-4">
                             <div class="row justify-content-start">
                                 <div class="col">
                                     <div class="info">
-                                        <h3 class="text-dark text-gradient">{{ $kegiatans->judul_kegiatan }}</h3>
-                                        <p class="text-xs text-muted">Posted {{ $kegiatans->created_at->diffForHumans() }}</p>
-                                        <img src="/image/kegiatan/{{$kegiatans->foto_kegiatan}}" alt="" class="py-4 img-fluid">
+                                        <center><img src="/image/kegiatan/{{$kegiatans->foto_kegiatan}}" alt=""
+                                                class="py-4 img-fluid"></center>
                                         <p class="text-dark ms-3">{!! $kegiatans->deskripsi !!}</p>
                                     </div>
                                 </div>
@@ -56,46 +56,58 @@
                                     <div class="col">
                                         <div class="info">
                                             <h6 class="text-dark text-gradient">Anonim</h6>
-                                            <p class="mt-n2" style="font-size: 12px;">{{$data->created_at->diffForHumans()}}</p>
+                                            <p class="mt-n2" style="font-size: 12px;">
+                                                {{$data->created_at->diffForHumans()}}</p>
                                             <p class="text-dark">{{$data->komentar}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <hr>
                                 @endforeach
-                                
+
                                 <div class="card shadow">
                                     <div class="card-body">
-                                    <div class="col">
-                                    <h6 class="">Tulis Komentar</h6>
-                                    <form role="form" action="{{ route('client.kegiatan.create.komentar') }}" id="contact-form" method="post" autocomplete="off">
-                                        @csrf
-                                        <div class="card-body">
-                                            <div class="input-group mb-4 input-group-static">
-                                                <label>Komentar Anda</label>
-                                                <textarea name="komentar" class="form-control" id="message" placeholder="Tulis Komentar Anda Disini"
-                                                    rows="4"></textarea>
-                                                <input type="text" name="id_kegiatan" class="form-control" hidden value="{{ $kegiatans->id }}">
+                                        <div class="col">
+                                            <h6 class="">Tulis Komentar</h6>
+                                            @if ($errors->any())
+                                            <div class="alert alert-danger text-white">
+                                                <strong>Komentar tidak boleh kosong.</strong> 
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-check form-switch mb-4 d-flex align-items-center">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="flexSwitchCheckDefault" checked="">
-                                                        <label class="form-check-label ms-3 mb-0"
-                                                            for="flexSwitchCheckDefault">Saya setuju dengan <a
-                                                                href="javascript:;" class="text-dark"><u>Ketentuan
-                                                                    Berkomentar</u></a>.</label>
+                                            @endif
+                                            <form role="form" action="{{ route('client.kegiatan.create.komentar') }}"
+                                                id="contact-form" method="post" autocomplete="off">
+                                                @csrf
+                                                <div class="card-body">
+                                                    <div class="input-group mb-4 input-group-static">
+                                                        <label>Komentar Anda</label>
+                                                        <textarea name="komentar" class="form-control" id="message"
+                                                            placeholder="Tulis Komentar Anda Disini"
+                                                            rows="4"></textarea>
+                                                        <input type="text" name="id_kegiatan" class="form-control"
+                                                            hidden value="{{ $kegiatans->id }}">
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div
+                                                                class="form-check form-switch mb-4 d-flex align-items-center">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="flexSwitchCheckDefault" checked="">
+                                                                <label class="form-check-label ms-3 mb-0"
+                                                                    for="flexSwitchCheckDefault">Saya setuju dengan <a
+                                                                        href="javascript:;"
+                                                                        class="text-dark"><u>Ketentuan
+                                                                            Berkomentar</u></a>.</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <button type="submit"
+                                                                class="btn bg-gradient-primary w-100">Kirim
+                                                                Komentar</button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <button type="submit" class="btn bg-gradient-primary w-100">Kirim
-                                                        Komentar</button>
-                                                </div>
-                                            </div>
+                                            </form>
                                         </div>
-                                    </form>
-                                </div>
                                     </div>
                                 </div>
                             </div>
@@ -106,35 +118,6 @@
         </div>
 
     </div>
-    <div class="col-md-4">
-        <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
-            <section class="pt-3">
-                <div class="container">
-                    <div class="row">
-                        <h2 class="mb-5">Informasi Kegiatan Terbaru</h2>
-                        <hr class="mb-3">
-                        <div class="col-lg ms-auto mt-lg-0 mt-4">
-                            @foreach($listKegiatan as $kegiatan)
-                            <div class="col-md-6">
-                                <a href="{{ url('/kegiatan/' . $kegiatan->id) }}">
-                                    <div class="card card-background card-background-mask-dark align-items-start mt-2">
-                                        <div class="full-background cursor-pointer"
-                                            style="background-image: url('https://images.unsplash.com/photo-1604213410393-89f141bb96b8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA5fHxuYXR1cmV8ZW58MHx8MHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60')">
-                                        </div>
-                                        <div class="card-body mx-auto">
-                                            <h5 class="text-white mb-0" style="font-size: 15px;">
-                                                {{ $kegiatan->judul_kegiatan }}
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
+
 </div>
 @endsection
