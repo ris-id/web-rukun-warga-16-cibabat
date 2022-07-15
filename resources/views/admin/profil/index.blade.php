@@ -1,6 +1,5 @@
 @extends('layouts.admin.dashboard')
 @section('content')
-@include('sweetalert::alert')
     <div class="container p-5">
         <h1>Halaman Profil</h1>
         <p><small>Halaman ini digunakan jika akan melakukan perubahan terhadap data profil RW 16</small></p>
@@ -64,12 +63,12 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-outline-primary show_confirm" data-toggle="tooltip">Publish</button>
-                <form method="POST" action="{{ route('profile.destroy', $data->id) }}">
+                {{-- <form method="POST" action="{{ route('profil.destroy', $data->id) }}">
                     @csrf
                     <input name="_method" type="hidden" value="DELETE">
-                    <button type="submit" class="btn btn-outline-danger show_confirm " data-toggle="tooltip"
-                        title='Delete'>Hapus Profile</button>
-                </form>
+                    <button type="submit" class="btn  btn-outline-danger show_confirm"
+                        data-toggle="tooltip" title='Delete'>Delete</button>
+                </form> --}}
             </form>
         @else
             <div class="text-right">

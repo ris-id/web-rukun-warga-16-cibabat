@@ -306,12 +306,12 @@
                                         <p>Kegiatan</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="{{ route('komentar-infoPenting.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Info Penting</p>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                     </ul>

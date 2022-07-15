@@ -117,6 +117,7 @@ class ProfilController extends Controller
     {
         $data = Profil::find($id);
         $data::where("id", $id)->delete();
+        
         Alert::success('Success', 'Profil Berhasil di hapus');
         return redirect()->route('profil.index');
 
