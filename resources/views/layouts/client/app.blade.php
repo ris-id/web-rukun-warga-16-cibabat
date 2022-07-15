@@ -96,6 +96,10 @@
                                                 class="dropdown-item border-radius-md">
                                                 <span>Info Penting</span>
                                             </a>
+                                            <a href="{{ route('client.lapkeu') }}"
+                                                class="dropdown-item border-radius-md">
+                                                <span>Laporan Keuangan</span>
+                                            </a>
                                             <a href="{{ route('client.aset') }}" class="dropdown-item border-radius-md">
                                                 <span>Aset</span>
                                             </a>

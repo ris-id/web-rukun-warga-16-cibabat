@@ -17,6 +17,7 @@ use App\Http\Controllers\Client\PageKegiatanController;
 use App\Http\Controllers\Client\PagePkkController;
 use App\Http\Controllers\Client\PageAsetController;
 use App\Http\Controllers\Client\PagePelayananController;
+use App\Http\Controllers\Client\LaporanKeuanganController as LapKeu;
 use App\Http\Controllers\KomentarKegiatanController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\StrukturOrganisasiController;
@@ -74,6 +75,10 @@ Route::namespace('Client')->group(function () {
     //Aset Page Routes
     Route::get('/aset', [PageAsetController::class, 'index'])->name('client.aset');
     Route::get('/aset/{id}', [PageAsetController::class, 'show'])->name('client.aset.show');
+
+    //Laporan Keuangan Page Routes
+    Route::get('/laporan-keuangan', [LapKeu::class, 'index'])->name('client.lapkeu');
+    Route::get('/laporan-keuangan/{id}', [LapKeu::class, 'show'])->name('client.lapkeu.show');
 
     //Pelayanan Page Routes
     Route::get('/pelayanan', [PagePelayananController::class, 'index'])->name('client.pelayanan');

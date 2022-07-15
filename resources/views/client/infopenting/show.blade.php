@@ -26,7 +26,7 @@
                             <div class="col">
                                 <div class="info">
                                     <h3 class="text-dark text-gradient">{{ $info->judul_info }}</h3>
-                                    <p class="text-dark ms-3">{{ $info->deskripsi }}</p>
+                                    <p class="text-dark ms-3">{!! $info->deskripsi !!}</p>
                                 </div>
                             </div>
                         </div>

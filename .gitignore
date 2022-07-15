@@ -3,6 +3,9 @@
 /public/storage
 /public/image/kegiatan
 /public/image/logo
+/public/image/karang-taruna
+/public/image/laporan-keuangan
+/public/image/aset
 /storage/*.key
 /vendor
 .env

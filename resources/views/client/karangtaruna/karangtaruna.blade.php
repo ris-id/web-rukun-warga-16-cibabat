@@ -45,7 +45,7 @@
                             <div class="row py-4">
                                 <div class="col-lg my-auto py-3">
                                     <h3>{{ $item->judul }}</h3>
-                                    <p class="pe-5 short-text">{{ $item->konten }}</p>
+                                    <p class="pe-5 short-text">{!! $item->konten !!}</p>
                                     <a href="{{ url('/karangtaruna/' . $item->id) }}" class="text-primary icon-move-right">Baca Selengkapnya
                                         <i class="fas fa-arrow-right text-sm ms-1"></i>
                                     </a>
@@ -60,35 +60,16 @@
                 @else
                     <div class="container">
                         <div class="pt-4">
-                            <div class="row py-4">
-                                <div class="col-lg my-auto py-3">
-                                    <h3>Kegiatan Karang Taruna</h3>
-                                    <p class="pe-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat est facilis
-                                        eligendi! Omnis repellendus sapiente at aperiam earum deleniti error fuga accusantium voluptate
-                                        esse. Magnam sit earum fugit veritatis molestiae.</p>
-                                    <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
-                                        <i class="fas fa-arrow-right text-sm ms-1"></i>
-                                    </a>
-                                </div>
-                                <div class="col-lg my-auto py-4">
-                                    <img class="img-fluid" src="{{asset('dist/img/client/bg.jpg')}}" alt="Kegiatan">
-                                </div>
+                        <div class="row">
+                            <div class="d-flex col-lg my-auto py-3 justify-content-center">
+                                <h1 class="heading-1"><i class="fa-solid fa-exclamation"></i></h1>
                             </div>
-
-                            <div class="row py-4">
-                                <div class="col-lg-5 my-auto py-4">
-                                    <img class="img-fluid" src="{{asset('dist/img/client/bg.jpg')}}" alt="Kegiatan">
-                                </div>
-                                <div class="col-lg-7 my-auto py-3">
-                                    <h3>Kegiatan Karang Taruna</h3>
-                                    <p class="pe-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat est facilis
-                                        eligendi! Omnis repellendus sapiente at aperiam earum deleniti error fuga accusantium voluptate
-                                        esse. Magnam sit earum fugit veritatis molestiae.</p>
-                                    <a href="javascript:;" class="text-primary icon-move-right">Baca Selengkapnya
-                                        <i class="fas fa-arrow-right text-sm ms-1"></i>
-                                    </a>
-                                </div>
+                        </div> 
+                        <div class="row">
+                            <div class="d-flex col-lg my-auto py-3 justify-content-center">
+                                <h3 class="text-muted">Belum ada Kegiatan, stay tuned ya!!</h3>
                             </div>
+                        </div>                  
                         </div>
                     </div>
                 @endIf

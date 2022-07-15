@@ -82,7 +82,7 @@
                                                         <label>Komentar Anda</label>
                                                         <textarea name="komentar" class="form-control" id="message"
                                                             placeholder="Tulis Komentar Anda Disini"
-                                                            rows="4"></textarea>
+                                                            rows="4" required='required'></textarea>
                                                         <input type="text" name="id_kegiatan" class="form-control"
                                                             hidden value="{{ $kegiatans->id }}">
                                                     </div>
@@ -90,12 +90,12 @@
                                                         <div class="col-md-12">
                                                             <div
                                                                 class="form-check form-switch mb-4 d-flex align-items-center">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="flexSwitchCheckDefault" checked="">
+                                                                <input class="form-check-input" type="checkbox" required= "required"
+                                                                    id="flexSwitchCheckDefault">
                                                                 <label class="form-check-label ms-3 mb-0"
                                                                     for="flexSwitchCheckDefault">Saya setuju dengan <a
                                                                         href="javascript:;"
-                                                                        class="text-dark"><u>Ketentuan
+                                                                        class="text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"><u>Ketentuan
                                                                             Berkomentar</u></a>.</label>
                                                             </div>
                                                         </div>
@@ -120,4 +120,33 @@
     </div>
 
 </div>
+
+<div class="container py-7">
+  <div class="row mt-3">
+    <div class="col-sm-4 col-6 mx-auto">
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ketentuan Berkomentar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ol>
+                <li>Berkomentarlah sesuai dengan isi artikel yang ada.</li>
+                <li>Dihimbau agar tidak perlu mencantumkan link, karena mengandung unsur promosi dan spam yang tinggi.</li>
+                <li>Hindari berkomentar yang berunsur SARA atau kata-kata kasar yang diluar batas kewajaran.</li>
+
+              </ol>
+            <div class="modal-footer justify-content-end">
+              <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection

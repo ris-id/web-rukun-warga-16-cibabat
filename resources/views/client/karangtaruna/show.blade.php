@@ -26,7 +26,7 @@
                             <h3 class="mb-0">{{ $katar->judul }}</h3>
                         </div>
                         <p class="text-lg mb-0">
-                            {{ $katar->konten }}
+                            {!! $katar->konten !!}
                         </p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                                 <h5>
                                     <a href="" class="text-dark font-weight-bold">{{ $item->judul }}</a>
                                 </h5>
-                                <p class="short-text">{{ $item->konten }}</p>
+                                <p class="short-text">{!! $item->konten !!}</p>
                                 <a href="{{ url('/karangtaruna/' . $item->id) }}" class="text-info text-sm icon-move-right">
                                     Selengkapnya
                                     <i class="fas fa-arrow-right text-xs ms-1"></i>
