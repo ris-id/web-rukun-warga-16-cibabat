@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfilController extends Controller
 {
@@ -112,8 +113,12 @@ class ProfilController extends Controller
      * @param  \App\Models\Profil  $profil
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profil $profil)
+    public function destroy($id)
     {
-        //
+        $data = Profil::find($id);
+        $data::where("id", $id)->delete();
+        Alert::success('Success', 'Profil Berhasil di hapus');
+        return redirect()->route('profil.index');
+
     }
 }

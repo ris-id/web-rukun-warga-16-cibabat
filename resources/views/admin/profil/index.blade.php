@@ -1,5 +1,6 @@
 @extends('layouts.admin.dashboard')
 @section('content')
+@include('sweetalert::alert')
     <div class="container p-5">
         <h1>Halaman Profil</h1>
         <p><small>Halaman ini digunakan jika akan melakukan perubahan terhadap data profil RW 16</small></p>
@@ -39,19 +40,19 @@
                                 <label for="instagram" class="font-weight-light">Instagram</label>
                                 <input type="text" class="form-control" name="link_instagram" id="instagram"
                                     aria-describedby="emailHelp" value="{{ $data[0]->link_instagram }}"
-                                    placeholder="Masukan username instagram">
+                                    placeholder="Masukan link url instagram anda">
                             </div>
                             <div class="form-group">
                                 <label for="facebook" class="font-weight-light">Facebook</label>
                                 <input type="text" class="form-control" name="link_facebook" id="facebook"
                                     aria-describedby="emailHelp" value="{{ $data[0]->link_facebook }}"
-                                    placeholder="Masukan username facebook">
+                                    placeholder="Masukan link url facebook anda">
                             </div>
                             <div class="form-group">
                                 <label for="twitter" class="font-weight-light">Twitter</label>
                                 <input type="text" class="form-control" name="link_twitter" id="twitter"
                                     aria-describedby="emailHelp" value="{{ $data[0]->link_twitter }}"
-                                    placeholder="Masukan username twitter">
+                                    placeholder="Masukan link url twitter anda">
                             </div>
                         </div>
                     </div>
@@ -63,6 +64,12 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-outline-primary show_confirm" data-toggle="tooltip">Publish</button>
+                <form method="POST" action="{{ route('profile.destroy', $data->id) }}">
+                    @csrf
+                    <input name="_method" type="hidden" value="DELETE">
+                    <button type="submit" class="btn btn-outline-danger show_confirm " data-toggle="tooltip"
+                        title='Delete'>Hapus Profile</button>
+                </form>
             </form>
         @else
             <div class="text-right">

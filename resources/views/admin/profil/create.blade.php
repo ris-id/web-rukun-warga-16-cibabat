@@ -34,17 +34,17 @@
                         <div class="form-group">
                             <label for="instagram" class="font-weight-light">Instagram</label>
                             <input type="email" class="form-control" name="link_instagram" id="instagram"
-                                aria-describedby="emailHelp" placeholder="Masukan username instagram">
+                                aria-describedby="emailHelp" placeholder="Masukan link url instagram anda">
                         </div>
                         <div class="form-group">
                             <label for="facebook" class="font-weight-light">Facebook</label>
                             <input type="email" class="form-control" name="link_facebook" id="facebook"
-                                aria-describedby="emailHelp" placeholder="Masukan username facebook">
+                                aria-describedby="emailHelp" placeholder="Masukan link url facebook anda">
                         </div>
                         <div class="form-group">
                             <label for="twitter" class="font-weight-light">Twitter</label>
                             <input type="email" class="form-control" name="link_twitter" id="twitter"
-                                aria-describedby="emailHelp" placeholder="Masukan username twitter">
+                                aria-describedby="emailHelp" placeholder="Masukan link url twitter anda">
                         </div>
                     </div>
                 </div>
