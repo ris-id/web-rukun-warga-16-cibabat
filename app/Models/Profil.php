@@ -11,6 +11,6 @@ class Profil extends Model
     protected $table = 'tb_profil';
     protected $fillable = [
         'logo', 'link_instagram', 'link_instagram', 'link_facebook',
-        'link_twitter', 'link_email', 'deskripsi'
+        'link_twitter', 'link_email', 'deskripsi',
     ];
 }

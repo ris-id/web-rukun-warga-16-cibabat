@@ -19,6 +19,9 @@
                 <table class="table table-bordered mt-4">
                     <thead>
                         <tr>
+                            <th scope="col">Foto Aset </th>
+                            <th scope="col">Nama Aset </th>
+                            <th scope="col">Jumlah </th>
                             <th scope="col">Informasi </th>
                             <th scope="col">Aksi</th>
                         </tr>
@@ -26,6 +29,20 @@
                     @foreach ($data as $item)
                         <tbody>
                             <tr>
+                                <td>
+                                    <div class="d-flex">
+                                        <span class="d-inline-block ">
+                                            {{$item->nama_aset}}
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <span class="d-inline-block ">
+                                            {{$item->jumlah}}
+                                        </span>
+                                    </div>
+                                </td>
                                 <td>
                                     <div class="d-flex">
                                         <span class="d-inline-block text-truncate" style="max-width: 300px;">

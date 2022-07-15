@@ -9,13 +9,12 @@
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="{{ route('laporanKeuangan.edit', ['laporanKeuangan' => $laporanKeuangan->id]) }}"
-                    class="btn btn-outline-success mr-4"><span class="fa fa-pencil"></span> Edit
-                    Info</a>
+                    class="btn btn-outline-success mr-4"><span class="fa fa-pencil"></span> Edit Laporan Keuangan</a>
                 <form method="POST" action="{{ route('laporanKeuangan.destroy', $laporanKeuangan->id) }}">
                     @csrf
                     <input name="_method" type="hidden" value="DELETE">
                     <button type="submit" class="btn btn-outline-danger show_confirm " data-toggle="tooltip"
-                        title='Delete'>Hapus postingan</button>
+                        title='Delete'>Hapus Laporan Keuangan</button>
                 </form>
             </div>
         </div>
