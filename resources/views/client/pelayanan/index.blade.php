@@ -36,7 +36,7 @@
       <div CLASS='col-sm-4'>
         <i class="fa-solid fa-solid fa-headset fa-2x" style="color:red"></i>
         <h5 style="text-align:center">{{ $data->jenis_pelayanan }}</h5>
-        <p>{{ $data->informasi}}</p>
+        <p>{!! $data->informasi !!}</p>
       </div>
       @endforeach
   </div>

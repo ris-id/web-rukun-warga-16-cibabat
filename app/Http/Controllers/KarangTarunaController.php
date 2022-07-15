@@ -53,7 +53,7 @@ class KarangTarunaController extends Controller
 
         KarangTaruna::create($input);
 
-        Alert::success('Success', 'Data Karang Taruna Berhasi ditambahkan');
+        Alert::success('Success', 'Data karang taruna berhasil ditambahkan');
 
         return redirect()->route('karangTaruna.index');
     }
@@ -107,7 +107,7 @@ class KarangTarunaController extends Controller
         $karangTaruna->update($input);
 
 
-        Alert::success('Success', 'Data Karang Taruna Berhasi diupdate');
+        Alert::success('Success', 'Data karang taruna berhasil diupdate');
 
         return redirect()->route('karangTaruna.index');
     }
@@ -124,7 +124,7 @@ class KarangTarunaController extends Controller
         unlink("image/karang-taruna/" . $data->foto);
         $data::where("id", $id)->delete();
 
-        Alert::success('Success', 'Data Karang taruna Berhasi dihapus');
+        Alert::success('Success', 'Data karang taruna berhasil dihapus');
         return redirect()->route('karangTaruna.index');
     }
 }

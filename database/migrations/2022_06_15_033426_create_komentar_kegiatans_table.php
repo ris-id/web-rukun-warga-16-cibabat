@@ -15,7 +15,7 @@ class CreateKomentarKegiatansTable extends Migration
     {
         Schema::create('tb_komentar_kegiatan', function (Blueprint $table) {
             $table->id();
-            $table->longText('komentar');
+            $table->text('komentar');
             $table->unsignedBigInteger('id_kegiatan');
             $table->foreign('id_kegiatan')->references('id')->on('tb_kegiatan')->onDelete('cascade');
             $table->timestamps();

@@ -27,7 +27,14 @@
                         <tbody>
                             <tr>
                                 <td>{{ $item->jenis_pelayanan }} </td>
-                                <td>{!! $item->informasi !!} </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <span class="d-inline-block text-truncate" style="max-width: 300px;">
+                                            {!! $item->informasi !!}
+                                        </span>
+                                        ...
+                                    </div>
+                                </td>
                                 <td>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                                         <a href="{{ route('pelayanan.edit', $item->id) }}"

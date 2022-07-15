@@ -54,7 +54,7 @@ class PKKController extends Controller
 
         PKK::create($input);
 
-        Alert::success('Success', 'Data PKK Berhasil ditambahkan');
+        Alert::success('Success', 'Data PKK berhasil ditambahkan');
 
         return redirect()->route('pkk.index');
     }
@@ -109,7 +109,7 @@ class PKKController extends Controller
 
         $pkk->update($input);
 
-        Alert::success('Success', 'Data Kegiatan Berhasil diupdate');
+        Alert::success('Success', 'Data PKK berhasil diupdate');
 
         return redirect()->route('pkk.index');
     }
@@ -125,7 +125,7 @@ class PKKController extends Controller
         $data = PKK::find($id);
         unlink("image/pkk/" . $data->foto);
         $data::where("id", $id)->delete();
-        Alert::success('Success', 'Data PKK Berhasil dihapus');
+        Alert::success('Success', 'Data PKK berhasil dihapus');
         return redirect()->route('pkk.index');
     }
 }

@@ -22,7 +22,19 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Foto Aset:</strong>
-                        <input type="file" name="foto" class="form-control" placeholder="Foto Aset" required>
+                        <input type="file" name="foto" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Nama aset:</strong>
+                        <input type="text" name="nama_aset" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Jumlah aset:</strong>
+                        <input type="number" name="jumlah" class="form-control" required>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

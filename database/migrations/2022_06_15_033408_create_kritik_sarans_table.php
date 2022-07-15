@@ -17,7 +17,7 @@ class CreateKritikSaransTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('email')->nullable();
-            $table->longText('pesan')->nullable();
+            $table->text('pesan')->nullable();
             $table->timestamps();
         });
     }

@@ -392,7 +392,7 @@
     <!-- AdminLTE App -->
     <script src="/dist/js/adminlte.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/k1crzih9u57tl6edqk0ky4jhq1kfy36vafhe1ybuho3dqn57/tinymce/5/tinymce.min.js"
+    <script src="https://cdn.tiny.cloud/1/qkm0r2soqyda46tsn45pt9k8n8rhpz9bpdea49k8gb8lgk29/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     @yield('script-laporan-keuangan')
     @yield('script-karang-taruna')

@@ -26,7 +26,14 @@
                     @foreach ($laporanKeuangan as $item)
                         <tbody>
                             <tr>
-                                <td>{!! $item->informasi !!} </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <span class="d-inline-block text-truncate" style="max-width: 500px;">
+                                            {!! $item->informasi !!}
+                                        </span>
+                                        ...
+                                    </div>
+                                </td>
                                 <td>
                                     <a href="{{ route('laporanKeuangan.show', [$item->id]) }}">Lihat detail postingan</a>
                                 </td>

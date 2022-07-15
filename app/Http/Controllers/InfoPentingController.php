@@ -46,10 +46,9 @@ class InfoPentingController extends Controller
 
         InfoPenting::create($input);
 
-        Alert::success('Success', 'Info Penting Berhasi diumumkan');
+        Alert::success('Success', 'Info penting berhasil ditambahkan');
 
         return redirect()->route('infoPenting.index');
-
     }
 
     /**
@@ -71,7 +70,7 @@ class InfoPentingController extends Controller
      */
     public function edit(Request $request, InfoPenting $infoPenting)
     {
-        return view ('admin.infoPenting.edit', compact('infoPenting'));
+        return view('admin.infoPenting.edit', compact('infoPenting'));
     }
 
     /**
@@ -92,7 +91,7 @@ class InfoPentingController extends Controller
 
         $infoPenting->update($input);
 
-        Alert::success('Success', 'Info Berhasil diupdate');
+        Alert::success('Success', 'Info berhasil diupdate');
         return redirect()->route('infoPenting.index');
     }
 
@@ -107,7 +106,7 @@ class InfoPentingController extends Controller
         $data =  InfoPenting::find($id);
         $data::where("id", $id)->delete();
 
-        Alert::success('Success', 'Info Berhasil dihapus');
+        Alert::success('Success', 'Info berhasil dihapus');
         return redirect()->route('infoPenting.index');
     }
 }

@@ -12,65 +12,64 @@
 
         <div>
             @if (count($strukturOrganisasi) < 1)
-            <div class="ml-auto text-right">
-                <a href="{{ route('strukturOrganisasi.create') }}" class="btn btn-outline-primary">Masukan Data Struktur
-                    Organisasi</a>
-            </div>
+                <div class="ml-auto text-right">
+                    <a href="{{ route('strukturOrganisasi.create') }}" class="btn btn-outline-primary">Masukan Data Struktur
+                        Organisasi</a>
+                </div>
                 <p>Tidak ada data, silahkan <a href="{{ route('strukturOrganisasi.create') }}">entri data baru</a>
-            @else
+                @else
                 <div class="row mt-4">
                     @foreach ($strukturOrganisasi as $item)
                         <div class="col-md-12">
                             <div class="card p-4">
-                                <img src="/image/struktu-organisasi/{{ $item->foto }}" class="card-img-top"
-                                    height="400" />
-                                    <table class="table table-bordered mt-4">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Ketua RR</th>
-                                                <th scope="col">{{ $item->ketua_rw  }}</th>
-                                            </tr>
-                                        </thead>
+                                <img src="/image/struktu-organisasi/{{ $item->foto }}" class="card-img-top" />
+                                <table class="table table-bordered mt-4">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Ketua RR</th>
+                                            <th scope="col">{{ $item->ketua_rw }}</th>
+                                        </tr>
+                                    </thead>
 
-                                            <tbody>
-                                                <tr>
-                                                    <td>Wakil Ketua</td>
-                                                    <td>{{ $item->wakil_ketua }} </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sekretaris</td>
-                                                    <td>{{ $item->sekretaris }} </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Bendahara</td>
-                                                    <td>{{ $item->bendahara }} </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Keamanan</td>
-                                                    <td>{{ $item->keamanan }} </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Pelayanan Masyarakat</td>
-                                                    <td>{{ $item->pelayanan_masyarakat }} </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Pemuda Olahraga</td>
-                                                    <td>{{ $item->pemuda_olahraga }} </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Kesehatan Masyarakat</td>
-                                                    <td>{{ $item->kesehatan_masyarakat }} </td>
-                                                </tr>
-                                            </tbody>
-                                    </table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Wakil Ketua</td>
+                                            <td>{{ $item->wakil_ketua }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sekretaris</td>
+                                            <td>{{ $item->sekretaris }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bendahara</td>
+                                            <td>{{ $item->bendahara }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Keamanan</td>
+                                            <td>{{ $item->keamanan }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pelayanan Masyarakat</td>
+                                            <td>{{ $item->pelayanan_masyarakat }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pemuda Olahraga</td>
+                                            <td>{{ $item->pemuda_olahraga }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kesehatan Masyarakat</td>
+                                            <td>{{ $item->kesehatan_masyarakat }} </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
                                 <form method="POST" action="{{ route('strukturOrganisasi.destroy', $item->id) }}">
                                     <a href="{{ route('strukturOrganisasi.edit', $item->id) }}"
                                         class="btn btn-outline-success">Edit</a>
                                     @csrf
                                     <input name="_method" type="hidden" value="DELETE">
-                                    <button type="submit" class="btn  btn-outline-danger show_confirm" data-toggle="tooltip"
-                                        title='Delete'>Delete</button>
+                                    <button type="submit" class="btn  btn-outline-danger show_confirm"
+                                        data-toggle="tooltip" title='Delete'>Delete</button>
                                 </form>
                             </div>
                         </div>

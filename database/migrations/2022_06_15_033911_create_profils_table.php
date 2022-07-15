@@ -15,7 +15,7 @@ class CreateProfilsTable extends Migration
     {
         Schema::create('tb_profil', function (Blueprint $table) {
             $table->id();
-            $table->longText('deskripsi');
+            $table->text('deskripsi');
             $table->string('link_email')->nullable();
             $table->string('link_facebook')->nullable();
             $table->string('link_instagram')->nullable();

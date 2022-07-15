@@ -24,10 +24,10 @@ class PageController extends Controller
     public function profile()
     {
         $profil = Profil::all();
-        return view('client.pages.profile', ['profil' => $profil]);
+        return view('client.Pages.profile', ['profil' => $profil]);
     }
     public function layanan()
     {
-        return view('client.pages.pelayanan');
+        return view('client.Pages.pelayanan');
     }
 }
